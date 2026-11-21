@@ -7,10 +7,9 @@ tools/fonts/candidate.ttf
 *.tar.xz
 *.part
 
-# raw per-model PNG renders (compressed copies live in renders/models/, sheets in renders/sheets/)
-renders/single/
+# render tool logs (renders themselves are tracked in renders/)
+tools/*.log
 
 # OS / editor noise
 .DS_Store
 Thumbs.db
-renders/
