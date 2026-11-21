@@ -1,0 +1,1827 @@
+{
+ "Barrel_01": {
+  "id": "Barrel_01",
+  "name": "Barrel_01",
+  "categories": [
+   "containers"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Jorge Camacho"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/Barrel_01",
+  "file": "polyhaven/Barrel_01/Barrel_01_1k.gltf",
+  "size_mb": 0.69
+ },
+ "Barrel_02": {
+  "id": "Barrel_02",
+  "name": "Barrel 02",
+  "categories": [
+   "containers"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Jorge Camacho"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/Barrel_02",
+  "file": "polyhaven/Barrel_02/Barrel_02_1k.gltf",
+  "size_mb": 0.42
+ },
+ "Camera_01": {
+  "id": "Camera_01",
+  "name": "Camera 01",
+  "categories": [
+   "electronics",
+   "props"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Rajil Jose Macatangay"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/Camera_01",
+  "file": "polyhaven/Camera_01/Camera_01_1k.gltf",
+  "size_mb": 2.44
+ },
+ "CashRegister_01": {
+  "id": "CashRegister_01",
+  "name": "Cash Register 01",
+  "categories": [
+   "appliances"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Joe Seabuhr"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/CashRegister_01",
+  "file": "polyhaven/CashRegister_01/CashRegister_01_1k.gltf",
+  "size_mb": 1.04
+ },
+ "Chandelier_01": {
+  "id": "Chandelier_01",
+  "name": "Chandelier 01",
+  "categories": [
+   "lighting"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Kirill Sannikov"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/Chandelier_01",
+  "file": "polyhaven/Chandelier_01/Chandelier_01_1k.gltf",
+  "size_mb": 1.31
+ },
+ "Chandelier_03": {
+  "id": "Chandelier_03",
+  "name": "Chandelier 03",
+  "categories": [
+   "lighting"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Kirill Sannikov"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/Chandelier_03",
+  "file": "polyhaven/Chandelier_03/Chandelier_03_1k.gltf",
+  "size_mb": 1.36
+ },
+ "ClassicConsole_01": {
+  "id": "ClassicConsole_01",
+  "name": "Classic Console 01",
+  "categories": [
+   "furniture"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Kirill Sannikov"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/ClassicConsole_01",
+  "file": "polyhaven/ClassicConsole_01/ClassicConsole_01_1k.gltf",
+  "size_mb": 0.74
+ },
+ "CoffeeCart_01": {
+  "id": "CoffeeCart_01",
+  "name": "Coffee Cart 01",
+  "categories": [
+   "appliances",
+   "furniture",
+   "office"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Joe Seabuhr"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/CoffeeCart_01",
+  "file": "polyhaven/CoffeeCart_01/CoffeeCart_01_1k.gltf",
+  "size_mb": 1.84
+ },
+ "Drill_01": {
+  "id": "Drill_01",
+  "name": "Drill 01",
+  "categories": [
+   "electronics",
+   "tools"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Fernando Quinn"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/Drill_01",
+  "file": "polyhaven/Drill_01/Drill_01_1k.gltf",
+  "size_mb": 0.5
+ },
+ "GothicBed_01": {
+  "id": "GothicBed_01",
+  "name": "Gothic Bed 01",
+  "categories": [
+   "furniture"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Kirill Sannikov"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/GothicBed_01",
+  "file": "polyhaven/GothicBed_01/GothicBed_01_1k.gltf",
+  "size_mb": 1.16
+ },
+ "GothicCabinet_01": {
+  "id": "GothicCabinet_01",
+  "name": "Gothic Cabinet 01",
+  "categories": [
+   "furniture"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Kirill Sannikov"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/GothicCabinet_01",
+  "file": "polyhaven/GothicCabinet_01/GothicCabinet_01_1k.gltf",
+  "size_mb": 1.02
+ },
+ "GothicCommode_01": {
+  "id": "GothicCommode_01",
+  "name": "Gothic Commode 01",
+  "categories": [
+   "furniture"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Kirill Sannikov"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/GothicCommode_01",
+  "file": "polyhaven/GothicCommode_01/GothicCommode_01_1k.gltf",
+  "size_mb": 0.6
+ },
+ "GreenChair_01": {
+  "id": "GreenChair_01",
+  "name": "Green Chair 01",
+  "categories": [
+   "furniture"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Kirill Sannikov"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/GreenChair_01",
+  "file": "polyhaven/GreenChair_01/GreenChair_01_1k.gltf",
+  "size_mb": 0.61
+ },
+ "Lantern_01": {
+  "id": "Lantern_01",
+  "name": "Lantern 01",
+  "categories": [
+   "lighting",
+   "props"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Rajil Jose Macatangay"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/Lantern_01",
+  "file": "polyhaven/Lantern_01/Lantern_01_1k.gltf",
+  "size_mb": 1.42
+ },
+ "Megaphone_01": {
+  "id": "Megaphone_01",
+  "name": "Megaphone 01",
+  "categories": [
+   "tools"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Ethan Simon-Law"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/Megaphone_01",
+  "file": "polyhaven/Megaphone_01/Megaphone_01_1k.gltf",
+  "size_mb": 0.78
+ },
+ "Ottoman_01": {
+  "id": "Ottoman_01",
+  "name": "Ottoman 01",
+  "categories": [
+   "furniture"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Caspian Fortune"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/Ottoman_01",
+  "file": "polyhaven/Ottoman_01/Ottoman_01_1k.gltf",
+  "size_mb": 0.65
+ },
+ "Sofa_01": {
+  "id": "Sofa_01",
+  "name": "Sofa 01",
+  "categories": [
+   "furniture"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Kirill Sannikov"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/Sofa_01",
+  "file": "polyhaven/Sofa_01/Sofa_01_1k.gltf",
+  "size_mb": 0.52
+ },
+ "Television_01": {
+  "id": "Television_01",
+  "name": "Television 01",
+  "categories": [
+   "electronics",
+   "props"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Gabriel Radić"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/Television_01",
+  "file": "polyhaven/Television_01/Television_01_1k.gltf",
+  "size_mb": 0.53
+ },
+ "WetFloorSign_01": {
+  "id": "WetFloorSign_01",
+  "name": "Wet Floor Sign 01",
+  "categories": [
+   "office"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Fran Calvente"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/WetFloorSign_01",
+  "file": "polyhaven/WetFloorSign_01/WetFloorSign_01_1k.gltf",
+  "size_mb": 0.27
+ },
+ "WoodenTable_01": {
+  "id": "WoodenTable_01",
+  "name": "Wooden Table 01",
+  "categories": [
+   "furniture"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Ethan Place"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/WoodenTable_01",
+  "file": "polyhaven/WoodenTable_01/WoodenTable_01_1k.gltf",
+  "size_mb": 0.55
+ },
+ "alarm_clock_01": {
+  "id": "alarm_clock_01",
+  "name": "Alarm Clock 01",
+  "categories": [
+   "props",
+   "rigged"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "James Ray Cock",
+   "Yann Kervran"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/alarm_clock_01",
+  "file": "polyhaven/alarm_clock_01/alarm_clock_01_1k.gltf",
+  "size_mb": 1.66
+ },
+ "bench_vice_01": {
+  "id": "bench_vice_01",
+  "name": "Bench Vice 01",
+  "categories": [
+   "rigged"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Antanas Kep",
+   "Yann Kervran"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/bench_vice_01",
+  "file": "polyhaven/bench_vice_01/bench_vice_01_1k.gltf",
+  "size_mb": 2.44
+ },
+ "bolt_action_rifle_7_62": {
+  "id": "bolt_action_rifle_7_62",
+  "name": "Bolt Action Rifle 7.62",
+  "categories": [
+   "firearms",
+   "weapons"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Mateusz Sadek"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/bolt_action_rifle_7_62",
+  "file": "polyhaven/bolt_action_rifle_7_62/bolt_action_rifle_7_62_1k.gltf",
+  "size_mb": 6.04
+ },
+ "bolt_cutters_01": {
+  "id": "bolt_cutters_01",
+  "name": "Bolt Cutters 01",
+  "categories": [
+   "rigged"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Antanas Kep",
+   "Yann Kervran"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/bolt_cutters_01",
+  "file": "polyhaven/bolt_cutters_01/bolt_cutters_01_1k.gltf",
+  "size_mb": 2.5
+ },
+ "book_encyclopedia_set_01": {
+  "id": "book_encyclopedia_set_01",
+  "name": "Book Encyclopedia Set 01",
+  "categories": [
+   "props"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "John Malcolm"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/book_encyclopedia_set_01",
+  "file": "polyhaven/book_encyclopedia_set_01/book_encyclopedia_set_01_1k.gltf",
+  "size_mb": 3.26
+ },
+ "boombox": {
+  "id": "boombox",
+  "name": "Boombox",
+  "categories": [
+   "appliances",
+   "electronics"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Thomas Paul Mouilleron"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/boombox",
+  "file": "polyhaven/boombox/boombox_1k.gltf",
+  "size_mb": 3.07
+ },
+ "brass_candleholders": {
+  "id": "brass_candleholders",
+  "name": "Brass Candleholders",
+  "categories": [
+   "lighting"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Tina"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/brass_candleholders",
+  "file": "polyhaven/brass_candleholders/brass_candleholders_1k.gltf",
+  "size_mb": 9.5
+ },
+ "brass_goblets": {
+  "id": "brass_goblets",
+  "name": "Brass Goblets",
+  "categories": [
+   "containers",
+   "dishes"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Tina"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/brass_goblets",
+  "file": "polyhaven/brass_goblets/brass_goblets_1k.gltf",
+  "size_mb": 4.78
+ },
+ "brass_vase_03": {
+  "id": "brass_vase_03",
+  "name": "Brass Vase 03",
+  "categories": [
+   "containers"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Rico Cilliers"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/brass_vase_03",
+  "file": "polyhaven/brass_vase_03/brass_vase_03_1k.gltf",
+  "size_mb": 1.58
+ },
+ "cannon_01": {
+  "id": "cannon_01",
+  "name": "Cannon 01",
+  "categories": [
+   "rigged"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "James Ray Cock",
+   "Yann Kervran"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/cannon_01",
+  "file": "polyhaven/cannon_01/cannon_01_1k.gltf",
+  "size_mb": 4.06
+ },
+ "cardboard_box_01": {
+  "id": "cardboard_box_01",
+  "name": "Cardboard Box 01",
+  "categories": [
+   "containers"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Rahul Chaudhary"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/cardboard_box_01",
+  "file": "polyhaven/cardboard_box_01/cardboard_box_01_1k.gltf",
+  "size_mb": 2.17
+ },
+ "carrot_cake": {
+  "id": "carrot_cake",
+  "name": "Carrot Cake",
+  "categories": [
+   "food"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "James Ray Cock",
+   "Greg Zaal"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/carrot_cake",
+  "file": "polyhaven/carrot_cake/carrot_cake_1k.gltf",
+  "size_mb": 3.36
+ },
+ "cassette_player": {
+  "id": "cassette_player",
+  "name": "Cassette Player",
+  "categories": [
+   "electronics"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Oday Abuzaeed"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/cassette_player",
+  "file": "polyhaven/cassette_player/cassette_player_1k.gltf",
+  "size_mb": 0.94
+ },
+ "chess_set": {
+  "id": "chess_set",
+  "name": "Chess Set",
+  "categories": [
+   "decorative",
+   "props"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Riley Queen"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/chess_set",
+  "file": "polyhaven/chess_set/chess_set_1k.gltf",
+  "size_mb": 6.98
+ },
+ "classic_laptop": {
+  "id": "classic_laptop",
+  "name": "Classic Laptop",
+  "categories": [
+   "office"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Arrangemonk"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/classic_laptop",
+  "file": "polyhaven/classic_laptop/classic_laptop_1k.gltf",
+  "size_mb": 2.18
+ },
+ "concrete_cat_statue": {
+  "id": "concrete_cat_statue",
+  "name": "Concrete Cat Statue",
+  "categories": [
+   "decorative"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Riley Queen",
+   "Rico Cilliers"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/concrete_cat_statue",
+  "file": "polyhaven/concrete_cat_statue/concrete_cat_statue_1k.gltf",
+  "size_mb": 3.1
+ },
+ "concrete_road_barrier": {
+  "id": "concrete_road_barrier",
+  "name": "Concrete Road Barrier",
+  "categories": [
+   "structures"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Amal Kumar"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/concrete_road_barrier",
+  "file": "polyhaven/concrete_road_barrier/concrete_road_barrier_1k.gltf",
+  "size_mb": 3.75
+ },
+ "concrete_road_barrier_02": {
+  "id": "concrete_road_barrier_02",
+  "name": "Concrete Road Barrier 02",
+  "categories": [
+   "structures"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Amal Kumar"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/concrete_road_barrier_02",
+  "file": "polyhaven/concrete_road_barrier_02/concrete_road_barrier_02_1k.gltf",
+  "size_mb": 2.93
+ },
+ "croissant": {
+  "id": "croissant",
+  "name": "Croissant",
+  "categories": [
+   "food"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Dario Barresi",
+   "Greg Zaal"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/croissant",
+  "file": "polyhaven/croissant/croissant_1k.gltf",
+  "size_mb": 2.1
+ },
+ "decorative_book_set_01": {
+  "id": "decorative_book_set_01",
+  "name": "Decorative Book Set 01",
+  "categories": [
+   "decorative",
+   "props"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "James Ray Cock"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/decorative_book_set_01",
+  "error": "'gltf'"
+ },
+ "desk_lamp_arm_01": {
+  "id": "desk_lamp_arm_01",
+  "name": "Desk Lamp Arm 01",
+  "categories": [
+   "rigged"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Kuutti Siitonen",
+   "Yann Kervran"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/desk_lamp_arm_01",
+  "file": "polyhaven/desk_lamp_arm_01/desk_lamp_arm_01_1k.gltf",
+  "size_mb": 2.88
+ },
+ "dry_branches_medium_01": {
+  "id": "dry_branches_medium_01",
+  "name": "Dry Branches Medium 01",
+  "categories": [
+   "props"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Rico Cilliers"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/dry_branches_medium_01",
+  "file": "polyhaven/dry_branches_medium_01/dry_branches_medium_01_1k.gltf",
+  "size_mb": 3.25
+ },
+ "electric_stove": {
+  "id": "electric_stove",
+  "name": "Electric Stove",
+  "categories": [
+   "rigged"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Kuutti Siitonen"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/electric_stove",
+  "file": "polyhaven/electric_stove/electric_stove_1k.gltf",
+  "size_mb": 2.05
+ },
+ "exterior_aircon_unit": {
+  "id": "exterior_aircon_unit",
+  "name": "Exterior Aircon Unit",
+  "categories": [
+   "appliances",
+   "electronics"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Monsta3D"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/exterior_aircon_unit",
+  "file": "polyhaven/exterior_aircon_unit/exterior_aircon_unit_1k.gltf",
+  "size_mb": 7.67
+ },
+ "fancy_picture_frame_01": {
+  "id": "fancy_picture_frame_01",
+  "name": "Fancy Picture Frame 01",
+  "categories": [
+   "decorative"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Rico Cilliers",
+   "Rob Tuytel"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/fancy_picture_frame_01",
+  "file": "polyhaven/fancy_picture_frame_01/fancy_picture_frame_01_1k.gltf",
+  "size_mb": 0.74
+ },
+ "fire_alarm": {
+  "id": "fire_alarm",
+  "name": "Fire Alarm",
+  "categories": [
+   "office"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Slinc"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/fire_alarm",
+  "file": "polyhaven/fire_alarm/fire_alarm_1k.gltf",
+  "size_mb": 1.95
+ },
+ "fire_hydrant": {
+  "id": "fire_hydrant",
+  "name": "Fire Hydrant",
+  "categories": [
+   "structures"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Gonçalo Felício"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/fire_hydrant",
+  "file": "polyhaven/fire_hydrant/fire_hydrant_1k.gltf",
+  "size_mb": 5.52
+ },
+ "food_apple_01": {
+  "id": "food_apple_01",
+  "name": "Food Apple 01",
+  "categories": [
+   "food"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Oliver Harries"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/food_apple_01",
+  "file": "polyhaven/food_apple_01/food_apple_01_1k.gltf",
+  "size_mb": 0.47
+ },
+ "food_lime_01": {
+  "id": "food_lime_01",
+  "name": "Food Lime 01",
+  "categories": [
+   "food"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Oliver Harries"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/food_lime_01",
+  "file": "polyhaven/food_lime_01/food_lime_01_1k.gltf",
+  "size_mb": 0.58
+ },
+ "food_pears_asian_01": {
+  "id": "food_pears_asian_01",
+  "name": "Pears Asian 01",
+  "categories": [
+   "food"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Amal Kumar"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/food_pears_asian_01",
+  "file": "polyhaven/food_pears_asian_01/food_pears_asian_01_1k.gltf",
+  "size_mb": 1.72
+ },
+ "food_pomegranate_01": {
+  "id": "food_pomegranate_01",
+  "name": "Food Pomegranate 01",
+  "categories": [
+   "food"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Oliver Harries"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/food_pomegranate_01",
+  "file": "polyhaven/food_pomegranate_01/food_pomegranate_01_1k.gltf",
+  "size_mb": 0.61
+ },
+ "gate_latch_01": {
+  "id": "gate_latch_01",
+  "name": "Gate Latch 01",
+  "categories": [
+   "buildings"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Desktoy"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/gate_latch_01",
+  "file": "polyhaven/gate_latch_01/gate_latch_01_1k.gltf",
+  "size_mb": 2.08
+ },
+ "horse_statue_01": {
+  "id": "horse_statue_01",
+  "name": "Horse Statue 01",
+  "categories": [
+   "decorative",
+   "props"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Rico Cilliers"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/horse_statue_01",
+  "file": "polyhaven/horse_statue_01/horse_statue_01_1k.gltf",
+  "size_mb": 1.28
+ },
+ "jug_01": {
+  "id": "jug_01",
+  "name": "Jug 01",
+  "categories": [
+   "dishes"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Kuutti Siitonen"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/jug_01",
+  "file": "polyhaven/jug_01/jug_01_1k.gltf",
+  "size_mb": 1.23
+ },
+ "large_castle_door": {
+  "id": "large_castle_door",
+  "name": "Large Castle Door",
+  "categories": [
+   "buildings",
+   "structures"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Tina"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/large_castle_door",
+  "file": "polyhaven/large_castle_door/large_castle_door_1k.gltf",
+  "size_mb": 3.27
+ },
+ "large_iron_gate": {
+  "id": "large_iron_gate",
+  "name": "Large Iron Gate",
+  "categories": [
+   "buildings"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Josh Dean"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/large_iron_gate",
+  "file": "polyhaven/large_iron_gate/large_iron_gate_1k.gltf",
+  "size_mb": 3.13
+ },
+ "lemon": {
+  "id": "lemon",
+  "name": "Lemon",
+  "categories": [
+   "food"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Kuutti Siitonen"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/lemon",
+  "file": "polyhaven/lemon/lemon_1k.gltf",
+  "size_mb": 1.85
+ },
+ "lubricant_spray": {
+  "id": "lubricant_spray",
+  "name": "Lubricant Spray",
+  "categories": [
+   "tools"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "James Ray Cock"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/lubricant_spray",
+  "file": "polyhaven/lubricant_spray/lubricant_spray_1k.gltf",
+  "size_mb": 1.76
+ },
+ "mantel_clock_01": {
+  "id": "mantel_clock_01",
+  "name": "Mantel Clock 01",
+  "categories": [
+   "appliances",
+   "rigged"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Rico Cilliers",
+   "Yann Kervran"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/mantel_clock_01",
+  "file": "polyhaven/mantel_clock_01/mantel_clock_01_1k.gltf",
+  "size_mb": 2.43
+ },
+ "marble_bust_01": {
+  "id": "marble_bust_01",
+  "name": "Marble Bust 01",
+  "categories": [
+   "decorative"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Rico Cilliers"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/marble_bust_01",
+  "file": "polyhaven/marble_bust_01/marble_bust_01_1k.gltf",
+  "size_mb": 0.9
+ },
+ "metal_office_desk": {
+  "id": "metal_office_desk",
+  "name": "Metal Office Desk",
+  "categories": [
+   "office"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Ulan Cabanilla"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/metal_office_desk",
+  "file": "polyhaven/metal_office_desk/metal_office_desk_1k.gltf",
+  "size_mb": 1.61
+ },
+ "metal_tool_chest": {
+  "id": "metal_tool_chest",
+  "name": "Metal Tool Chest",
+  "categories": [
+   "rigged",
+   "tools"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "John Hutcheson",
+   "Yann Kervran"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/metal_tool_chest",
+  "file": "polyhaven/metal_tool_chest/metal_tool_chest_1k.gltf",
+  "size_mb": 2.36
+ },
+ "metal_trash_can": {
+  "id": "metal_trash_can",
+  "name": "Metal Trash Can",
+  "categories": [
+   "containers"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "GurJas Studios"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/metal_trash_can",
+  "file": "polyhaven/metal_trash_can/metal_trash_can_1k.gltf",
+  "size_mb": 4.99
+ },
+ "modern_arm_chair_01": {
+  "id": "modern_arm_chair_01",
+  "name": "Modern Arm Chair 01",
+  "categories": [
+   "furniture",
+   "office"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Vibrant Nordic"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/modern_arm_chair_01",
+  "file": "polyhaven/modern_arm_chair_01/modern_arm_chair_01_1k.gltf",
+  "size_mb": 2.7
+ },
+ "modern_ceiling_lamp_01": {
+  "id": "modern_ceiling_lamp_01",
+  "name": "Modern Ceiling Lamp 01",
+  "categories": [
+   "lighting"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "James Ray Cock"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/modern_ceiling_lamp_01",
+  "file": "polyhaven/modern_ceiling_lamp_01/modern_ceiling_lamp_01_1k.gltf",
+  "size_mb": 0.44
+ },
+ "modular_chainlink_fence": {
+  "id": "modular_chainlink_fence",
+  "name": "Modular Chainlink Fence",
+  "categories": [
+   "buildings",
+   "structures"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "James Ray Cock",
+   "Amal Kumar"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/modular_chainlink_fence",
+  "file": "polyhaven/modular_chainlink_fence/modular_chainlink_fence_1k.gltf",
+  "size_mb": 7.29
+ },
+ "modular_electricity_poles": {
+  "id": "modular_electricity_poles",
+  "name": "Modular Electricity Poles",
+  "categories": [
+   "structures"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "James Ray Cock"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/modular_electricity_poles",
+  "file": "polyhaven/modular_electricity_poles/modular_electricity_poles_1k.gltf",
+  "size_mb": 12.42
+ },
+ "modular_factory_facade": {
+  "id": "modular_factory_facade",
+  "name": "Modular Factory Facade",
+  "categories": [
+   "buildings"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "James Ray Cock"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/modular_factory_facade",
+  "file": "polyhaven/modular_factory_facade/modular_factory_facade_1k.gltf",
+  "size_mb": 17.63
+ },
+ "modular_fire_escape": {
+  "id": "modular_fire_escape",
+  "name": "Modular Fire Escape",
+  "categories": [
+   "structures"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Juniix"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/modular_fire_escape",
+  "file": "polyhaven/modular_fire_escape/modular_fire_escape_1k.gltf",
+  "size_mb": 4.81
+ },
+ "modular_fort_01": {
+  "id": "modular_fort_01",
+  "name": "Modular Fort 01",
+  "categories": [
+   "buildings",
+   "structures"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Rico Cilliers"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/modular_fort_01",
+  "file": "polyhaven/modular_fort_01/modular_fort_01_1k.gltf",
+  "size_mb": 10.64
+ },
+ "modular_industrial_pipes_01": {
+  "id": "modular_industrial_pipes_01",
+  "name": "Modular Industrial Pipes 01",
+  "categories": [
+   "structures"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Jorge Camacho"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/modular_industrial_pipes_01",
+  "file": "polyhaven/modular_industrial_pipes_01/modular_industrial_pipes_01_1k.gltf",
+  "size_mb": 4.82
+ },
+ "modular_metal_gutter": {
+  "id": "modular_metal_gutter",
+  "name": "Modular Metal Gutter",
+  "categories": [
+   "buildings"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Maxim Domnin"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/modular_metal_gutter",
+  "file": "polyhaven/modular_metal_gutter/modular_metal_gutter_1k.gltf",
+  "size_mb": 2.21
+ },
+ "modular_urban_apartments_facade": {
+  "id": "modular_urban_apartments_facade",
+  "name": "Modular Urban Apartments Facade",
+  "categories": [
+   "buildings"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "James Ray Cock"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/modular_urban_apartments_facade",
+  "file": "polyhaven/modular_urban_apartments_facade/modular_urban_apartments_facade_1k.gltf",
+  "size_mb": 16.49
+ },
+ "modular_wooden_pier": {
+  "id": "modular_wooden_pier",
+  "name": "Modular Wooden Pier",
+  "categories": [
+   "structures"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Rico Cilliers"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/modular_wooden_pier",
+  "file": "polyhaven/modular_wooden_pier/modular_wooden_pier_1k.gltf",
+  "size_mb": 7.84
+ },
+ "office_notepads": {
+  "id": "office_notepads",
+  "name": "Office Notepads",
+  "categories": [
+   "office"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Ulan Cabanilla"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/office_notepads",
+  "file": "polyhaven/office_notepads/office_notepads_1k.gltf",
+  "size_mb": 1.33
+ },
+ "ornate_mirror_01": {
+  "id": "ornate_mirror_01",
+  "name": "Ornate Mirror 01",
+  "categories": [
+   "furniture"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "James Ray Cock"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/ornate_mirror_01",
+  "file": "polyhaven/ornate_mirror_01/ornate_mirror_01_1k.gltf",
+  "size_mb": 0.68
+ },
+ "outdoor_table_chair_set_01": {
+  "id": "outdoor_table_chair_set_01",
+  "name": "Outdoor Table Chair Set 01",
+  "categories": [
+   "furniture"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "James Ray Cock"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/outdoor_table_chair_set_01",
+  "file": "polyhaven/outdoor_table_chair_set_01/outdoor_table_chair_set_01_1k.gltf",
+  "size_mb": 1.24
+ },
+ "plastic_monobloc_chair_01": {
+  "id": "plastic_monobloc_chair_01",
+  "name": "Plastic Monobloc Chair 01",
+  "categories": [
+   "furniture"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Kuutti Siitonen"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/plastic_monobloc_chair_01",
+  "file": "polyhaven/plastic_monobloc_chair_01/plastic_monobloc_chair_01_1k.gltf",
+  "size_mb": 1.95
+ },
+ "potted_plant_01": {
+  "id": "potted_plant_01",
+  "name": "Potted Plant 01",
+  "categories": [
+   "decorative"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Rico Cilliers"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/potted_plant_01",
+  "file": "polyhaven/potted_plant_01/potted_plant_01_1k.gltf",
+  "size_mb": 6.33
+ },
+ "potted_plant_02": {
+  "id": "potted_plant_02",
+  "name": "Potted Plant 02",
+  "categories": [
+   "decorative"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Rico Cilliers"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/potted_plant_02",
+  "file": "polyhaven/potted_plant_02/potted_plant_02_1k.gltf",
+  "size_mb": 2.63
+ },
+ "potted_plant_04": {
+  "id": "potted_plant_04",
+  "name": "Potted Plant 04",
+  "categories": [
+   "decorative"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "James Ray Cock"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/potted_plant_04",
+  "file": "polyhaven/potted_plant_04/potted_plant_04_1k.gltf",
+  "size_mb": 2.12
+ },
+ "power_box_01": {
+  "id": "power_box_01",
+  "name": "Power Box 01",
+  "categories": [
+   "electronics",
+   "rigged",
+   "tools"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Rico Cilliers",
+   "Yann Kervran"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/power_box_01",
+  "file": "polyhaven/power_box_01/power_box_01_1k.gltf",
+  "size_mb": 2.73
+ },
+ "ratchet_wrench": {
+  "id": "ratchet_wrench",
+  "name": "Ratchet Wrench",
+  "categories": [
+   "rigged"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "John Hutcheson"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/ratchet_wrench",
+  "file": "polyhaven/ratchet_wrench/ratchet_wrench_1k.gltf",
+  "size_mb": 1.52
+ },
+ "rollershutter_door": {
+  "id": "rollershutter_door",
+  "name": "Rollershutter Door",
+  "categories": [
+   "buildings"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "MP"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/rollershutter_door",
+  "file": "polyhaven/rollershutter_door/rollershutter_door_1k.gltf",
+  "size_mb": 2.34
+ },
+ "rollershutter_window_01": {
+  "id": "rollershutter_window_01",
+  "name": "Rollershutter Window 01",
+  "categories": [
+   "buildings",
+   "structures"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "MP"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/rollershutter_window_01",
+  "file": "polyhaven/rollershutter_window_01/rollershutter_window_01_1k.gltf",
+  "size_mb": 2.24
+ },
+ "rollershutter_window_02": {
+  "id": "rollershutter_window_02",
+  "name": "Rollershutter Window 02",
+  "categories": [
+   "buildings"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "MP"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/rollershutter_window_02",
+  "file": "polyhaven/rollershutter_window_02/rollershutter_window_02_1k.gltf",
+  "size_mb": 2.12
+ },
+ "rollershutter_window_03": {
+  "id": "rollershutter_window_03",
+  "name": "Rollershutter Window 03",
+  "categories": [
+   "buildings"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "MP"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/rollershutter_window_03",
+  "file": "polyhaven/rollershutter_window_03/rollershutter_window_03_1k.gltf",
+  "size_mb": 2.28
+ },
+ "round_wooden_table_01": {
+  "id": "round_wooden_table_01",
+  "name": "Round Wooden Table 01",
+  "categories": [
+   "furniture"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Ulan Cabanilla"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/round_wooden_table_01",
+  "file": "polyhaven/round_wooden_table_01/round_wooden_table_01_1k.gltf",
+  "size_mb": 0.55
+ },
+ "rubber_duck_toy": {
+  "id": "rubber_duck_toy",
+  "name": "Rubber Duck Toy",
+  "categories": [
+   "decorative",
+   "props"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Plat251"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/rubber_duck_toy",
+  "file": "polyhaven/rubber_duck_toy/rubber_duck_toy_1k.gltf",
+  "size_mb": 0.74
+ },
+ "russian_food_cans_01": {
+  "id": "russian_food_cans_01",
+  "name": "Russian Food Cans 01",
+  "categories": [
+   "food"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Kosan Aziz"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/russian_food_cans_01",
+  "file": "polyhaven/russian_food_cans_01/russian_food_cans_01_1k.gltf",
+  "size_mb": 1.5
+ },
+ "rusted_spade_01": {
+  "id": "rusted_spade_01",
+  "name": "Rusted Spade 01",
+  "categories": [
+   "tools"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Blemonade"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/rusted_spade_01",
+  "file": "polyhaven/rusted_spade_01/rusted_spade_01_1k.gltf",
+  "size_mb": 2.42
+ },
+ "security_camera_01": {
+  "id": "security_camera_01",
+  "name": "Security Camera 01",
+  "categories": [
+   "appliances",
+   "electronics",
+   "rigged"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Yann Kervran",
+   "Alexander Otterbeck"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/security_camera_01",
+  "file": "polyhaven/security_camera_01/security_camera_01_1k.gltf",
+  "size_mb": 1.76
+ },
+ "security_camera_02": {
+  "id": "security_camera_02",
+  "name": "Security Camera 02",
+  "categories": [
+   "appliances",
+   "rigged"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Garrison Gager",
+   "Yann Kervran"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/security_camera_02",
+  "file": "polyhaven/security_camera_02/security_camera_02_1k.gltf",
+  "size_mb": 1.69
+ },
+ "service_pistol": {
+  "id": "service_pistol",
+  "name": "Service Pistol",
+  "categories": [
+   "firearms",
+   "weapons"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Mateusz Sadek"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/service_pistol",
+  "file": "polyhaven/service_pistol/service_pistol_1k.gltf",
+  "size_mb": 3.3
+ },
+ "ship_pinnace": {
+  "id": "ship_pinnace",
+  "name": "Ship Pinnace",
+  "categories": [
+   "rigged"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "James Ray Cock",
+   "Nicolò Zubbini",
+   "Rico Cilliers",
+   "Yann Kervran"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/ship_pinnace",
+  "file": "polyhaven/ship_pinnace/ship_pinnace_1k.gltf",
+  "size_mb": 21.07
+ },
+ "small_oil_can_01": {
+  "id": "small_oil_can_01",
+  "name": "Small Oil Can 01",
+  "categories": [
+   "tools"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Raven van de Werken"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/small_oil_can_01",
+  "file": "polyhaven/small_oil_can_01/small_oil_can_01_1k.gltf",
+  "size_mb": 0.93
+ },
+ "sofa_02": {
+  "id": "sofa_02",
+  "name": "Sofa 02",
+  "categories": [
+   "furniture"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Kirill Sannikov"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/sofa_02",
+  "file": "polyhaven/sofa_02/sofa_02_1k.gltf",
+  "size_mb": 0.43
+ },
+ "sofa_03": {
+  "id": "sofa_03",
+  "name": "Sofa 03",
+  "categories": [
+   "furniture"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Fran Calvente"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/sofa_03",
+  "file": "polyhaven/sofa_03/sofa_03_1k.gltf",
+  "size_mb": 0.67
+ },
+ "spray_paint_bottles_02": {
+  "id": "spray_paint_bottles_02",
+  "name": "Spray Paint Bottles 02",
+  "categories": [
+   "tools"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Riley Queen"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/spray_paint_bottles_02",
+  "file": "polyhaven/spray_paint_bottles_02/spray_paint_bottles_02_1k.gltf",
+  "size_mb": 2.23
+ },
+ "stationery_supplies": {
+  "id": "stationery_supplies",
+  "name": "Stationery Supplies",
+  "categories": [
+   "office"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Mateusz Sadek"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/stationery_supplies",
+  "file": "polyhaven/stationery_supplies/stationery_supplies_1k.gltf",
+  "size_mb": 1.99
+ },
+ "steel_frame_shelves_01": {
+  "id": "steel_frame_shelves_01",
+  "name": "Steel Frame Shelves 01",
+  "categories": [
+   "furniture"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "James Ray Cock"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/steel_frame_shelves_01",
+  "file": "polyhaven/steel_frame_shelves_01/steel_frame_shelves_01_1k.gltf",
+  "size_mb": 1.6
+ },
+ "stick_grenade": {
+  "id": "stick_grenade",
+  "name": "Stick Grenade",
+  "categories": [
+   "weapons"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "singaii"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/stick_grenade",
+  "file": "polyhaven/stick_grenade/stick_grenade_1k.gltf",
+  "size_mb": 1.9
+ },
+ "stone_fire_pit": {
+  "id": "stone_fire_pit",
+  "name": "Stone Fire Pit",
+  "categories": [
+   "buildings",
+   "structures"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Sebastian Platen"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/stone_fire_pit",
+  "file": "polyhaven/stone_fire_pit/stone_fire_pit_1k.gltf",
+  "size_mb": 2.54
+ },
+ "street_lamp_01": {
+  "id": "street_lamp_01",
+  "name": "Street Lamp 01",
+  "categories": [
+   "lighting"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Josh Dean"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/street_lamp_01",
+  "file": "polyhaven/street_lamp_01/street_lamp_01_1k.gltf",
+  "size_mb": 2.17
+ },
+ "street_rat": {
+  "id": "street_rat",
+  "name": "Street Rat",
+  "categories": [
+   "creature"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Sean Buckley"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/street_rat",
+  "file": "polyhaven/street_rat/street_rat_1k.gltf",
+  "size_mb": 3.61
+ },
+ "tea_set_01": {
+  "id": "tea_set_01",
+  "name": "Tea Set 01",
+  "categories": [
+   "dishes",
+   "props"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "James Ray Cock",
+   "Jurita Burger",
+   "Rico Cilliers"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/tea_set_01",
+  "file": "polyhaven/tea_set_01/tea_set_01_1k.gltf",
+  "size_mb": 2.28
+ },
+ "treasure_chest": {
+  "id": "treasure_chest",
+  "name": "Treasure Chest",
+  "categories": [
+   "containers"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Rico Cilliers"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/treasure_chest",
+  "file": "polyhaven/treasure_chest/treasure_chest_1k.gltf",
+  "size_mb": 5.48
+ },
+ "utility_box_01": {
+  "id": "utility_box_01",
+  "name": "Utility Box 01",
+  "categories": [
+   "structures"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "James Ray Cock"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/utility_box_01",
+  "file": "polyhaven/utility_box_01/utility_box_01_1k.gltf",
+  "size_mb": 1.98
+ },
+ "utility_box_02": {
+  "id": "utility_box_02",
+  "name": "Utility Box 02",
+  "categories": [
+   "structures"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "James Ray Cock"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/utility_box_02",
+  "file": "polyhaven/utility_box_02/utility_box_02_1k.gltf",
+  "size_mb": 2.03
+ },
+ "vintage_grandfather_clock_01": {
+  "id": "vintage_grandfather_clock_01",
+  "name": "Vintage Grandfather Clock 01",
+  "categories": [
+   "appliances",
+   "rigged"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "James Ray Cock",
+   "Yann Kervran"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/vintage_grandfather_clock_01",
+  "file": "polyhaven/vintage_grandfather_clock_01/vintage_grandfather_clock_01_1k.gltf",
+  "size_mb": 2.36
+ },
+ "vintage_hand_drill": {
+  "id": "vintage_hand_drill",
+  "name": "Vintage Hand Drill",
+  "categories": [
+   "rigged"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Benjamin McDonnell",
+   "Yann Kervran"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/vintage_hand_drill",
+  "file": "polyhaven/vintage_hand_drill/vintage_hand_drill_1k.gltf",
+  "size_mb": 3.1
+ },
+ "watering_can_metal_01": {
+  "id": "watering_can_metal_01",
+  "name": "Watering Can Metal 01",
+  "categories": [
+   "tools"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Charles Nderitu"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/watering_can_metal_01",
+  "file": "polyhaven/watering_can_metal_01/watering_can_metal_01_1k.gltf",
+  "size_mb": 2.61
+ },
+ "wine_barrel_01": {
+  "id": "wine_barrel_01",
+  "name": "Wine Barrel 01",
+  "categories": [
+   "containers"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "James Ray Cock"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/wine_barrel_01",
+  "file": "polyhaven/wine_barrel_01/wine_barrel_01_1k.gltf",
+  "size_mb": 0.92
+ },
+ "wine_bottles_01": {
+  "id": "wine_bottles_01",
+  "name": "Wine Bottles 01",
+  "categories": [
+   "containers",
+   "dishes",
+   "props"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Jurita Burger",
+   "Rico Cilliers"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/wine_bottles_01",
+  "file": "polyhaven/wine_bottles_01/wine_bottles_01_1k.gltf",
+  "size_mb": 3.91
+ },
+ "wooden_bowl_01": {
+  "id": "wooden_bowl_01",
+  "name": "Wooden Bowl 01",
+  "categories": [
+   "dishes"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Oliver Harries"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/wooden_bowl_01",
+  "file": "polyhaven/wooden_bowl_01/wooden_bowl_01_1k.gltf",
+  "size_mb": 1.82
+ },
+ "wooden_crate_01": {
+  "id": "wooden_crate_01",
+  "name": "Wooden Crate 01",
+  "categories": [
+   "containers"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "James Ray Cock"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/wooden_crate_01",
+  "file": "polyhaven/wooden_crate_01/wooden_crate_01_1k.gltf",
+  "size_mb": 2.28
+ },
+ "wooden_hammer_01": {
+  "id": "wooden_hammer_01",
+  "name": "Wooden Hammer 01",
+  "categories": [
+   "tools"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "James Ray Cock"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/wooden_hammer_01",
+  "file": "polyhaven/wooden_hammer_01/wooden_hammer_01_1k.gltf",
+  "size_mb": 1.89
+ },
+ "wooden_table_02": {
+  "id": "wooden_table_02",
+  "name": "Wooden Table 02",
+  "categories": [
+   "furniture"
+  ],
+  "license": "CC0 1.0 (Poly Haven)",
+  "author": [
+   "Serhii Khromov"
+  ],
+  "format": "glTF 2.0 + 1K PBR textures",
+  "source": "https://polyhaven.com/a/wooden_table_02",
+  "file": "polyhaven/wooden_table_02/wooden_table_02_1k.gltf",
+  "size_mb": 0.49
+ }
+}

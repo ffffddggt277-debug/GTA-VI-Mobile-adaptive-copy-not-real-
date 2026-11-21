@@ -1,0 +1,15 @@
+# local render toolchain (not part of the project, re-installed by tools/setup_blender.sh)
+tools/blender-*/
+tools/blender-*.tar.xz
+tools/debs/
+tools/sysroot/
+tools/fonts/candidate.ttf
+*.tar.xz
+*.part
+
+# raw per-model PNG renders (compressed copies live in renders/models/, sheets in renders/sheets/)
+renders/single/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
