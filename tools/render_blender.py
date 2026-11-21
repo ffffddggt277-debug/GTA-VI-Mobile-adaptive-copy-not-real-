@@ -132,11 +132,17 @@ for i, a in enumerate(argv):
         limits = int(argv[i + 1])
 if limits:
     models = models[:limits]
+only = None
+for i, a in enumerate(argv):
+    if a == "--only":
+        only = [s for s in argv[i + 1].split(",") if s]
+if only:
+    models = [m for m in models if any(s in m for s in only)]
 print(f"MODELS={len(models)} samples={SAMPLES}", flush=True)
 
 done = 0
 for m in models:
-    rel = os.path.splitext(os.path.relpath(m, os.path.join(ROOT, "assets")))[0].replace(os.sep, "__")
+    rel = os.path.splitext(os.path.relpath(m, os.path.join(ROOT, "models")))[0].replace(os.sep, "__")
     out = os.path.join(ROOT, OUT, rel + ".png")
     if os.path.exists(out):
         continue

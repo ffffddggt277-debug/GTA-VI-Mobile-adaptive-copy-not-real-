@@ -1,36 +1,51 @@
-# Задание для GitHub Copilot (coding agent)
+# Промпт для GitHub Copilot (coding agent)
 
-Этот файл описывает работу, которую должен выполнить Copilot-агент в этом репозитории.
-Чтобы агент её взял, нужно: **Settings → Copilot → Coding agent** включить, затем создать
-Issue с текстом ниже и назначить его (Assignees → Copilot). Агент откроет PR в `main`.
+Скопируй текст ниже в новый Issue и назначь его на Copilot (Assignees → Copilot).
+Агент откроет PR в `main`.
 
-## Что нужно сделать
+---
 
-1. Перерендерить превью всех моделей из папки `models/` и обновить контактные листы.
-   - Скрипт: `tools/render_blender.py` (Blender 4.2, Cycles CPU).
-   - Результат: `renders/models/<model>.jpg` (по одному превью на модель) и
-     `renders/sheets/<nn>_<category>.jpg` (листы по категориям), сборка — `tools/make_sheets.py`.
-2. Обновить каталог: `python3 tools/write_sources.py` → `models/SOURCES.md`.
-3. Ничего не удалять из `models/`, лицензии и авторы должны остаться указанными.
+## Задача
+
+В репозитории лежит папка `models/` со 125 моделями в формате glTF/GLB + PBR-текстуры 1K.
+Нужно отрендерить превью каждой модели и превью по категориям, затем закоммитить их.
+
+1. Установи Blender 4.2 LTS (headless) — скрипт `tools/setup_blender.sh` качает его в `tools/`
+   и подтягивает недостающие библиотеки без root.
+2. Отрендерь все модели:
+   ```bash
+   LD_LIBRARY_PATH=$PWD/tools/sysroot/usr/lib/x86_64-linux-gnu:$PWD/tools/blender-4.2.3-linux-x64/lib \
+   tools/blender-4.2.3-linux-x64/blender -b --python tools/render_blender.py -- renders/single
+   ```
+   Скрипт сам обходит `models/**/*.gltf` и `models/**/*.glb`, ставит камеру, свет,
+   пол и рендерит в Cycles (8 сэмплов, 480×360). Имя файла: `<источник>__<модель>__<файл>.png`.
+3. Собери контактные листы по категориям: `python3 tools/make_sheets.py`
+   (результат — `renders/sheets/*.jpg`, по одному листу на категорию, с подписями и лицензиями).
+4. Обнови каталог: `python3 tools/write_sources.py` → `models/SOURCES.md`.
+5. Закоммить `renders/models/*.jpg`, `renders/sheets/*.jpg` и `models/SOURCES.md`.
+   Сырые PNG из `renders/single/` не коммитить (они в `.gitignore`).
 
 ## Требования
 
-- Python 3.12, Pillow; Blender 4.2 LTS (headless): `blender -b --python tools/render_blender.py -- renders/single`.
-- Считать пути относительно корня репозитория, папка моделей — `models/` (было `assets/`).
-- Коммитить только `renders/*.jpg` и `models/SOURCES.md`: сырые PNG (`renders/single/`) в `.gitignore`.
-- Сообщение коммита: `docs(renders): refresh model previews and category sheets`.
+- Python 3.12 + Pillow, Blender 4.2 LTS.
+- Все пути — относительно корня репозитория; папка моделей — `models/`.
+- Не менять и не удалять сами модели, лицензии и авторов в `models/SOURCES.md`.
+- Сообщение коммита: `docs(renders): add model previews and category sheets`.
 
-## Структура репозитория
+## Структура
 
 ```
 models/
   polyhaven/<asset_id>/...     118 фотореалистичных моделей, glTF + 1K PBR, CC0
   khronos/<name>/<name>.glb    транспорт и персонажи с ригом, CC-BY 4.0
   generated/money_stack.glb    процедурные деньги
-  manifest.json                полный каталог
+  manifest.json                каталог
   SOURCES.md                   лицензии и ссылки
-renders/
-  models/*.jpg                 превью каждой модели
-  sheets/*.jpg                 листы по категориям
-tools/                         скрипты загрузки, рендера, сборки листов
+tools/
+  setup_blender.sh             установка Blender
+  render_blender.py            рендер превью
+  make_sheets.py               контактные листы по категориям
+  write_sources.py             каталог лицензий
+  fetch_polyhaven.py           повторная загрузка моделей с Poly Haven API
+  make_money.py                генерация модели денег
 ```

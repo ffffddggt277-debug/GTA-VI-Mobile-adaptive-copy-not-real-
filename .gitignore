@@ -13,3 +13,4 @@ renders/single/
 # OS / editor noise
 .DS_Store
 Thumbs.db
+renders/
