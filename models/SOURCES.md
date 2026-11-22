@@ -3,17 +3,17 @@
 Все модели скачаны из открытых источников и лежат локально в `models/`.
 Формат: **glTF 2.0 / GLB + PBR-текстуры 1K** — импортируется в Blender, Unity, Unreal, Godot, three.js без конвертации.
 
-Всего моделей: **467**
+Всего моделей: **531**
 
 ## Источники и лицензии
 
 | Источник | Лицензия | Что покрывает |
 |---|---|---|
 | [Poly Haven](https://polyhaven.com/models) | CC0 1.0 (public domain) | 446 фотореалистичных моделей: мебель, интерьеры, техника, инструменты, еда, контейнеры, фасады, двери, оружие |
-| [Sketchfab](https://sketchfab.com) | CC-BY 4.0 / CC-BY-SA 4.0 | 5 моделей с ригом и техники; автор обязателен к указанию (см. таблицу ниже) |
-| Сгенерировано `tools/make_houses.py` | — | 12 домов: отдельные двери с анимацией, прозрачные стёкла (KHR_materials_transmission) |
+| [Sketchfab](https://sketchfab.com) | CC-BY 4.0 / CC-BY-SA 4.0 | 69 моделей с ригом и техники; автор обязателен к указанию (см. таблицу ниже) |
+| Сгенерировано в Blender | — | 12 домов: отдельные двери с анимацией, прозрачные стёкла (KHR_materials_transmission) |
 | [Khronos glTF Sample Assets](https://github.com/KhronosGroup/glTF-Sample-Assets) | CC-BY 4.0 | CarConcept, CesiumMilkTruck, RiggedFigure. ToyCar / CesiumMan / Fox удалены как нереалистичные |
-| Сгенерировано скриптом `tools/make_money.py` | — | пачки банкнот (деньги), без воспроизведения реального дизайна валюты |
+| Сгенерировано в Blender | — | пачки банкнот (деньги), без воспроизведения реального дизайна валюты |
 
 CC0 — можно использовать в коммерческой игре без указания автора (указание приветствуется).
 CC-BY 4.0 — требуется указать автора в титрах; текст лицензии лежит рядом с моделью в `LICENSE-README.md`.
@@ -506,10 +506,74 @@ RiggedFigure — со **скелетом и анимациями**; люди с�
 | Модель | Категория | Автор | Лицензия | Риг | Ссылка |
 |---|---|---|---|---|---|
 | Gavin Reed - Detroit Become Human | characters | Q.SARDOR | by | да | [0161bd8e](https://sketchfab.com/3d-models/0161bd8ecbaa44cb9da40ba4f2f80aaf) |
+| Cyberpunk character | characters | 4d_Bob | by | да | [019f4b3f](https://sketchfab.com/3d-models/019f4b3fd3c74ed0bc6c8dbe9cd50d51) |
+| Modern luxury villa house building with pool | houses | zigurat architecture studio | by | нет | [0e858284](https://sketchfab.com/3d-models/0e858284939343cb994233d40a48a20a) |
+| Kimber 1911 | firearms | m.daneshyab | by | нет | [12b70050](https://sketchfab.com/3d-models/12b70050f764456fb4db69a37a96c505) |
+| SR-2M Veresk Tactical / Tacticool / Custom | firearms | valterjherson1 | by | нет | [13de87a7](https://sketchfab.com/3d-models/13de87a73ac044709795373ab392b967) |
+| Urban Building | houses | Sousinho | by | нет | [1704ecbc](https://sketchfab.com/3d-models/1704ecbc09a24f358332fd358c818d18) |
+| Assault rifle M4A1 | firearms | bobeer | by | нет | [1b858701](https://sketchfab.com/3d-models/1b858701dd7142d9b82bbe3fd121a97b) |
+| Tesla Roadster 2020 | vehicles | metarex.4d | by | нет | [1fbf29e2](https://sketchfab.com/3d-models/1fbf29e297bd4a17ac39a00a378441d8) |
+| Final House | houses | Anton Revutsky | CC Attribution | нет | [20ea8edb](https://sketchfab.com/3d-models/20ea8edb2b7043b1a98a0b6ae18684bb) |
+| Generic passenger car pack | vehicles | Comrade1280 | by | нет | [20f9af9b](https://sketchfab.com/3d-models/20f9af9b8a404d5cb022ac6fe87f21f5) |
+| Springfield M1903 Rifle | firearms | Edward Moss | by-sa | нет | [224bd15d](https://sketchfab.com/3d-models/224bd15dc9c544afa78af6c3a46fe22f) |
+| Masterpiece Arms 30 SST SMG | firearms | eNse7en | by | нет | [279c4d07](https://sketchfab.com/3d-models/279c4d07eae4456fa5cc169cc7e00766) |
+| Buster Drone | characters | LaVADraGoN | by | да | [294e7965](https://sketchfab.com/3d-models/294e79652f494130ad2ab00a13fdbafd) |
+| Makarov Pistol - Animated | firearms | user77 | by-sa | нет | [2d8353ff](https://sketchfab.com/3d-models/2d8353ff5a374517b9132a617939cfc9) |
+| Iveco Daily Van 2014 | vehicles | Max | by | нет | [30003fba](https://sketchfab.com/3d-models/30003fba5b074d6eb7bc74fd5e1e7d19) |
+| M16 Assault Rifle | firearms | SpatialNeglect | by | нет | [339d0f7b](https://sketchfab.com/3d-models/339d0f7b21024387853dd926a5d51b50) |
+| Robot Police Unit (animated) | characters | Jungle Jim | by | да | [36bc284b](https://sketchfab.com/3d-models/36bc284bf5b84a6597db8f6db053c095) |
+| Saiga-9mm | firearms | rwroclav | by | нет | [3d031dfe](https://sketchfab.com/3d-models/3d031dfeb2ad45beb19e89977225a631) |
+| GameReady: Colt Python Revolver | firearms | HYQQM | by | нет | [3def6e39](https://sketchfab.com/3d-models/3def6e3980e64dfa832f298004ce1b94) |
+| American Colonial house | houses | Blue3D | by | нет | [3e536217](https://sketchfab.com/3d-models/3e536217e25545448762004ec55f1786) |
+| SLR AR-15 | firearms | AlexFinsher | by | нет | [429b6ef8](https://sketchfab.com/3d-models/429b6ef8516b46dca8992e78c4bf7a55) |
+| The House | houses | jennyhenny | by-sa | нет | [559897d3](https://sketchfab.com/3d-models/559897d3f08f4a4f860779dc6406b427) |
+| SMG_Kriss_V | firearms | NanouJune | by | нет | [5d2a5e8b](https://sketchfab.com/3d-models/5d2a5e8bff1445a78aea42c8da7485d8) |
+| Thompson submachine gun | firearms | Artem Goyko | by | нет | [5fe11dfe](https://sketchfab.com/3d-models/5fe11dfebf734b4aa49c43545397abd1) |
 | Connor RK900 - Detroit Become Human | characters | Q.SARDOR | by | да | [623e3f52](https://sketchfab.com/3d-models/623e3f52b7da4116a4576f38479eaaaf) |
+| AKM Assault Rifle - Animated | firearms | user77 | by-sa | нет | [6348dc53](https://sketchfab.com/3d-models/6348dc53e3e249c6b297cb8f3f1e3e9b) |
+| Russian residential building: P-44K | houses | AquaSixio | by | нет | [6536b723](https://sketchfab.com/3d-models/6536b723e61640c8a85c5d250985fd5a) |
+| Winter Country House | houses | TheWoodWard | by | нет | [7673ffde](https://sketchfab.com/3d-models/7673ffdea07e4a2b9e6dfc31f16a5eee) |
+| G17 Pistol - Animated | firearms | user77 | by-sa | нет | [7723ab14](https://sketchfab.com/3d-models/7723ab14e70446ef8e06a134984f287f) |
 | IWI Male Character 02 | characters | ilkay.ivrendi | by | да | [774ca001](https://sketchfab.com/3d-models/774ca00136b94d359e7d3ba425a5c57a) |
+| Oldsmobile Cutlass Supreme Sedan '71 | vehicles | Barbo | by | нет | [78f76d38](https://sketchfab.com/3d-models/78f76d386a4341b0b71745bdc50fd5ab) |
+| Triple barrel shotgun 4K textures | firearms | Achronic | by | нет | [79223862](https://sketchfab.com/3d-models/79223862a1f84538ba84972fe1c8ee9a) |
+| Los Angeles Police Department car | vehicles | SpatialNeglect | by | нет | [795fa062](https://sketchfab.com/3d-models/795fa0620bc44db8afcb06720a4dadd7) |
+| American House | houses | AleixoAlonso | by | нет | [798ffaea](https://sketchfab.com/3d-models/798ffaeadacf4e08a2665785422fb45d) |
+| Harley-Davidson Police | vehicles | Comrade1280 | by | нет | [79dc0029](https://sketchfab.com/3d-models/79dc00298bf449d7bcfdf6eb32bd15ac) |
+| Hot Rod Pickup | vehicles | Fredrik Johansen | by | нет | [7b882dc2](https://sketchfab.com/3d-models/7b882dc2d7ed407689f8e851d5f8250f) |
+| Pistol 9mm Custom | firearms | ~D-Try~ | by | нет | [7bb44ec1](https://sketchfab.com/3d-models/7bb44ec1d8e14925aeebbfa8374b87cf) |
+| WIP - Chicago crime | characters | Loïc Norgeot | by | да | [7c5fb45e](https://sketchfab.com/3d-models/7c5fb45e696046e3b135406abd6ac58e) |
+| Modular House l Garage l Shed l Pool l Kit | houses | burnedhrum | by | нет | [7dfa7d64](https://sketchfab.com/3d-models/7dfa7d64895d4b1394162401366e806a) |
+| Old | House | Wooden | Enterable | Rusty | houses | YadroGames | by | нет | [7f496b30](https://sketchfab.com/3d-models/7f496b3002d24341a618408cb8221e8c) |
+| Ford F150 Raptor Police [ 2026 UPDATE ] | vehicles | Vehsource | VHS Mods | by | нет | [840ede58](https://sketchfab.com/3d-models/840ede58ed40499a9cf332e25129f0b2) |
+| Porsche Mission R | www.vecarz.com | vehicles | vecarz | by-sa | нет | [86c216df](https://sketchfab.com/3d-models/86c216df075a489f8dee85e3d891793c) |
+| Franchi SPAS 12 | firearms | cesa210 | by-sa | нет | [8793e33f](https://sketchfab.com/3d-models/8793e33f94d4448197316aa1adf320a9) |
+| country house | houses | geodezes | CC Attribution | нет | [8c5d5230](https://sketchfab.com/3d-models/8c5d5230b9374fa3934be5fe16c039b9) |
 | Police | characters | Alihan | by | да | [8f939bfd](https://sketchfab.com/3d-models/8f939bfdf22f476d91f480f4d6f5d72a) |
+| Generic civil service vehicles pack | vehicles | Comrade1280 | by | нет | [8ff2a13f](https://sketchfab.com/3d-models/8ff2a13f30914932a70c7950cfa58465) |
+| Police car | vehicles | SpatialNeglect | by | нет | [9166b13b](https://sketchfab.com/3d-models/9166b13b6ae341f4bfc093edb71d74f4) |
+| Suburban House V2 | houses | Bogdan Strielecki | by | нет | [92b305cf](https://sketchfab.com/3d-models/92b305cf37ad4b0daec1630028e4499c) |
+| Kimber Stainless TLE/RL II 1911 .45ACP | firearms | 8sianDude | by | нет | [9b2503a1](https://sketchfab.com/3d-models/9b2503a1283b4c1fa506510c9dc7d1f5) |
+| S.W.A.T. Operator | characters | SpatialNeglect | by | да | [9e82fabf](https://sketchfab.com/3d-models/9e82fabf26194896b5ad4a364d864eab) |
+| HK 416 A7 (free download) | firearms | r4m | by | нет | [a16768f0](https://sketchfab.com/3d-models/a16768f0ffa24737a4fe324a411cfbd9) |
+| Adaptive Combat Rifle | firearms | doomsentinel | by | нет | [a18a8008](https://sketchfab.com/3d-models/a18a8008a299430caa5f1fe05563c949) |
+| Mersedes CLS 63 | www.vecarz.com | vehicles | vecarz | by-sa | нет | [a5e6b676](https://sketchfab.com/3d-models/a5e6b676eb484211bf13d9fa48bb2c51) |
+| House | houses | SINNIK | by | нет | [a667b2ca](https://sketchfab.com/3d-models/a667b2ca217c439c97a57f20d62bb8e6) |
+| Sports Bike | vehicles | appsnation | by | нет | [a80259b8](https://sketchfab.com/3d-models/a80259b859c842d5824c25c61e0fc421) |
+| Steyr_Aug_A1 | firearms | Pieter Ferreira | by-sa | нет | [b15b50b5](https://sketchfab.com/3d-models/b15b50b5a2044439b5aa1abfe985c337) |
+| Macchiato Mansion | houses | Dreaming Dogg | by | нет | [c9d13217](https://sketchfab.com/3d-models/c9d13217f4cc4f098d8c221a9dbbbc27) |
+| Desert Eagle | firearms | ELIZION | by | нет | [cabde59f](https://sketchfab.com/3d-models/cabde59f5cf24effaf80536e35d04e95) |
+| (FREE) Porsche 911 Carrera 4S | vehicles | Lionsharp Studios | by-sa | нет | [d01b2544](https://sketchfab.com/3d-models/d01b254483794de3819786d93e0e1ebf) |
 | PoliceMan | characters | SPP Animation Studio | by | да | [d47bb1f6](https://sketchfab.com/3d-models/d47bb1f61fa340588b5801cdb63812c8) |
+| residential complex modern apartment building | houses | zigurat architecture studio | by | нет | [d4959af1](https://sketchfab.com/3d-models/d4959af16d8f4524844e8b97d3e9772b) |
+| 2016 | Ford Mustang Police Barricade | vehicles | kevin (ケビン) | by | нет | [d54ad13a](https://sketchfab.com/3d-models/d54ad13ac57d41c28479db79009ae71e) |
+| Shotgun Benelli M4 | firearms | drollShark | by | нет | [e0d23db5](https://sketchfab.com/3d-models/e0d23db5a8b64ff2980875834b425c4b) |
+| A modern house design | houses | AM ARCHITECTURE | by | нет | [e2c66f68](https://sketchfab.com/3d-models/e2c66f68ca6746df8d0c1aedafe24e56) |
+| Stylized Sci-Fi Officer with Gun (Animated) | characters | Jungle Jim | by | да | [ea2b996c](https://sketchfab.com/3d-models/ea2b996c62024746adb892b2faf08223) |
+| Remington 870 Police Magnum 12 Gauge Shotgun | firearms | 8sianDude | by | нет | [eea11de7](https://sketchfab.com/3d-models/eea11de7e9d24b6683962b8388c319eb) |
+| Suburban House | houses | Bogdan Strielecki | by | нет | [efcc220c](https://sketchfab.com/3d-models/efcc220c62f641d29a1480e8b221c7b3) |
+| HK MP5 SMG | firearms | Daniel Zamary | by | нет | [fad0226e](https://sketchfab.com/3d-models/fad0226e1dcf4af180f707a5509d3a4e) |
+| CZ Scorpion EVO 3 S1 | firearms | Artem Goyko | by | нет | [fc8f5444](https://sketchfab.com/3d-models/fc8f5444abd54c37ae672c12b08a0560) |
 
 ## Важные ограничения
 

@@ -1,14 +1,4 @@
-# local render toolchain (not part of the project, re-installed by tools/setup_blender.sh)
-tools/blender-*/
-tools/blender-*.tar.xz
-tools/debs/
-tools/sysroot/
-tools/fonts/candidate.ttf
-*.tar.xz
 *.part
-
-# render tool logs (renders themselves are tracked in renders/)
-tools/*.log
 
 # OS / editor noise
 .DS_Store

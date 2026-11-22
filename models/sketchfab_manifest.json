@@ -63,5 +63,837 @@
   "file": "sketchfab/policeman__d47bb1f61fa340588b5801cdb63812c8.glb",
   "rigged": true,
   "size_mb": 9.05
+ },
+ "7c5fb45e696046e3b135406abd6ac58e": {
+  "id": "7c5fb45e696046e3b135406abd6ac58e",
+  "name": "WIP - Chicago crime",
+  "categories": [
+   "characters"
+  ],
+  "license": "by",
+  "author": "Loïc Norgeot",
+  "source": "https://sketchfab.com/3d-models/7c5fb45e696046e3b135406abd6ac58e",
+  "file": "sketchfab/wip-chicago-crime__7c5fb45e696046e3b135406abd6ac58e.glb",
+  "rigged": true,
+  "size_mb": 42.1
+ },
+ "ea2b996c62024746adb892b2faf08223": {
+  "id": "ea2b996c62024746adb892b2faf08223",
+  "name": "Stylized Sci-Fi Officer with Gun (Animated)",
+  "categories": [
+   "characters"
+  ],
+  "license": "by",
+  "author": "Jungle Jim",
+  "source": "https://sketchfab.com/3d-models/ea2b996c62024746adb892b2faf08223",
+  "file": "sketchfab/stylized-sci-fi-officer-with-gun-animated__ea2b996c62024746adb892b2faf08223.glb",
+  "rigged": true,
+  "size_mb": 31.49
+ },
+ "9e82fabf26194896b5ad4a364d864eab": {
+  "id": "9e82fabf26194896b5ad4a364d864eab",
+  "name": "S.W.A.T. Operator",
+  "categories": [
+   "characters"
+  ],
+  "license": "by",
+  "author": "SpatialNeglect",
+  "source": "https://sketchfab.com/3d-models/9e82fabf26194896b5ad4a364d864eab",
+  "file": "sketchfab/s-w-a-t-operator__9e82fabf26194896b5ad4a364d864eab.glb",
+  "rigged": true,
+  "size_mb": 31.52
+ },
+ "36bc284bf5b84a6597db8f6db053c095": {
+  "id": "36bc284bf5b84a6597db8f6db053c095",
+  "name": "Robot Police Unit (animated)",
+  "categories": [
+   "characters"
+  ],
+  "license": "by",
+  "author": "Jungle Jim",
+  "source": "https://sketchfab.com/3d-models/36bc284bf5b84a6597db8f6db053c095",
+  "file": "sketchfab/robot-police-unit-animated__36bc284bf5b84a6597db8f6db053c095.glb",
+  "rigged": true,
+  "size_mb": 8.45
+ },
+ "019f4b3fd3c74ed0bc6c8dbe9cd50d51": {
+  "id": "019f4b3fd3c74ed0bc6c8dbe9cd50d51",
+  "name": "Cyberpunk character",
+  "categories": [
+   "characters"
+  ],
+  "license": "by",
+  "author": "4d_Bob",
+  "source": "https://sketchfab.com/3d-models/019f4b3fd3c74ed0bc6c8dbe9cd50d51",
+  "file": "sketchfab/cyberpunk-character__019f4b3fd3c74ed0bc6c8dbe9cd50d51.glb",
+  "rigged": true,
+  "size_mb": 7.69
+ },
+ "294e79652f494130ad2ab00a13fdbafd": {
+  "id": "294e79652f494130ad2ab00a13fdbafd",
+  "name": "Buster Drone",
+  "categories": [
+   "characters"
+  ],
+  "license": "by",
+  "author": "LaVADraGoN",
+  "source": "https://sketchfab.com/3d-models/294e79652f494130ad2ab00a13fdbafd",
+  "file": "sketchfab/buster-drone__294e79652f494130ad2ab00a13fdbafd.glb",
+  "rigged": true,
+  "size_mb": 15.24
+ },
+ "8c5d5230b9374fa3934be5fe16c039b9": {
+  "id": "8c5d5230b9374fa3934be5fe16c039b9",
+  "name": "country house",
+  "categories": [
+   "houses"
+  ],
+  "license": "CC Attribution",
+  "author": "geodezes",
+  "source": "https://sketchfab.com/3d-models/8c5d5230b9374fa3934be5fe16c039b9",
+  "file": "sketchfab/country-house__8c5d5230b9374fa3934be5fe16c039b9.glb",
+  "rigged": false,
+  "size_mb": 12.63
+ },
+ "20ea8edb2b7043b1a98a0b6ae18684bb": {
+  "id": "20ea8edb2b7043b1a98a0b6ae18684bb",
+  "name": "Final House",
+  "categories": [
+   "houses"
+  ],
+  "license": "CC Attribution",
+  "author": "Anton Revutsky",
+  "source": "https://sketchfab.com/3d-models/20ea8edb2b7043b1a98a0b6ae18684bb",
+  "file": "sketchfab/final-house__20ea8edb2b7043b1a98a0b6ae18684bb.glb",
+  "rigged": false,
+  "size_mb": 8.72
+ },
+ "efcc220c62f641d29a1480e8b221c7b3": {
+  "id": "efcc220c62f641d29a1480e8b221c7b3",
+  "name": "Suburban House",
+  "categories": [
+   "houses"
+  ],
+  "license": "by",
+  "author": "Bogdan Strielecki",
+  "source": "https://sketchfab.com/3d-models/efcc220c62f641d29a1480e8b221c7b3",
+  "file": "sketchfab/suburban-house__efcc220c62f641d29a1480e8b221c7b3.glb",
+  "rigged": false,
+  "size_mb": 10.49
+ },
+ "92b305cf37ad4b0daec1630028e4499c": {
+  "id": "92b305cf37ad4b0daec1630028e4499c",
+  "name": "Suburban House V2",
+  "categories": [
+   "houses"
+  ],
+  "license": "by",
+  "author": "Bogdan Strielecki",
+  "source": "https://sketchfab.com/3d-models/92b305cf37ad4b0daec1630028e4499c",
+  "file": "sketchfab/suburban-house-v2__92b305cf37ad4b0daec1630028e4499c.glb",
+  "rigged": false,
+  "size_mb": 8.1
+ },
+ "a667b2ca217c439c97a57f20d62bb8e6": {
+  "id": "a667b2ca217c439c97a57f20d62bb8e6",
+  "name": "House",
+  "categories": [
+   "houses"
+  ],
+  "license": "by",
+  "author": "SINNIK",
+  "source": "https://sketchfab.com/3d-models/a667b2ca217c439c97a57f20d62bb8e6",
+  "file": "sketchfab/house__a667b2ca217c439c97a57f20d62bb8e6.glb",
+  "rigged": false,
+  "size_mb": 29.06
+ },
+ "7f496b3002d24341a618408cb8221e8c": {
+  "id": "7f496b3002d24341a618408cb8221e8c",
+  "name": "Old | House | Wooden | Enterable | Rusty",
+  "categories": [
+   "houses"
+  ],
+  "license": "by",
+  "author": "YadroGames",
+  "source": "https://sketchfab.com/3d-models/7f496b3002d24341a618408cb8221e8c",
+  "file": "sketchfab/old-house-wooden-enterable-rusty__7f496b3002d24341a618408cb8221e8c.glb",
+  "rigged": false,
+  "size_mb": 23.65
+ },
+ "559897d3f08f4a4f860779dc6406b427": {
+  "id": "559897d3f08f4a4f860779dc6406b427",
+  "name": "The House",
+  "categories": [
+   "houses"
+  ],
+  "license": "by-sa",
+  "author": "jennyhenny",
+  "source": "https://sketchfab.com/3d-models/559897d3f08f4a4f860779dc6406b427",
+  "file": "sketchfab/the-house__559897d3f08f4a4f860779dc6406b427.glb",
+  "rigged": false,
+  "size_mb": 10.31
+ },
+ "1704ecbc09a24f358332fd358c818d18": {
+  "id": "1704ecbc09a24f358332fd358c818d18",
+  "name": "Urban Building",
+  "categories": [
+   "houses"
+  ],
+  "license": "by",
+  "author": "Sousinho",
+  "source": "https://sketchfab.com/3d-models/1704ecbc09a24f358332fd358c818d18",
+  "file": "sketchfab/urban-building__1704ecbc09a24f358332fd358c818d18.glb",
+  "rigged": false,
+  "size_mb": 8.41
+ },
+ "6536b723e61640c8a85c5d250985fd5a": {
+  "id": "6536b723e61640c8a85c5d250985fd5a",
+  "name": "Russian residential building: P-44K",
+  "categories": [
+   "houses"
+  ],
+  "license": "by",
+  "author": "AquaSixio",
+  "source": "https://sketchfab.com/3d-models/6536b723e61640c8a85c5d250985fd5a",
+  "file": "sketchfab/russian-residential-building-p-44k__6536b723e61640c8a85c5d250985fd5a.glb",
+  "rigged": false,
+  "size_mb": 9.32
+ },
+ "d4959af16d8f4524844e8b97d3e9772b": {
+  "id": "d4959af16d8f4524844e8b97d3e9772b",
+  "name": "residential complex modern apartment building",
+  "categories": [
+   "houses"
+  ],
+  "license": "by",
+  "author": "zigurat architecture studio",
+  "source": "https://sketchfab.com/3d-models/d4959af16d8f4524844e8b97d3e9772b",
+  "file": "sketchfab/residential-complex-modern-apartment-building__d4959af16d8f4524844e8b97d3e9772b.glb",
+  "rigged": false,
+  "size_mb": 13.09
+ },
+ "798ffaeadacf4e08a2665785422fb45d": {
+  "id": "798ffaeadacf4e08a2665785422fb45d",
+  "name": "American House",
+  "categories": [
+   "houses"
+  ],
+  "license": "by",
+  "author": "AleixoAlonso",
+  "source": "https://sketchfab.com/3d-models/798ffaeadacf4e08a2665785422fb45d",
+  "file": "sketchfab/american-house__798ffaeadacf4e08a2665785422fb45d.glb",
+  "rigged": false,
+  "size_mb": 32.24
+ },
+ "3e536217e25545448762004ec55f1786": {
+  "id": "3e536217e25545448762004ec55f1786",
+  "name": "American Colonial house",
+  "categories": [
+   "houses"
+  ],
+  "license": "by",
+  "author": "Blue3D",
+  "source": "https://sketchfab.com/3d-models/3e536217e25545448762004ec55f1786",
+  "file": "sketchfab/american-colonial-house__3e536217e25545448762004ec55f1786.glb",
+  "rigged": false,
+  "size_mb": 5.53
+ },
+ "7673ffdea07e4a2b9e6dfc31f16a5eee": {
+  "id": "7673ffdea07e4a2b9e6dfc31f16a5eee",
+  "name": "Winter Country House",
+  "categories": [
+   "houses"
+  ],
+  "license": "by",
+  "author": "TheWoodWard",
+  "source": "https://sketchfab.com/3d-models/7673ffdea07e4a2b9e6dfc31f16a5eee",
+  "file": "sketchfab/winter-country-house__7673ffdea07e4a2b9e6dfc31f16a5eee.glb",
+  "rigged": false,
+  "size_mb": 5.75
+ },
+ "e2c66f68ca6746df8d0c1aedafe24e56": {
+  "id": "e2c66f68ca6746df8d0c1aedafe24e56",
+  "name": "A modern house design",
+  "categories": [
+   "houses"
+  ],
+  "license": "by",
+  "author": "AM ARCHITECTURE",
+  "source": "https://sketchfab.com/3d-models/e2c66f68ca6746df8d0c1aedafe24e56",
+  "file": "sketchfab/a-modern-house-design__e2c66f68ca6746df8d0c1aedafe24e56.glb",
+  "rigged": false,
+  "size_mb": 55.21
+ },
+ "0e858284939343cb994233d40a48a20a": {
+  "id": "0e858284939343cb994233d40a48a20a",
+  "name": "Modern luxury villa house building with pool",
+  "categories": [
+   "houses"
+  ],
+  "license": "by",
+  "author": "zigurat architecture studio",
+  "source": "https://sketchfab.com/3d-models/0e858284939343cb994233d40a48a20a",
+  "file": "sketchfab/modern-luxury-villa-house-building-with-pool__0e858284939343cb994233d40a48a20a.glb",
+  "rigged": false,
+  "size_mb": 6.66
+ },
+ "c9d13217f4cc4f098d8c221a9dbbbc27": {
+  "id": "c9d13217f4cc4f098d8c221a9dbbbc27",
+  "name": "Macchiato Mansion",
+  "categories": [
+   "houses"
+  ],
+  "license": "by",
+  "author": "Dreaming Dogg",
+  "source": "https://sketchfab.com/3d-models/c9d13217f4cc4f098d8c221a9dbbbc27",
+  "file": "sketchfab/macchiato-mansion__c9d13217f4cc4f098d8c221a9dbbbc27.glb",
+  "rigged": false,
+  "size_mb": 10.68
+ },
+ "7dfa7d64895d4b1394162401366e806a": {
+  "id": "7dfa7d64895d4b1394162401366e806a",
+  "name": "Modular House l Garage l Shed l Pool l Kit",
+  "categories": [
+   "houses"
+  ],
+  "license": "by",
+  "author": "burnedhrum",
+  "source": "https://sketchfab.com/3d-models/7dfa7d64895d4b1394162401366e806a",
+  "file": "sketchfab/modular-house-l-garage-l-shed-l-pool-l-kit__7dfa7d64895d4b1394162401366e806a.glb",
+  "rigged": false,
+  "size_mb": 67.05
+ },
+ "9166b13b6ae341f4bfc093edb71d74f4": {
+  "id": "9166b13b6ae341f4bfc093edb71d74f4",
+  "name": "Police car",
+  "categories": [
+   "vehicles"
+  ],
+  "license": "by",
+  "author": "SpatialNeglect",
+  "source": "https://sketchfab.com/3d-models/9166b13b6ae341f4bfc093edb71d74f4",
+  "file": "sketchfab/police-car__9166b13b6ae341f4bfc093edb71d74f4.glb",
+  "rigged": false,
+  "size_mb": 8.37
+ },
+ "840ede58ed40499a9cf332e25129f0b2": {
+  "id": "840ede58ed40499a9cf332e25129f0b2",
+  "name": "Ford F150 Raptor Police [ 2026 UPDATE ]",
+  "categories": [
+   "vehicles"
+  ],
+  "license": "by",
+  "author": "Vehsource | VHS Mods",
+  "source": "https://sketchfab.com/3d-models/840ede58ed40499a9cf332e25129f0b2",
+  "file": "sketchfab/ford-f150-raptor-police-2026-update__840ede58ed40499a9cf332e25129f0b2.glb",
+  "rigged": false,
+  "size_mb": 55.03
+ },
+ "d54ad13ac57d41c28479db79009ae71e": {
+  "id": "d54ad13ac57d41c28479db79009ae71e",
+  "name": "2016 | Ford Mustang Police Barricade",
+  "categories": [
+   "vehicles"
+  ],
+  "license": "by",
+  "author": "kevin (ケビン)",
+  "source": "https://sketchfab.com/3d-models/d54ad13ac57d41c28479db79009ae71e",
+  "file": "sketchfab/2016-ford-mustang-police-barricade__d54ad13ac57d41c28479db79009ae71e.glb",
+  "rigged": false,
+  "size_mb": 22.29
+ },
+ "795fa0620bc44db8afcb06720a4dadd7": {
+  "id": "795fa0620bc44db8afcb06720a4dadd7",
+  "name": "Los Angeles Police Department car",
+  "categories": [
+   "vehicles"
+  ],
+  "license": "by",
+  "author": "SpatialNeglect",
+  "source": "https://sketchfab.com/3d-models/795fa0620bc44db8afcb06720a4dadd7",
+  "file": "sketchfab/los-angeles-police-department-car__795fa0620bc44db8afcb06720a4dadd7.glb",
+  "rigged": false,
+  "size_mb": 8.29
+ },
+ "d01b254483794de3819786d93e0e1ebf": {
+  "id": "d01b254483794de3819786d93e0e1ebf",
+  "name": "(FREE) Porsche 911 Carrera 4S",
+  "categories": [
+   "vehicles"
+  ],
+  "license": "by-sa",
+  "author": "Lionsharp Studios",
+  "source": "https://sketchfab.com/3d-models/d01b254483794de3819786d93e0e1ebf",
+  "file": "sketchfab/free-porsche-911-carrera-4s__d01b254483794de3819786d93e0e1ebf.glb",
+  "rigged": false,
+  "size_mb": 21.08
+ },
+ "a5e6b676eb484211bf13d9fa48bb2c51": {
+  "id": "a5e6b676eb484211bf13d9fa48bb2c51",
+  "name": "Mersedes CLS 63 | www.vecarz.com",
+  "categories": [
+   "vehicles"
+  ],
+  "license": "by-sa",
+  "author": "vecarz",
+  "source": "https://sketchfab.com/3d-models/a5e6b676eb484211bf13d9fa48bb2c51",
+  "file": "sketchfab/mersedes-cls-63-www-vecarz-com__a5e6b676eb484211bf13d9fa48bb2c51.glb",
+  "rigged": false,
+  "size_mb": 6.48
+ },
+ "86c216df075a489f8dee85e3d891793c": {
+  "id": "86c216df075a489f8dee85e3d891793c",
+  "name": "Porsche Mission R | www.vecarz.com",
+  "categories": [
+   "vehicles"
+  ],
+  "license": "by-sa",
+  "author": "vecarz",
+  "source": "https://sketchfab.com/3d-models/86c216df075a489f8dee85e3d891793c",
+  "file": "sketchfab/porsche-mission-r-www-vecarz-com__86c216df075a489f8dee85e3d891793c.glb",
+  "rigged": false,
+  "size_mb": 13.84
+ },
+ "1fbf29e297bd4a17ac39a00a378441d8": {
+  "id": "1fbf29e297bd4a17ac39a00a378441d8",
+  "name": "Tesla Roadster 2020",
+  "categories": [
+   "vehicles"
+  ],
+  "license": "by",
+  "author": "metarex.4d",
+  "source": "https://sketchfab.com/3d-models/1fbf29e297bd4a17ac39a00a378441d8",
+  "file": "sketchfab/tesla-roadster-2020__1fbf29e297bd4a17ac39a00a378441d8.glb",
+  "rigged": false,
+  "size_mb": 28.15
+ },
+ "78f76d386a4341b0b71745bdc50fd5ab": {
+  "id": "78f76d386a4341b0b71745bdc50fd5ab",
+  "name": "Oldsmobile Cutlass Supreme Sedan '71",
+  "categories": [
+   "vehicles"
+  ],
+  "license": "by",
+  "author": "Barbo",
+  "source": "https://sketchfab.com/3d-models/78f76d386a4341b0b71745bdc50fd5ab",
+  "file": "sketchfab/oldsmobile-cutlass-supreme-sedan-71__78f76d386a4341b0b71745bdc50fd5ab.glb",
+  "rigged": false,
+  "size_mb": 12.69
+ },
+ "7b882dc2d7ed407689f8e851d5f8250f": {
+  "id": "7b882dc2d7ed407689f8e851d5f8250f",
+  "name": "Hot Rod Pickup",
+  "categories": [
+   "vehicles"
+  ],
+  "license": "by",
+  "author": "Fredrik Johansen",
+  "source": "https://sketchfab.com/3d-models/7b882dc2d7ed407689f8e851d5f8250f",
+  "file": "sketchfab/hot-rod-pickup__7b882dc2d7ed407689f8e851d5f8250f.glb",
+  "rigged": false,
+  "size_mb": 39.61
+ },
+ "30003fba5b074d6eb7bc74fd5e1e7d19": {
+  "id": "30003fba5b074d6eb7bc74fd5e1e7d19",
+  "name": "Iveco Daily Van 2014",
+  "categories": [
+   "vehicles"
+  ],
+  "license": "by",
+  "author": "Max",
+  "source": "https://sketchfab.com/3d-models/30003fba5b074d6eb7bc74fd5e1e7d19",
+  "file": "sketchfab/iveco-daily-van-2014__30003fba5b074d6eb7bc74fd5e1e7d19.glb",
+  "rigged": false,
+  "size_mb": 18.59
+ },
+ "79dc00298bf449d7bcfdf6eb32bd15ac": {
+  "id": "79dc00298bf449d7bcfdf6eb32bd15ac",
+  "name": "Harley-Davidson Police",
+  "categories": [
+   "vehicles"
+  ],
+  "license": "by",
+  "author": "Comrade1280",
+  "source": "https://sketchfab.com/3d-models/79dc00298bf449d7bcfdf6eb32bd15ac",
+  "file": "sketchfab/harley-davidson-police__79dc00298bf449d7bcfdf6eb32bd15ac.glb",
+  "rigged": false,
+  "size_mb": 21.5
+ },
+ "a80259b859c842d5824c25c61e0fc421": {
+  "id": "a80259b859c842d5824c25c61e0fc421",
+  "name": "Sports Bike",
+  "categories": [
+   "vehicles"
+  ],
+  "license": "by",
+  "author": "appsnation",
+  "source": "https://sketchfab.com/3d-models/a80259b859c842d5824c25c61e0fc421",
+  "file": "sketchfab/sports-bike__a80259b859c842d5824c25c61e0fc421.glb",
+  "rigged": false,
+  "size_mb": 26.71
+ },
+ "20f9af9b8a404d5cb022ac6fe87f21f5": {
+  "id": "20f9af9b8a404d5cb022ac6fe87f21f5",
+  "name": "Generic passenger car pack",
+  "categories": [
+   "vehicles"
+  ],
+  "license": "by",
+  "author": "Comrade1280",
+  "source": "https://sketchfab.com/3d-models/20f9af9b8a404d5cb022ac6fe87f21f5",
+  "file": "sketchfab/generic-passenger-car-pack__20f9af9b8a404d5cb022ac6fe87f21f5.glb",
+  "rigged": false,
+  "size_mb": 11.76
+ },
+ "8ff2a13f30914932a70c7950cfa58465": {
+  "id": "8ff2a13f30914932a70c7950cfa58465",
+  "name": "Generic civil service vehicles pack",
+  "categories": [
+   "vehicles"
+  ],
+  "license": "by",
+  "author": "Comrade1280",
+  "source": "https://sketchfab.com/3d-models/8ff2a13f30914932a70c7950cfa58465",
+  "file": "sketchfab/generic-civil-service-vehicles-pack__8ff2a13f30914932a70c7950cfa58465.glb",
+  "rigged": false,
+  "size_mb": 22.61
+ },
+ "1b858701dd7142d9b82bbe3fd121a97b": {
+  "id": "1b858701dd7142d9b82bbe3fd121a97b",
+  "name": "Assault rifle M4A1",
+  "categories": [
+   "firearms"
+  ],
+  "license": "by",
+  "author": "bobeer",
+  "source": "https://sketchfab.com/3d-models/1b858701dd7142d9b82bbe3fd121a97b",
+  "file": "sketchfab/assault-rifle-m4a1__1b858701dd7142d9b82bbe3fd121a97b.glb",
+  "rigged": false,
+  "size_mb": 21.08
+ },
+ "429b6ef8516b46dca8992e78c4bf7a55": {
+  "id": "429b6ef8516b46dca8992e78c4bf7a55",
+  "name": "SLR AR-15",
+  "categories": [
+   "firearms"
+  ],
+  "license": "by",
+  "author": "AlexFinsher",
+  "source": "https://sketchfab.com/3d-models/429b6ef8516b46dca8992e78c4bf7a55",
+  "file": "sketchfab/slr-ar-15__429b6ef8516b46dca8992e78c4bf7a55.glb",
+  "rigged": false,
+  "size_mb": 10.78
+ },
+ "a16768f0ffa24737a4fe324a411cfbd9": {
+  "id": "a16768f0ffa24737a4fe324a411cfbd9",
+  "name": "HK 416 A7 (free download)",
+  "categories": [
+   "firearms"
+  ],
+  "license": "by",
+  "author": "r4m",
+  "source": "https://sketchfab.com/3d-models/a16768f0ffa24737a4fe324a411cfbd9",
+  "file": "sketchfab/hk-416-a7-free-download__a16768f0ffa24737a4fe324a411cfbd9.glb",
+  "rigged": false,
+  "size_mb": 6.35
+ },
+ "339d0f7b21024387853dd926a5d51b50": {
+  "id": "339d0f7b21024387853dd926a5d51b50",
+  "name": "M16 Assault Rifle",
+  "categories": [
+   "firearms"
+  ],
+  "license": "by",
+  "author": "SpatialNeglect",
+  "source": "https://sketchfab.com/3d-models/339d0f7b21024387853dd926a5d51b50",
+  "file": "sketchfab/m16-assault-rifle__339d0f7b21024387853dd926a5d51b50.glb",
+  "rigged": false,
+  "size_mb": 5.06
+ },
+ "b15b50b5a2044439b5aa1abfe985c337": {
+  "id": "b15b50b5a2044439b5aa1abfe985c337",
+  "name": "Steyr_Aug_A1",
+  "categories": [
+   "firearms"
+  ],
+  "license": "by-sa",
+  "author": "Pieter Ferreira",
+  "source": "https://sketchfab.com/3d-models/b15b50b5a2044439b5aa1abfe985c337",
+  "file": "sketchfab/steyr-aug-a1__b15b50b5a2044439b5aa1abfe985c337.glb",
+  "rigged": false,
+  "size_mb": 17.78
+ },
+ "6348dc53e3e249c6b297cb8f3f1e3e9b": {
+  "id": "6348dc53e3e249c6b297cb8f3f1e3e9b",
+  "name": "AKM Assault Rifle - Animated",
+  "categories": [
+   "firearms"
+  ],
+  "license": "by-sa",
+  "author": "user77",
+  "source": "https://sketchfab.com/3d-models/6348dc53e3e249c6b297cb8f3f1e3e9b",
+  "file": "sketchfab/akm-assault-rifle-animated__6348dc53e3e249c6b297cb8f3f1e3e9b.glb",
+  "rigged": false,
+  "size_mb": 11.61
+ },
+ "fad0226e1dcf4af180f707a5509d3a4e": {
+  "id": "fad0226e1dcf4af180f707a5509d3a4e",
+  "name": "HK MP5 SMG",
+  "categories": [
+   "firearms"
+  ],
+  "license": "by",
+  "author": "Daniel Zamary",
+  "source": "https://sketchfab.com/3d-models/fad0226e1dcf4af180f707a5509d3a4e",
+  "file": "sketchfab/hk-mp5-smg__fad0226e1dcf4af180f707a5509d3a4e.glb",
+  "rigged": false,
+  "size_mb": 16.49
+ },
+ "5d2a5e8bff1445a78aea42c8da7485d8": {
+  "id": "5d2a5e8bff1445a78aea42c8da7485d8",
+  "name": "SMG_Kriss_V",
+  "categories": [
+   "firearms"
+  ],
+  "license": "by",
+  "author": "NanouJune",
+  "source": "https://sketchfab.com/3d-models/5d2a5e8bff1445a78aea42c8da7485d8",
+  "file": "sketchfab/smg-kriss-v__5d2a5e8bff1445a78aea42c8da7485d8.glb",
+  "rigged": false,
+  "size_mb": 10.11
+ },
+ "5fe11dfebf734b4aa49c43545397abd1": {
+  "id": "5fe11dfebf734b4aa49c43545397abd1",
+  "name": "Thompson submachine gun",
+  "categories": [
+   "firearms"
+  ],
+  "license": "by",
+  "author": "Artem Goyko",
+  "source": "https://sketchfab.com/3d-models/5fe11dfebf734b4aa49c43545397abd1",
+  "file": "sketchfab/thompson-submachine-gun__5fe11dfebf734b4aa49c43545397abd1.glb",
+  "rigged": false,
+  "size_mb": 18.04
+ },
+ "fc8f5444abd54c37ae672c12b08a0560": {
+  "id": "fc8f5444abd54c37ae672c12b08a0560",
+  "name": "CZ Scorpion EVO 3 S1",
+  "categories": [
+   "firearms"
+  ],
+  "license": "by",
+  "author": "Artem Goyko",
+  "source": "https://sketchfab.com/3d-models/fc8f5444abd54c37ae672c12b08a0560",
+  "file": "sketchfab/cz-scorpion-evo-3-s1__fc8f5444abd54c37ae672c12b08a0560.glb",
+  "rigged": false,
+  "size_mb": 16.41
+ },
+ "e0d23db5a8b64ff2980875834b425c4b": {
+  "id": "e0d23db5a8b64ff2980875834b425c4b",
+  "name": "Shotgun Benelli M4",
+  "categories": [
+   "firearms"
+  ],
+  "license": "by",
+  "author": "drollShark",
+  "source": "https://sketchfab.com/3d-models/e0d23db5a8b64ff2980875834b425c4b",
+  "file": "sketchfab/shotgun-benelli-m4__e0d23db5a8b64ff2980875834b425c4b.glb",
+  "rigged": false,
+  "size_mb": 5.79
+ },
+ "8793e33f94d4448197316aa1adf320a9": {
+  "id": "8793e33f94d4448197316aa1adf320a9",
+  "name": "Franchi SPAS 12",
+  "categories": [
+   "firearms"
+  ],
+  "license": "by-sa",
+  "author": "cesa210",
+  "source": "https://sketchfab.com/3d-models/8793e33f94d4448197316aa1adf320a9",
+  "file": "sketchfab/franchi-spas-12__8793e33f94d4448197316aa1adf320a9.glb",
+  "rigged": false,
+  "size_mb": 2.61
+ },
+ "eea11de7e9d24b6683962b8388c319eb": {
+  "id": "eea11de7e9d24b6683962b8388c319eb",
+  "name": "Remington 870 Police Magnum 12 Gauge Shotgun",
+  "categories": [
+   "firearms"
+  ],
+  "license": "by",
+  "author": "8sianDude",
+  "source": "https://sketchfab.com/3d-models/eea11de7e9d24b6683962b8388c319eb",
+  "file": "sketchfab/remington-870-police-magnum-12-gauge-shotgun__eea11de7e9d24b6683962b8388c319eb.glb",
+  "rigged": false,
+  "size_mb": 6.41
+ },
+ "79223862a1f84538ba84972fe1c8ee9a": {
+  "id": "79223862a1f84538ba84972fe1c8ee9a",
+  "name": "Triple barrel shotgun 4K textures",
+  "categories": [
+   "firearms"
+  ],
+  "license": "by",
+  "author": "Achronic",
+  "source": "https://sketchfab.com/3d-models/79223862a1f84538ba84972fe1c8ee9a",
+  "file": "sketchfab/triple-barrel-shotgun-4k-textures__79223862a1f84538ba84972fe1c8ee9a.glb",
+  "rigged": false,
+  "size_mb": 3.75
+ },
+ "3d031dfeb2ad45beb19e89977225a631": {
+  "id": "3d031dfeb2ad45beb19e89977225a631",
+  "name": "Saiga-9mm",
+  "categories": [
+   "firearms"
+  ],
+  "license": "by",
+  "author": "rwroclav",
+  "source": "https://sketchfab.com/3d-models/3d031dfeb2ad45beb19e89977225a631",
+  "file": "sketchfab/saiga-9mm__3d031dfeb2ad45beb19e89977225a631.glb",
+  "rigged": false,
+  "size_mb": 9.5
+ },
+ "a18a8008a299430caa5f1fe05563c949": {
+  "id": "a18a8008a299430caa5f1fe05563c949",
+  "name": "Adaptive Combat Rifle",
+  "categories": [
+   "firearms"
+  ],
+  "license": "by",
+  "author": "doomsentinel",
+  "source": "https://sketchfab.com/3d-models/a18a8008a299430caa5f1fe05563c949",
+  "file": "sketchfab/adaptive-combat-rifle__a18a8008a299430caa5f1fe05563c949.glb",
+  "rigged": false,
+  "size_mb": 9.62
+ },
+ "224bd15dc9c544afa78af6c3a46fe22f": {
+  "id": "224bd15dc9c544afa78af6c3a46fe22f",
+  "name": "Springfield M1903 Rifle",
+  "categories": [
+   "firearms"
+  ],
+  "license": "by-sa",
+  "author": "Edward Moss",
+  "source": "https://sketchfab.com/3d-models/224bd15dc9c544afa78af6c3a46fe22f",
+  "file": "sketchfab/springfield-m1903-rifle__224bd15dc9c544afa78af6c3a46fe22f.glb",
+  "rigged": false,
+  "size_mb": 10.09
+ },
+ "13de87a73ac044709795373ab392b967": {
+  "id": "13de87a73ac044709795373ab392b967",
+  "name": "SR-2M Veresk Tactical / Tacticool / Custom",
+  "categories": [
+   "firearms"
+  ],
+  "license": "by",
+  "author": "valterjherson1",
+  "source": "https://sketchfab.com/3d-models/13de87a73ac044709795373ab392b967",
+  "file": "sketchfab/sr-2m-veresk-tactical-tacticool-custom__13de87a73ac044709795373ab392b967.glb",
+  "rigged": false,
+  "size_mb": 33.33
+ },
+ "279c4d07eae4456fa5cc169cc7e00766": {
+  "id": "279c4d07eae4456fa5cc169cc7e00766",
+  "name": "Masterpiece Arms 30 SST SMG",
+  "categories": [
+   "firearms"
+  ],
+  "license": "by",
+  "author": "eNse7en",
+  "source": "https://sketchfab.com/3d-models/279c4d07eae4456fa5cc169cc7e00766",
+  "file": "sketchfab/masterpiece-arms-30-sst-smg__279c4d07eae4456fa5cc169cc7e00766.glb",
+  "rigged": false,
+  "size_mb": 24.14
+ },
+ "cabde59f5cf24effaf80536e35d04e95": {
+  "id": "cabde59f5cf24effaf80536e35d04e95",
+  "name": "Desert Eagle",
+  "categories": [
+   "firearms"
+  ],
+  "license": "by",
+  "author": "ELIZION",
+  "source": "https://sketchfab.com/3d-models/cabde59f5cf24effaf80536e35d04e95",
+  "file": "sketchfab/desert-eagle__cabde59f5cf24effaf80536e35d04e95.glb",
+  "rigged": false,
+  "size_mb": 11.5
+ },
+ "12b70050f764456fb4db69a37a96c505": {
+  "id": "12b70050f764456fb4db69a37a96c505",
+  "name": "Kimber 1911",
+  "categories": [
+   "firearms"
+  ],
+  "license": "by",
+  "author": "m.daneshyab",
+  "source": "https://sketchfab.com/3d-models/12b70050f764456fb4db69a37a96c505",
+  "file": "sketchfab/kimber-1911__12b70050f764456fb4db69a37a96c505.glb",
+  "rigged": false,
+  "size_mb": 5.24
+ },
+ "9b2503a1283b4c1fa506510c9dc7d1f5": {
+  "id": "9b2503a1283b4c1fa506510c9dc7d1f5",
+  "name": "Kimber Stainless TLE/RL II 1911 .45ACP",
+  "categories": [
+   "firearms"
+  ],
+  "license": "by",
+  "author": "8sianDude",
+  "source": "https://sketchfab.com/3d-models/9b2503a1283b4c1fa506510c9dc7d1f5",
+  "file": "sketchfab/kimber-stainless-tle-rl-ii-1911-45acp__9b2503a1283b4c1fa506510c9dc7d1f5.glb",
+  "rigged": false,
+  "size_mb": 10.06
+ },
+ "7bb44ec1d8e14925aeebbfa8374b87cf": {
+  "id": "7bb44ec1d8e14925aeebbfa8374b87cf",
+  "name": "Pistol 9mm Custom",
+  "categories": [
+   "firearms"
+  ],
+  "license": "by",
+  "author": "~D-Try~",
+  "source": "https://sketchfab.com/3d-models/7bb44ec1d8e14925aeebbfa8374b87cf",
+  "file": "sketchfab/pistol-9mm-custom__7bb44ec1d8e14925aeebbfa8374b87cf.glb",
+  "rigged": false,
+  "size_mb": 41.81
+ },
+ "7723ab14e70446ef8e06a134984f287f": {
+  "id": "7723ab14e70446ef8e06a134984f287f",
+  "name": "G17 Pistol - Animated",
+  "categories": [
+   "firearms"
+  ],
+  "license": "by-sa",
+  "author": "user77",
+  "source": "https://sketchfab.com/3d-models/7723ab14e70446ef8e06a134984f287f",
+  "file": "sketchfab/g17-pistol-animated__7723ab14e70446ef8e06a134984f287f.glb",
+  "rigged": false,
+  "size_mb": 20.19
+ },
+ "2d8353ff5a374517b9132a617939cfc9": {
+  "id": "2d8353ff5a374517b9132a617939cfc9",
+  "name": "Makarov Pistol - Animated",
+  "categories": [
+   "firearms"
+  ],
+  "license": "by-sa",
+  "author": "user77",
+  "source": "https://sketchfab.com/3d-models/2d8353ff5a374517b9132a617939cfc9",
+  "file": "sketchfab/makarov-pistol-animated__2d8353ff5a374517b9132a617939cfc9.glb",
+  "rigged": false,
+  "size_mb": 9.62
+ },
+ "3def6e3980e64dfa832f298004ce1b94": {
+  "id": "3def6e3980e64dfa832f298004ce1b94",
+  "name": "GameReady: Colt Python Revolver",
+  "categories": [
+   "firearms"
+  ],
+  "license": "by",
+  "author": "HYQQM",
+  "source": "https://sketchfab.com/3d-models/3def6e3980e64dfa832f298004ce1b94",
+  "file": "sketchfab/gameready-colt-python-revolver__3def6e3980e64dfa832f298004ce1b94.glb",
+  "rigged": false,
+  "size_mb": 3.45
  }
 }
