@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Анимации — GTA VI Mobile (фанатский концепт)</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 13px/1.4 system-ui, "Segoe UI", sans-serif; background: #0d1117; color: #e6edf3; overflow: hidden; }
+  #app { display: flex; height: 100vh; }
+  #side { width: 320px; flex: 0 0 320px; display: flex; flex-direction: column; border-right: 1px solid #21262d; background: #0f151d; }
+  #side header { padding: 12px 14px 8px; border-bottom: 1px solid #21262d; }
+  #side h1 { font-size: 14px; margin: 0 0 8px; font-weight: 600; letter-spacing: .2px; }
+  select, input[type=range], button { font: inherit; color: inherit; }
+  select { width: 100%; padding: 6px 8px; background: #161b22; border: 1px solid #30363d; border-radius: 6px; }
+  #list { overflow: auto; flex: 1; padding: 6px 0 24px; }
+  .cat { padding: 10px 14px 4px; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: #7d8590; }
+  .clip { display: flex; gap: 8px; padding: 5px 14px; cursor: pointer; align-items: baseline; }
+  .clip:hover { background: #161b22; }
+  .clip.active { background: #1f6feb33; box-shadow: inset 2px 0 0 #1f6feb; }
+  .clip b { font-weight: 500; flex: 1; }
+  .clip span { color: #7d8590; font-size: 11px; }
+  #stage { position: relative; flex: 1; }
+  canvas { display: block; width: 100%; height: 100%; }
+  #hud { position: absolute; left: 0; right: 0; bottom: 0; padding: 10px 14px; display: flex; gap: 12px; align-items: center; background: linear-gradient(#0d111700, #0d1117dd 40%); }
+  #hud button { padding: 6px 12px; background: #21262d; border: 1px solid #30363d; border-radius: 6px; cursor: pointer; }
+  #hud button:hover { background: #30363d; }
+  #hud input[type=range] { flex: 1; }
+  #name { position: absolute; top: 12px; left: 14px; font-size: 15px; font-weight: 600; text-shadow: 0 1px 6px #000; }
+  #desc { position: absolute; top: 34px; left: 14px; color: #9aa4af; font-size: 12px; max-width: 60%; text-shadow: 0 1px 6px #000; }
+  #time { font-variant-numeric: tabular-nums; color: #9aa4af; }
+  #err { position: absolute; inset: auto 14px 60px 14px; color: #ff7b72; white-space: pre-wrap; }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<div id="app">
+  <aside id="side">
+    <header>
+      <h1>Анимации персонажей</h1>
+      <select id="charset">
+        <option value="player.glb">Игрок — player.glb</option>
+        <option value="npc_civilian.glb">Гражданский NPC — npc_civilian.glb</option>
+        <option value="npc_police.glb">Полицейский NPC — npc_police.glb</option>
+      </select>
+    </header>
+    <div id="list"></div>
+  </aside>
+  <main id="stage">
+    <div id="name"></div>
+    <div id="desc"></div>
+    <div id="err"></div>
+    <div id="hud">
+      <button id="play">▶︎ Пауза</button>
+      <input id="scrub" type="range" min="0" max="1000" value="0">
+      <span id="time">0.00 / 0.00 с</span>
+      <button id="loop" title="Повтор">↻</button>
+    </div>
+  </main>
+</div>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+const stage = document.getElementById('stage');
+const errBox = document.getElementById('err');
+const listEl = document.getElementById('list');
+const nameEl = document.getElementById('name');
+const descEl = document.getElementById('desc');
+const scrub = document.getElementById('scrub');
+const timeEl = document.getElementById('time');
+const playBtn = document.getElementById('play');
+const loopBtn = document.getElementById('loop');
+
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+stage.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x0d1117);
+scene.fog = new THREE.Fog(0x0d1117, 6, 22);
+
+const camera = new THREE.PerspectiveCamera(45, 1, 0.05, 100);
+camera.position.set(1.8, 1.6, 3.0);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.target.set(0, 0.95, 0);
+controls.enableDamping = true;
+controls.maxPolarAngle = Math.PI * 0.52;
+
+scene.add(new THREE.HemisphereLight(0xbfd4ff, 0x2b2118, 2.2));
+const key = new THREE.DirectionalLight(0xffffff, 1.6);
+key.position.set(3, 6, 4);
+scene.add(key);
+const rim = new THREE.DirectionalLight(0x88aaff, 0.9);
+rim.position.set(-4, 3, -5);
+scene.add(rim);
+
+const grid = new THREE.GridHelper(20, 40, 0x30363d, 0x1b222b);
+scene.add(grid);
+const floor = new THREE.Mesh(
+  new THREE.CircleGeometry(9, 64),
+  new THREE.MeshStandardMaterial({ color: 0x141a21, roughness: 1, metalness: 0 })
+);
+floor.rotation.x = -Math.PI / 2;
+floor.position.y = -0.002;
+scene.add(floor);
+
+const loader = new GLTFLoader();
+let mixer = null, action = null, clips = [], current = null, currentIndex = -1;
+let model = null, playing = true, scale = 1;
+
+function resize() {
+  const w = stage.clientWidth, h = stage.clientHeight;
+  renderer.setSize(w, h, false);
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+}
+window.addEventListener('resize', resize);
+
+function fmt(t) { return t.toFixed(2); }
+
+function selectClip(i, restart = true) {
+  if (!clips[i] || !mixer) return;
+  if (current) current.stop();
+  currentIndex = i;
+  const clip = clips[i];
+  current = mixer.clipAction(clip);
+  current.reset();
+  current.setLoop(THREE.LoopRepeat, Infinity);
+  current.clampWhenFinished = false;
+  current.play();
+  current.paused = !playing;
+  nameEl.textContent = clip.name;
+  const meta = clip.userData || {};
+  descEl.textContent = (meta.category ? meta.category + ' · ' : '') +
+    (meta.description || '') + (meta.loop ? ' · цикл' : '');
+  for (const el of listEl.querySelectorAll('.clip')) {
+    el.classList.toggle('active', Number(el.dataset.i) === i);
+  }
+  const active = listEl.querySelector('.clip.active');
+  if (active) active.scrollIntoView({ block: 'nearest' });
+}
+
+function buildList() {
+  listEl.innerHTML = '';
+  const groups = new Map();
+  for (const c of clips) {
+    const cat = (c.userData && c.userData.category) || 'other';
+    if (!groups.has(cat)) groups.set(cat, []);
+    groups.get(cat).push(c);
+  }
+  let i = 0;
+  for (const [cat, arr] of groups) {
+    const h = document.createElement('div');
+    h.className = 'cat';
+    h.textContent = `${cat} · ${arr.length}`;
+    listEl.appendChild(h);
+    for (const c of arr) {
+      const row = document.createElement('div');
+      row.className = 'clip';
+      row.dataset.i = clips.indexOf(c);
+      row.innerHTML = `<b>${c.name}</b><span>${fmt(c.duration)}с</span>`;
+      row.onclick = () => selectClip(Number(row.dataset.i));
+      listEl.appendChild(row);
+    }
+    i += arr.length;
+  }
+}
+
+async function load(file) {
+  errBox.textContent = '';
+  if (model) { scene.remove(model); model = null; }
+  if (mixer) { mixer.stopAllAction(); mixer = null; }
+  const gltf = await loader.loadAsync(file);
+  model = gltf.scene;
+  const box = new THREE.Box3().setFromObject(model);
+  const size = box.getSize(new THREE.Vector3());
+  scale = size.y > 3 ? 0.01 : 1;
+  model.scale.setScalar(scale);
+  model.position.y = 0;
+  scene.add(model);
+  clips = gltf.animations;
+  const metaByName = new Map();
+  const jsonAnims = gltf.parser.json.animations || [];
+  for (const a of jsonAnims) {
+    if (a.extras) metaByName.set(a.name, a.extras);
+  }
+  for (const c of clips) c.userData = metaByName.get(c.name) || {};
+  mixer = new THREE.AnimationMixer(model);
+  camera.position.set(1.6, 1.5, 2.8);
+  controls.target.set(0, 0.95, 0);
+  buildList();
+  const first = clips.findIndex(c => c.userData.category === 'locomotion');
+  selectClip(first >= 0 ? first : 0);
+}
+
+document.getElementById('charset').onchange = async (e) => {
+  try { await load(e.target.value); } catch (err) { errBox.textContent = String(err); }
+};
+playBtn.onclick = () => {
+  playing = !playing;
+  if (current) current.paused = !playing;
+  playBtn.textContent = playing ? '▶︎ Пауза' : '▶︎ Играть';
+};
+loopBtn.onclick = () => {
+  if (!current) return;
+  current.loop = current.loop === THREE.LoopRepeat ? THREE.LoopOnce : THREE.LoopRepeat;
+  current.clampWhenFinished = true;
+  loopBtn.style.opacity = current.loop === THREE.LoopRepeat ? 1 : .5;
+};
+scrub.oninput = () => {
+  if (!current) return;
+  const t = (scrub.value / 1000) * current.getClip().duration;
+  current.time = t;
+  if (!playing) current.paused = true;
+};
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight') { selectClip(Math.min(clips.length - 1, currentIndex + 1)); e.preventDefault(); }
+  if (e.key === 'ArrowLeft') { selectClip(Math.max(0, currentIndex - 1)); e.preventDefault(); }
+  if (e.code === 'Space') { playBtn.click(); e.preventDefault(); }
+});
+
+// отладочный доступ для скриншотов/автотестов
+window.viewer = {
+  camera, controls, scene, clips: () => clips,
+  select: (n) => { const i = clips.findIndex(c => c.name === n); if (i >= 0) selectClip(i); return i; },
+  time: (t) => { if (current) { current.time = t; if (!playing) current.paused = true; } },
+  playing: (v) => { playing = v; if (current) current.paused = !v; },
+  look: (x, y, z) => { camera.position.set(x, y, z); controls.target.set(0, 0.95, 0); controls.update(); },
+};
+
+const clock = new THREE.Clock();
+function tick() {
+  requestAnimationFrame(tick);
+  const dt = clock.getDelta();
+  if (mixer) mixer.update(dt);
+  if (current) {
+    const dur = current.getClip().duration;
+    const t = current.time % (dur || 1);
+    scrub.value = Math.round((t / (dur || 1)) * 1000);
+    timeEl.textContent = `${fmt(t)} / ${fmt(dur)} с`;
+  }
+  controls.update();
+  renderer.render(scene, camera);
+}
+resize();
+tick();
+load('player.glb').catch(e => { errBox.textContent = String(e); });
+</script>
+</body>
+</html>

@@ -27,7 +27,8 @@
 - [ ] Базовый движок и игровой цикл
 - [ ] Основной игровой мир
 - [ ] Управление с сенсорного экрана
-- [ ] Персонажи и анимации
+- [x] Персонажи и анимации (риг + 438 клипов в `game/animations/`)
+- [x] Карта города (концепт, `game/map/`)
 - [ ] Транспорт и физика
 - [ ] Оптимизация для Android
 - [ ] Сборка `.apk`
@@ -72,7 +73,8 @@ Rockstar Games и Take-Two Interactive никак не аффилированы 
 
 ## Ассеты
 
-Репозиторий содержит только модели — всё остальное (скрипты, рендеры, инструменты) убрано.
+Репозиторий содержит модели и начало разработки игры — карту и анимации в папке
+[`game/`](game).
 
 - `models/polyhaven/` — 446 фотореалистичных CC0-моделей (glTF + PBR-текстуры 1K).
 - `models/generated/houses/` — 12 домов: отдельные двери и прозрачные окна (`KHR_materials_transmission`).
@@ -96,3 +98,29 @@ Rockstar Games и Take-Two Interactive никак не аффилированы 
 - материалы, текстуры, UV, скины и существующие анимации не тронуты.
 
 Подробности и таблицы: [`models/PREPARED.md`](models/PREPARED.md).
+
+## Карта города
+
+Город **Marisol** (Leonida) — 12 × 8.5 км, 13 районов, кольцевое шоссе, железная
+дорога, аэропорт, порт, залив с островами и 21 точка интереса.
+
+- [`game/map/city_map.png`](game/map/city_map.png) — карта картинкой;
+- [`game/map/city_map.svg`](game/map/city_map.svg) — вектор-исходник;
+- [`game/map/MAP.md`](game/map/MAP.md) — районы, дороги, POI и формула перевода
+  координат карты в мир (1 px = 5 м).
+
+## Анимации персонажей
+
+**438 клипов** в трёх GLB, вшиты как обычные glTF-анимации (30 fps, in-place,
+циклы помечены `loop`):
+
+- [`game/animations/player.glb`](game/animations/player.glb) — 198 клипов: ходьба,
+  бег, присед, удары, огнестрел, паркур, двери, касса, машина, реакции, смерти;
+- [`game/animations/npc_civilian.glb`](game/animations/npc_civilian.glb) — 120 клипов;
+- [`game/animations/npc_police.glb`](game/animations/npc_police.glb) — 120 клипов.
+
+Смотреть: [`game/animations/viewer.html`](game/animations/viewer.html) (через
+локальный сервер). Полные таблицы —
+[`game/animations/ANIMATIONS.md`](game/animations/ANIMATIONS.md), машинный
+манифест — `game/animations/clips.json`. Как устроено и как пересобрать —
+[`game/README.md`](game/README.md).

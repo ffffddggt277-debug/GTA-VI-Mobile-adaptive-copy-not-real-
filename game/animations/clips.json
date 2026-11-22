@@ -1,0 +1,3540 @@
+{
+ "schema": 1,
+ "fps": 30,
+ "characters": {
+  "player": {
+   "label": "Игрок",
+   "file": "player.glb",
+   "sourceModel": "models/sketchfab/iwi-male-character-02__774ca00136b94d359e7d3ba425a5c57a.glb",
+   "source": {},
+   "sizeMB": 16.73,
+   "clips": 198,
+   "animations": [
+    {
+     "name": "walk",
+     "category": "locomotion",
+     "description": "Обычная ходьба",
+     "duration": 1.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_slow",
+     "category": "locomotion",
+     "description": "Медленная ходьба",
+     "duration": 1.4333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_fast",
+     "category": "locomotion",
+     "description": "Быстрая ходьба",
+     "duration": 0.8333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_heavy",
+     "category": "locomotion",
+     "description": "Тяжёлая походка",
+     "duration": 1.1,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_sneak",
+     "category": "locomotion",
+     "description": "Крадётся",
+     "duration": 1.6333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_tired",
+     "category": "locomotion",
+     "description": "Устало идёт",
+     "duration": 1.3667,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_limp",
+     "category": "locomotion",
+     "description": "Хромает",
+     "duration": 1.2333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_injured",
+     "category": "locomotion",
+     "description": "Идёт с ранением",
+     "duration": 1.5667,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_drunk",
+     "category": "locomotion",
+     "description": "Идёт пьяным",
+     "duration": 1.4333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_phone",
+     "category": "locomotion",
+     "description": "Идёт с телефоном",
+     "duration": 1.1333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_smoke",
+     "category": "locomotion",
+     "description": "Идёт с сигаретой",
+     "duration": 1.1667,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_back",
+     "category": "locomotion",
+     "description": "Идёт спиной вперёд",
+     "duration": 1.3,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_strafe_l",
+     "category": "locomotion",
+     "description": "Шаг влево",
+     "duration": 1.1333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_strafe_r",
+     "category": "locomotion",
+     "description": "Шаг вправо",
+     "duration": 1.1333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_diag_fl",
+     "category": "locomotion",
+     "description": "Шаг вперёд-влево",
+     "duration": 1.1,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_diag_fr",
+     "category": "locomotion",
+     "description": "Шаг вперёд-вправо",
+     "duration": 1.1,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_diag_bl",
+     "category": "locomotion",
+     "description": "Шаг назад-влево",
+     "duration": 1.3333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_diag_br",
+     "category": "locomotion",
+     "description": "Шаг назад-вправо",
+     "duration": 1.3333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_carry_box",
+     "category": "locomotion",
+     "description": "Несёт коробку",
+     "duration": 1.3,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_carry_body",
+     "category": "locomotion",
+     "description": "Тащит тело",
+     "duration": 1.3667,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_slope_up",
+     "category": "locomotion",
+     "description": "Подъём в гору",
+     "duration": 1.3333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_slope_down",
+     "category": "locomotion",
+     "description": "Спуск с горы",
+     "duration": 1.1667,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_mud",
+     "category": "locomotion",
+     "description": "Идёт по грязи",
+     "duration": 1.6333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_wet",
+     "category": "locomotion",
+     "description": "Идёт по мокрому",
+     "duration": 1.1333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_guard",
+     "category": "locomotion",
+     "description": "Идёт в стойке",
+     "duration": 1.1667,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_pistol",
+     "category": "locomotion",
+     "description": "Идёт с пистолетом",
+     "duration": 1.2333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_rifle",
+     "category": "locomotion",
+     "description": "Идёт с винтовкой",
+     "duration": 1.3,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_aim",
+     "category": "locomotion",
+     "description": "Идёт с прицелом",
+     "duration": 1.4333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "run",
+     "category": "locomotion",
+     "description": "Бег",
+     "duration": 0.7667,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "run_jog",
+     "category": "locomotion",
+     "description": "Лёгкий бег",
+     "duration": 0.9667,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "run_sprint",
+     "category": "locomotion",
+     "description": "Спринт",
+     "duration": 0.6,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "run_fast",
+     "category": "locomotion",
+     "description": "Быстрый бег",
+     "duration": 0.7,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "run_pistol",
+     "category": "locomotion",
+     "description": "Бег с пистолетом",
+     "duration": 0.8,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "run_rifle",
+     "category": "locomotion",
+     "description": "Бег с винтовкой",
+     "duration": 0.8333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "run_panic",
+     "category": "locomotion",
+     "description": "Бежит в панике",
+     "duration": 0.6667,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "run_back",
+     "category": "locomotion",
+     "description": "Бежит спиной",
+     "duration": 0.9333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "run_slope_up",
+     "category": "locomotion",
+     "description": "Бег в гору",
+     "duration": 0.8667,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "run_slope_down",
+     "category": "locomotion",
+     "description": "Бег с горы",
+     "duration": 0.7333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "run_limp",
+     "category": "locomotion",
+     "description": "Бежит хромая",
+     "duration": 0.9,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "run_wounded",
+     "category": "locomotion",
+     "description": "Бежит раненым",
+     "duration": 1.0667,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "crouch_walk",
+     "category": "locomotion",
+     "description": "Ходьба в приседе",
+     "duration": 1.5,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "crouch_walk_slow",
+     "category": "locomotion",
+     "description": "Медленный присед-шаг",
+     "duration": 1.9667,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "crouch_walk_fast",
+     "category": "locomotion",
+     "description": "Быстрый присед-шаг",
+     "duration": 1.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "crouch_walk_back",
+     "category": "locomotion",
+     "description": "Присед назад",
+     "duration": 1.6333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "crouch_walk_l",
+     "category": "locomotion",
+     "description": "Присед влево",
+     "duration": 1.5333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "crouch_walk_r",
+     "category": "locomotion",
+     "description": "Присед вправо",
+     "duration": 1.5333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "crouch_sneak",
+     "category": "locomotion",
+     "description": "Крадётся в приседе",
+     "duration": 2.2333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "crouch_pistol_walk",
+     "category": "locomotion",
+     "description": "Присед с пистолетом",
+     "duration": 1.5667,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "crouch_rifle_walk",
+     "category": "locomotion",
+     "description": "Присед с винтовкой",
+     "duration": 1.6333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle",
+     "category": "idle",
+     "description": "Стоит и дышит",
+     "duration": 4.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_alert",
+     "category": "idle",
+     "description": "Стоит настороже",
+     "duration": 4.5333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_cold",
+     "category": "idle",
+     "description": "Дрожит от холода",
+     "duration": 3.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_tired",
+     "category": "idle",
+     "description": "Стоит уставший",
+     "duration": 5.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_phone",
+     "category": "idle",
+     "description": "Смотрит в телефон",
+     "duration": 6.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_smoke",
+     "category": "idle",
+     "description": "Курит",
+     "duration": 6.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_lean_wall",
+     "category": "idle",
+     "description": "Опирается на стену",
+     "duration": 5.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_look_around",
+     "category": "idle",
+     "description": "Озирается",
+     "duration": 7.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_weapon_low",
+     "category": "idle",
+     "description": "Стоит с оружием опущенным",
+     "duration": 5.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_rifle_ready",
+     "category": "idle",
+     "description": "Стоит с винтовкой",
+     "duration": 5.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_crouch",
+     "category": "idle",
+     "description": "Сидит в приседе",
+     "duration": 4.5333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_crouch_alert",
+     "category": "idle",
+     "description": "Присед настороже",
+     "duration": 4.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_crouch_pistol",
+     "category": "idle",
+     "description": "Присед с пистолетом",
+     "duration": 5.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_exhausted",
+     "category": "idle",
+     "description": "Тяжело дышит",
+     "duration": 2.4333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_impatient",
+     "category": "idle",
+     "description": "Нетерпеливо ждёт",
+     "duration": 3.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_arms_crossed",
+     "category": "idle",
+     "description": "Стоит со скрещёнными руками",
+     "duration": 5.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_hands_pockets",
+     "category": "idle",
+     "description": "Руки в карманах",
+     "duration": 5.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_drunk",
+     "category": "idle",
+     "description": "Стоит пьяный, качает",
+     "duration": 5.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_combat",
+     "category": "idle",
+     "description": "Боевая стойка",
+     "duration": 3.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "door_open",
+     "category": "interaction",
+     "description": "Открывает дверь рукой от себя",
+     "duration": 1.1333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "door_open_slow",
+     "category": "interaction",
+     "description": "Медленно открывает дверь и заглядывает внутрь",
+     "duration": 2.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "door_close",
+     "category": "interaction",
+     "description": "Закрывает дверь",
+     "duration": 1.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "door_knock",
+     "category": "interaction",
+     "description": "Стучит в дверь",
+     "duration": 1.3333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "door_kick",
+     "category": "interaction",
+     "description": "Выбивает дверь ударом ноги",
+     "duration": 1.4333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "door_lockpick",
+     "category": "interaction",
+     "description": "Вскрывает замок отмычкой",
+     "duration": 2.6333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "window_open",
+     "category": "interaction",
+     "description": "Открывает окно",
+     "duration": 1.6333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "window_climb",
+     "category": "parkour",
+     "description": "Залезает в окно",
+     "duration": 2.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "pick_up",
+     "category": "interaction",
+     "description": "Поднимает предмет с земли",
+     "duration": 1.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "pick_up_ground",
+     "category": "interaction",
+     "description": "Подбирает что-то с земли из приседа",
+     "duration": 1.9333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "loot_body",
+     "category": "interaction",
+     "description": "Обыскивает лежащее тело",
+     "duration": 2.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "search_pockets",
+     "category": "interaction",
+     "description": "Обыскивает карманы",
+     "duration": 1.6333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "register_take",
+     "category": "interaction",
+     "description": "Забирает деньги из кассы",
+     "duration": 2.4333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "drawer_open",
+     "category": "interaction",
+     "description": "Открывает ящик",
+     "duration": 1.4333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "atm_use",
+     "category": "interaction",
+     "description": "Нажимает кнопки банкомата",
+     "duration": 2.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "vending_use",
+     "category": "interaction",
+     "description": "Покупает в автомате и забирает товар",
+     "duration": 2.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "shop_buy",
+     "category": "interaction",
+     "description": "Расплачивается на кассе",
+     "duration": 2.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "eat",
+     "category": "civilian",
+     "description": "Ест на ходу",
+     "duration": 2.4333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "drink",
+     "category": "civilian",
+     "description": "Пьёт из бутылки",
+     "duration": 2.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "take_photo",
+     "category": "civilian",
+     "description": "Делает фото на телефон",
+     "duration": 1.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "phone_call",
+     "category": "civilian",
+     "description": "Говорит по телефону (цикл)",
+     "duration": 2.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "check_watch",
+     "category": "gesture",
+     "description": "Смотрит на часы",
+     "duration": 2.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "wave",
+     "category": "gesture",
+     "description": "Машет рукой",
+     "duration": 1.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "point",
+     "category": "gesture",
+     "description": "Показывает рукой",
+     "duration": 1.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "salute",
+     "category": "gesture",
+     "description": "Отдаёт честь",
+     "duration": 1.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "thumbs_up",
+     "category": "gesture",
+     "description": "Показывает большой палец",
+     "duration": 1.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "beckon",
+     "category": "gesture",
+     "description": "Подзывает к себе",
+     "duration": 1.6333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "shrug",
+     "category": "gesture",
+     "description": "Пожимает плечами",
+     "duration": 1.4333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "facepalm",
+     "category": "gesture",
+     "description": "Бьёт себя по лицу (фейспалм)",
+     "duration": 1.6333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "clap",
+     "category": "gesture",
+     "description": "Хлопает (цикл)",
+     "duration": 1.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "stretch",
+     "category": "gesture",
+     "description": "Потягивается",
+     "duration": 2.4333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "crack_neck",
+     "category": "gesture",
+     "description": "Разминает шею",
+     "duration": 1.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "wipe_brow",
+     "category": "gesture",
+     "description": "Вытирает пот со лба",
+     "duration": 2.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "throw_object",
+     "category": "interaction",
+     "description": "Бросает предмет",
+     "duration": 1.5333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "throw_grenade",
+     "category": "combat",
+     "description": "Достаёт чеку и бросает гранату",
+     "duration": 2.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "aim_grenade",
+     "category": "combat",
+     "description": "Готовится бросить гранату (цикл)",
+     "duration": 2.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "plant_bomb",
+     "category": "interaction",
+     "description": "Ставит заряд",
+     "duration": 2.6333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "detonate",
+     "category": "interaction",
+     "description": "Нажимает кнопку детонатора",
+     "duration": 2.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "push_object",
+     "category": "interaction",
+     "description": "Толкает тяжёлый объект (цикл)",
+     "duration": 2.4333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "jack_car",
+     "category": "interaction",
+     "description": "Вскрывает дверь машины монтировкой",
+     "duration": 2.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "fuel_car",
+     "category": "interaction",
+     "description": "Заправляет машину (цикл)",
+     "duration": 3.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "car_repair",
+     "category": "interaction",
+     "description": "Копается под капотом (цикл)",
+     "duration": 2.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "car_trunk",
+     "category": "interaction",
+     "description": "Открывает багажник",
+     "duration": 1.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "car_open_door",
+     "category": "interaction",
+     "description": "Открывает дверь машины",
+     "duration": 1.4333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "car_enter",
+     "category": "interaction",
+     "description": "Садится в машину",
+     "duration": 2.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "car_drive_idle",
+     "category": "vehicle",
+     "description": "Сидит за рулём (цикл)",
+     "duration": 4.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "car_exit",
+     "category": "vehicle",
+     "description": "Выходит из машины",
+     "duration": 1.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "hotwire",
+     "category": "vehicle",
+     "description": "Замыкает провода (цикл)",
+     "duration": 2.6333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "handcuff",
+     "category": "police",
+     "description": "Надевает наручники",
+     "duration": 2.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "sit_down",
+     "category": "interaction",
+     "description": "Садится",
+     "duration": 1.6333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "sit_idle",
+     "category": "idle",
+     "description": "Сидит (цикл)",
+     "duration": 4.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "stand_up",
+     "category": "interaction",
+     "description": "Встаёт",
+     "duration": 1.5333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "jump_standing",
+     "category": "parkour",
+     "description": "Прыжок с места",
+     "duration": 1.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "jump_run",
+     "category": "parkour",
+     "description": "Прыжок с разбега",
+     "duration": 1.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "jump_forward",
+     "category": "parkour",
+     "description": "Прыжок вперёд",
+     "duration": 1.3333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "land_soft",
+     "category": "parkour",
+     "description": "Мягкое приземление",
+     "duration": 0.9333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "land_hard",
+     "category": "parkour",
+     "description": "Жёсткое приземление",
+     "duration": 1.3333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "roll_land",
+     "category": "parkour",
+     "description": "Приземление с кувырком",
+     "duration": 1.6333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "vault_low",
+     "category": "parkour",
+     "description": "Перепрыгивает низкое препятствие",
+     "duration": 1.4333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "vault_high",
+     "category": "parkour",
+     "description": "Перепрыгивает высокое препятствие",
+     "duration": 1.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "mantle",
+     "category": "parkour",
+     "description": "Забирается на уступ",
+     "duration": 2.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "climb_wall",
+     "category": "parkour",
+     "description": "Лезет по стене (цикл)",
+     "duration": 2.4333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "climb_ladder",
+     "category": "parkour",
+     "description": "Лезет по лестнице (цикл)",
+     "duration": 1.8333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "ledge_hang",
+     "category": "parkour",
+     "description": "Висит на уступе (цикл)",
+     "duration": 2.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "shimmy",
+     "category": "parkour",
+     "description": "Двигается вдоль уступа",
+     "duration": 2.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "climb_fence",
+     "category": "parkour",
+     "description": "Перелезает через забор",
+     "duration": 2.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "drop_down",
+     "category": "parkour",
+     "description": "Спрыгивает вниз",
+     "duration": 0.9333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "punch_jab",
+     "category": "melee",
+     "description": "Удар рукой (jab, right)",
+     "duration": 0.7333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "punch_cross",
+     "category": "melee",
+     "description": "Удар рукой (cross, right)",
+     "duration": 0.9,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "punch_jab_left",
+     "category": "melee",
+     "description": "Удар рукой (jab, left)",
+     "duration": 0.7333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "punch_cross_left",
+     "category": "melee",
+     "description": "Удар рукой (cross, left)",
+     "duration": 0.9,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "punch_hook_l",
+     "category": "melee",
+     "description": "Удар рукой (hook, left)",
+     "duration": 0.9333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "punch_hook_r",
+     "category": "melee",
+     "description": "Удар рукой (hook, right)",
+     "duration": 0.9333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "punch_uppercut",
+     "category": "melee",
+     "description": "Удар рукой (uppercut, right)",
+     "duration": 0.9333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "punch_combo_3",
+     "category": "melee",
+     "description": "Серия из трёх ударов",
+     "duration": 1.5333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "punch_running",
+     "category": "melee",
+     "description": "Бьёт на бегу",
+     "duration": 0.9333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "punch_crouch",
+     "category": "melee",
+     "description": "Бьёт из приседа",
+     "duration": 0.9333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "elbow_strike",
+     "category": "melee",
+     "description": "Удар локтем",
+     "duration": 0.9,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "headbutt",
+     "category": "melee",
+     "description": "Удар головой",
+     "duration": 0.9333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "tackle",
+     "category": "melee",
+     "description": "Захват и свалка",
+     "duration": 1.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "grapple_throw",
+     "category": "melee",
+     "description": "Бросок через бедро",
+     "duration": 1.6333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "kick_front",
+     "category": "melee",
+     "description": "Прямой удар ногой",
+     "duration": 1.1333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "kick_low",
+     "category": "melee",
+     "description": "Лоу-кик по ноге",
+     "duration": 1.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "kick_side",
+     "category": "melee",
+     "description": "Боковой удар ногой",
+     "duration": 1.1333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "knee_strike",
+     "category": "melee",
+     "description": "Удар коленом",
+     "duration": 0.9333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "stomp",
+     "category": "melee",
+     "description": "Затаптывает лежащего",
+     "duration": 1.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "block_hold",
+     "category": "melee",
+     "description": "Держит блок (цикл)",
+     "duration": 2.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "block_impact",
+     "category": "melee",
+     "description": "Держит удар в блок",
+     "duration": 0.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "dodge_left",
+     "category": "melee",
+     "description": "Уклон влево",
+     "duration": 0.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "dodge_right",
+     "category": "melee",
+     "description": "Уклон вправо",
+     "duration": 0.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "dodge_back",
+     "category": "melee",
+     "description": "Отскок назад",
+     "duration": 0.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "bat_swing",
+     "category": "melee",
+     "description": "Удар битой сбоку",
+     "duration": 1.1333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "bat_overhead",
+     "category": "melee",
+     "description": "Удар битой сверху",
+     "duration": 1.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "crowbar_swing",
+     "category": "melee",
+     "description": "Удар монтировкой",
+     "duration": 1.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "knife_slash",
+     "category": "melee",
+     "description": "Режущий удар ножом",
+     "duration": 0.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "knife_stab",
+     "category": "melee",
+     "description": "Колющий удар ножом",
+     "duration": 0.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "hit_light",
+     "category": "reaction",
+     "description": "Получает лёгкий удар",
+     "duration": 0.7333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "hit_heavy",
+     "category": "reaction",
+     "description": "Получает тяжёлый удар",
+     "duration": 1.1333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "hit_head",
+     "category": "reaction",
+     "description": "Удар в голову",
+     "duration": 0.9333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "hit_back",
+     "category": "reaction",
+     "description": "Удар в спину",
+     "duration": 1.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "knockdown",
+     "category": "reaction",
+     "description": "Падает на землю",
+     "duration": 1.4333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "getup",
+     "category": "reaction",
+     "description": "Встаёт с земли",
+     "duration": 1.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "death_forward",
+     "category": "reaction",
+     "description": "Падает лицом вниз",
+     "duration": 1.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "death_back",
+     "category": "reaction",
+     "description": "Падает на спину",
+     "duration": 1.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "death_headshot",
+     "category": "reaction",
+     "description": "Смерть от выстрела в голову",
+     "duration": 1.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "death_crouch",
+     "category": "reaction",
+     "description": "Падает из приседа",
+     "duration": 1.6333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "stumble",
+     "category": "reaction",
+     "description": "Спотыкается",
+     "duration": 1.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "fall_loop",
+     "category": "reaction",
+     "description": "Падение (цикл)",
+     "duration": 1.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "draw_pistol",
+     "category": "firearm",
+     "description": "Достаёт пистолет",
+     "duration": 1.1333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "holster_pistol",
+     "category": "firearm",
+     "description": "Убирает пистолет в кобуру",
+     "duration": 1.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "draw_rifle",
+     "category": "firearm",
+     "description": "Берёт винтовку на изготовку",
+     "duration": 1.5333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "holster_rifle",
+     "category": "firearm",
+     "description": "Убирает винтовку за спину",
+     "duration": 1.4333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "reload_pistol",
+     "category": "firearm",
+     "description": "Перезаряжает пистолет",
+     "duration": 2.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "reload_rifle",
+     "category": "firearm",
+     "description": "Перезаряжает винтовку",
+     "duration": 2.6333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "reload_shotgun",
+     "category": "firearm",
+     "description": "Перезаряжает дробовик",
+     "duration": 3.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "aim_pistol",
+     "category": "firearm",
+     "description": "Целится из пистолета (цикл)",
+     "duration": 4.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "aim_pistol_low",
+     "category": "firearm",
+     "description": "Держит пистолет опущенным (цикл)",
+     "duration": 4.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "aim_rifle",
+     "category": "firearm",
+     "description": "Целится из винтовки (цикл)",
+     "duration": 5.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "aim_shotgun",
+     "category": "firearm",
+     "description": "Целится из дробовика (цикл)",
+     "duration": 5.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "aim_crouch_pistol",
+     "category": "firearm",
+     "description": "Целится из пистолета в приседе",
+     "duration": 4.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "aim_crouch_rifle",
+     "category": "firearm",
+     "description": "Целится из винтовки в приседе",
+     "duration": 5.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "shoot_pistol",
+     "category": "firearm",
+     "description": "Выстрел из пистолета",
+     "duration": 1.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "shoot_pistol_double",
+     "category": "firearm",
+     "description": "Дубль из пистолета",
+     "duration": 1.3333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "shoot_pistol_crouch",
+     "category": "firearm",
+     "description": "Выстрел из пистолета в приседе",
+     "duration": 1.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "shoot_rifle",
+     "category": "firearm",
+     "description": "Выстрел из винтовки",
+     "duration": 1.5333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "shoot_rifle_burst",
+     "category": "firearm",
+     "description": "Очередь из винтовки",
+     "duration": 1.6333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "shoot_shotgun",
+     "category": "firearm",
+     "description": "Выстрел из дробовика",
+     "duration": 1.7333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "shoot_cover_right",
+     "category": "firearm",
+     "description": "Стреляет из-за укрытия справа",
+     "duration": 2.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "shoot_cover_left",
+     "category": "firearm",
+     "description": "Стреляет из-за укрытия слева",
+     "duration": 2.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "blindfire_right",
+     "category": "firearm",
+     "description": "Стреляет вслепую",
+     "duration": 1.6333,
+     "loop": false,
+     "channels": 26
+    }
+   ]
+  },
+  "civilian": {
+   "label": "Гражданский NPC",
+   "file": "npc_civilian.glb",
+   "sourceModel": "models/sketchfab/gavin-reed-detroit-become-human__0161bd8ecbaa44cb9da40ba4f2f80aaf.glb",
+   "source": {},
+   "sizeMB": 19.19,
+   "clips": 120,
+   "animations": [
+    {
+     "name": "walk",
+     "category": "locomotion",
+     "description": "Обычная ходьба",
+     "duration": 1.1,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_slow",
+     "category": "locomotion",
+     "description": "Прогулочный шаг",
+     "duration": 1.5333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_fast",
+     "category": "locomotion",
+     "description": "Спешит",
+     "duration": 0.9,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_phone",
+     "category": "locomotion",
+     "description": "Идёт с телефоном",
+     "duration": 1.1667,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_bag",
+     "category": "locomotion",
+     "description": "Идёт с сумкой",
+     "duration": 1.1333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_elderly",
+     "category": "locomotion",
+     "description": "Пожилая походка",
+     "duration": 1.7333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_child_style",
+     "category": "locomotion",
+     "description": "Детская походка",
+     "duration": 1.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_heavy",
+     "category": "locomotion",
+     "description": "Тяжёлая походка",
+     "duration": 1.1333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_drunk",
+     "category": "locomotion",
+     "description": "Пьяная походка",
+     "duration": 1.5,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_tired",
+     "category": "locomotion",
+     "description": "Устал",
+     "duration": 1.4333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_injured",
+     "category": "locomotion",
+     "description": "Хромает",
+     "duration": 1.5333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_back",
+     "category": "locomotion",
+     "description": "Пятится",
+     "duration": 1.3,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_strafe_l",
+     "category": "locomotion",
+     "description": "Шаг влево",
+     "duration": 1.1667,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_strafe_r",
+     "category": "locomotion",
+     "description": "Шаг вправо",
+     "duration": 1.1667,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_diag_fl",
+     "category": "locomotion",
+     "description": "Шаг вперёд-влево",
+     "duration": 1.1333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_diag_fr",
+     "category": "locomotion",
+     "description": "Шаг вперёд-вправо",
+     "duration": 1.1333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_diag_bl",
+     "category": "locomotion",
+     "description": "Шаг назад-влево",
+     "duration": 1.3667,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_diag_br",
+     "category": "locomotion",
+     "description": "Шаг назад-вправо",
+     "duration": 1.3667,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_shopping",
+     "category": "locomotion",
+     "description": "Идёт из магазина",
+     "duration": 1.2333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_mud",
+     "category": "locomotion",
+     "description": "По грязи",
+     "duration": 1.6333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "run",
+     "category": "locomotion",
+     "description": "Бежит",
+     "duration": 0.8333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "run_jog",
+     "category": "locomotion",
+     "description": "Пробежка",
+     "duration": 1.0,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "run_sprint",
+     "category": "locomotion",
+     "description": "Бежит со всех ног",
+     "duration": 0.6333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "run_panic",
+     "category": "locomotion",
+     "description": "Бежит в панике",
+     "duration": 0.6667,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "crouch_walk",
+     "category": "locomotion",
+     "description": "Присед-шаг",
+     "duration": 1.5333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "crouch_walk_slow",
+     "category": "locomotion",
+     "description": "Осторожный присед-шаг",
+     "duration": 2.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "crouch_sneak",
+     "category": "locomotion",
+     "description": "Прячется в приседе",
+     "duration": 2.2333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle",
+     "category": "idle",
+     "description": "Стоит и дышит",
+     "duration": 4.2333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_phone",
+     "category": "idle",
+     "description": "Смотрит в телефон",
+     "duration": 6.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_smoke",
+     "category": "idle",
+     "description": "Курит",
+     "duration": 6.5333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_look_around",
+     "category": "idle",
+     "description": "Озирается",
+     "duration": 7.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_impatient",
+     "category": "idle",
+     "description": "Ждёт и нервничает",
+     "duration": 3.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_cold",
+     "category": "idle",
+     "description": "Дрожит",
+     "duration": 3.2333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_tired",
+     "category": "idle",
+     "description": "Устал стоять",
+     "duration": 5.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_arms_crossed",
+     "category": "idle",
+     "description": "Скрестил руки",
+     "duration": 5.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_hands_pockets",
+     "category": "idle",
+     "description": "Руки в карманах",
+     "duration": 5.5333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_drunk",
+     "category": "idle",
+     "description": "Качается пьяный",
+     "duration": 5.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_crouch",
+     "category": "idle",
+     "description": "Присел",
+     "duration": 4.5333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_alert",
+     "category": "idle",
+     "description": "Испуганно оглядывается",
+     "duration": 3.6333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_lean_wall",
+     "category": "idle",
+     "description": "Опирается на стену",
+     "duration": 5.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_waiting",
+     "category": "idle",
+     "description": "Ждёт на остановке",
+     "duration": 6.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "door_open",
+     "category": "interaction",
+     "description": "Открывает дверь рукой от себя",
+     "duration": 1.1333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "door_close",
+     "category": "interaction",
+     "description": "Закрывает дверь",
+     "duration": 1.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "door_knock",
+     "category": "interaction",
+     "description": "Стучит в дверь",
+     "duration": 1.3333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "door_lockpick",
+     "category": "interaction",
+     "description": "Вскрывает замок отмычкой",
+     "duration": 2.6333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "window_open",
+     "category": "interaction",
+     "description": "Открывает окно",
+     "duration": 1.6333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "pick_up",
+     "category": "interaction",
+     "description": "Поднимает предмет с земли",
+     "duration": 1.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "pick_up_ground",
+     "category": "interaction",
+     "description": "Подбирает что-то с земли из приседа",
+     "duration": 1.9333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "atm_use",
+     "category": "interaction",
+     "description": "Нажимает кнопки банкомата",
+     "duration": 2.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "vending_use",
+     "category": "interaction",
+     "description": "Покупает в автомате и забирает товар",
+     "duration": 2.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "shop_buy",
+     "category": "interaction",
+     "description": "Расплачивается на кассе",
+     "duration": 2.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "drawer_open",
+     "category": "interaction",
+     "description": "Открывает ящик",
+     "duration": 1.4333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "eat",
+     "category": "civilian",
+     "description": "Ест на ходу",
+     "duration": 2.4333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "drink",
+     "category": "civilian",
+     "description": "Пьёт из бутылки",
+     "duration": 2.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "smoke_drag",
+     "category": "civilian",
+     "description": "Затягивается сигаретой",
+     "duration": 3.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "take_photo",
+     "category": "civilian",
+     "description": "Делает фото на телефон",
+     "duration": 1.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "phone_call",
+     "category": "civilian",
+     "description": "Говорит по телефону (цикл)",
+     "duration": 2.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "check_watch",
+     "category": "gesture",
+     "description": "Смотрит на часы",
+     "duration": 2.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "read_phone",
+     "category": "civilian",
+     "description": "Листает телефон (цикл)",
+     "duration": 3.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "selfie",
+     "category": "civilian",
+     "description": "Делает селфи",
+     "duration": 1.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "sit_down",
+     "category": "interaction",
+     "description": "Садится",
+     "duration": 1.6333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "sit_idle",
+     "category": "idle",
+     "description": "Сидит (цикл)",
+     "duration": 4.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "stand_up",
+     "category": "interaction",
+     "description": "Встаёт",
+     "duration": 1.5333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "sit_ground",
+     "category": "civilian",
+     "description": "Садится на землю",
+     "duration": 2.4333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "sit_ground_idle",
+     "category": "civilian",
+     "description": "Сидит на земле (цикл)",
+     "duration": 4.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "wave",
+     "category": "gesture",
+     "description": "Машет рукой",
+     "duration": 1.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "point",
+     "category": "gesture",
+     "description": "Показывает рукой",
+     "duration": 1.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "thumbs_up",
+     "category": "gesture",
+     "description": "Показывает большой палец",
+     "duration": 1.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "beckon",
+     "category": "gesture",
+     "description": "Подзывает к себе",
+     "duration": 1.6333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "shrug",
+     "category": "gesture",
+     "description": "Пожимает плечами",
+     "duration": 1.4333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "facepalm",
+     "category": "gesture",
+     "description": "Бьёт себя по лицу (фейспалм)",
+     "duration": 1.6333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "clap",
+     "category": "gesture",
+     "description": "Хлопает (цикл)",
+     "duration": 1.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "stretch",
+     "category": "gesture",
+     "description": "Потягивается",
+     "duration": 2.4333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "crack_neck",
+     "category": "gesture",
+     "description": "Разминает шею",
+     "duration": 1.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "wipe_brow",
+     "category": "gesture",
+     "description": "Вытирает пот со лба",
+     "duration": 2.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "throw_object",
+     "category": "interaction",
+     "description": "Бросает предмет",
+     "duration": 1.5333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "push_object",
+     "category": "interaction",
+     "description": "Толкает тяжёлый объект (цикл)",
+     "duration": 2.4333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "groceries",
+     "category": "civilian",
+     "description": "Толкает тележку (цикл)",
+     "duration": 2.4333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "dance",
+     "category": "civilian",
+     "description": "Танцует (цикл)",
+     "duration": 2.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "chat",
+     "category": "civilian",
+     "description": "Разговаривает жестами (цикл)",
+     "duration": 2.6333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "laugh",
+     "category": "civilian",
+     "description": "Смеётся",
+     "duration": 1.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "argue",
+     "category": "civilian",
+     "description": "Спорит (цикл)",
+     "duration": 2.4333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "construction_work",
+     "category": "civilian",
+     "description": "Работает инструментом (цикл)",
+     "duration": 2.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "cook",
+     "category": "civilian",
+     "description": "Готовит еду (цикл)",
+     "duration": 2.2333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "clean_floor",
+     "category": "civilian",
+     "description": "Моет пол (цикл)",
+     "duration": 2.2333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "jog_stretch",
+     "category": "civilian",
+     "description": "Разминается перед пробежкой (цикл)",
+     "duration": 3.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "cold_shiver",
+     "category": "civilian",
+     "description": "Дрожит от холода (цикл)",
+     "duration": 2.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "squat_exercise",
+     "category": "civilian",
+     "description": "Приседает (цикл)",
+     "duration": 2.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "bus_wait",
+     "category": "civilian",
+     "description": "Ждёт транспорт (цикл)",
+     "duration": 4.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "car_open_door",
+     "category": "interaction",
+     "description": "Открывает дверь машины",
+     "duration": 1.4333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "car_enter",
+     "category": "interaction",
+     "description": "Садится в машину",
+     "duration": 2.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "car_drive_idle",
+     "category": "vehicle",
+     "description": "Сидит за рулём (цикл)",
+     "duration": 4.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "car_exit",
+     "category": "vehicle",
+     "description": "Выходит из машины",
+     "duration": 1.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "car_trunk",
+     "category": "interaction",
+     "description": "Открывает багажник",
+     "duration": 1.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "fuel_car",
+     "category": "interaction",
+     "description": "Заправляет машину (цикл)",
+     "duration": 3.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "jump_standing",
+     "category": "parkour",
+     "description": "Прыжок с места",
+     "duration": 1.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "jump_run",
+     "category": "parkour",
+     "description": "Прыжок с разбега",
+     "duration": 1.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "land_soft",
+     "category": "parkour",
+     "description": "Мягкое приземление",
+     "duration": 0.9333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "drop_down",
+     "category": "parkour",
+     "description": "Спрыгивает вниз",
+     "duration": 0.9333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "climb_fence",
+     "category": "parkour",
+     "description": "Перелезает через забор",
+     "duration": 2.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "vault_low",
+     "category": "parkour",
+     "description": "Перепрыгивает низкое препятствие",
+     "duration": 1.4333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "hit_light",
+     "category": "reaction",
+     "description": "Получает лёгкий удар",
+     "duration": 0.7333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "hit_heavy",
+     "category": "reaction",
+     "description": "Получает тяжёлый удар",
+     "duration": 1.1333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "hit_head",
+     "category": "reaction",
+     "description": "Удар в голову",
+     "duration": 0.9333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "knockdown",
+     "category": "reaction",
+     "description": "Падает на землю",
+     "duration": 1.4333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "getup",
+     "category": "reaction",
+     "description": "Встаёт с земли",
+     "duration": 1.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "death_forward",
+     "category": "reaction",
+     "description": "Падает лицом вниз",
+     "duration": 1.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "death_back",
+     "category": "reaction",
+     "description": "Падает на спину",
+     "duration": 1.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "death_crouch",
+     "category": "reaction",
+     "description": "Падает из приседа",
+     "duration": 1.6333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "stumble",
+     "category": "reaction",
+     "description": "Спотыкается",
+     "duration": 1.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "fall_loop",
+     "category": "reaction",
+     "description": "Падение (цикл)",
+     "duration": 1.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "panic",
+     "category": "reaction",
+     "description": "Паникует (цикл)",
+     "duration": 1.4333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "surrender",
+     "category": "reaction",
+     "description": "Поднимает руки (сдаётся)",
+     "duration": 1.6333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "suspect_kneel",
+     "category": "police",
+     "description": "Ставит задержанного на колени",
+     "duration": 2.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "punch_jab",
+     "category": "melee",
+     "description": "Удар рукой (jab, right)",
+     "duration": 0.7333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "punch_cross",
+     "category": "melee",
+     "description": "Удар рукой (cross, right)",
+     "duration": 0.9,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "kick_front",
+     "category": "melee",
+     "description": "Прямой удар ногой",
+     "duration": 1.1333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "tackle",
+     "category": "melee",
+     "description": "Захват и свалка",
+     "duration": 1.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "block_hold",
+     "category": "melee",
+     "description": "Держит блок (цикл)",
+     "duration": 2.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "dodge_back",
+     "category": "melee",
+     "description": "Отскок назад",
+     "duration": 0.8333,
+     "loop": false,
+     "channels": 26
+    }
+   ]
+  },
+  "police": {
+   "label": "Полицейский NPC",
+   "file": "npc_police.glb",
+   "sourceModel": "models/sketchfab/policeman__d47bb1f61fa340588b5801cdb63812c8.glb",
+   "source": {},
+   "sizeMB": 12.69,
+   "clips": 120,
+   "animations": [
+    {
+     "name": "walk",
+     "category": "locomotion",
+     "description": "Патрульная ходьба",
+     "duration": 1.1,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_slow",
+     "category": "locomotion",
+     "description": "Медленный обход",
+     "duration": 1.5333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_fast",
+     "category": "locomotion",
+     "description": "Спешит на вызов",
+     "duration": 0.9,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_patrol",
+     "category": "locomotion",
+     "description": "Патрулирует",
+     "duration": 1.1667,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_pistol",
+     "category": "locomotion",
+     "description": "Идёт с пистолетом",
+     "duration": 1.3,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_rifle",
+     "category": "locomotion",
+     "description": "Идёт с винтовкой",
+     "duration": 1.3333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_guard",
+     "category": "locomotion",
+     "description": "Идёт в стойке",
+     "duration": 1.2333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_back",
+     "category": "locomotion",
+     "description": "Пятится",
+     "duration": 1.3333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_strafe_l",
+     "category": "locomotion",
+     "description": "Шаг влево",
+     "duration": 1.1667,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_strafe_r",
+     "category": "locomotion",
+     "description": "Шаг вправо",
+     "duration": 1.1667,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_diag_fl",
+     "category": "locomotion",
+     "description": "Шаг вперёд-влево",
+     "duration": 1.1333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_diag_fr",
+     "category": "locomotion",
+     "description": "Шаг вперёд-вправо",
+     "duration": 1.1333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_injured",
+     "category": "locomotion",
+     "description": "Хромает после ранения",
+     "duration": 1.5333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "walk_heavy",
+     "category": "locomotion",
+     "description": "Тяжёлая походка (броня)",
+     "duration": 1.1333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "run",
+     "category": "locomotion",
+     "description": "Бег",
+     "duration": 0.7667,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "run_jog",
+     "category": "locomotion",
+     "description": "Пробежка",
+     "duration": 0.9667,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "run_sprint",
+     "category": "locomotion",
+     "description": "Спринт",
+     "duration": 0.6333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "run_pistol",
+     "category": "locomotion",
+     "description": "Бежит с пистолетом",
+     "duration": 0.8333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "run_back",
+     "category": "locomotion",
+     "description": "Бежит спиной",
+     "duration": 0.9667,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "run_slope_up",
+     "category": "locomotion",
+     "description": "Бег в гору",
+     "duration": 0.9,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "crouch_walk",
+     "category": "locomotion",
+     "description": "Присед-шаг",
+     "duration": 1.5333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "crouch_walk_slow",
+     "category": "locomotion",
+     "description": "Осторожный присед-шаг",
+     "duration": 1.9667,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "crouch_walk_fast",
+     "category": "locomotion",
+     "description": "Быстрый присед-шаг",
+     "duration": 1.1,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "crouch_walk_l",
+     "category": "locomotion",
+     "description": "Присед влево",
+     "duration": 1.5333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "crouch_walk_r",
+     "category": "locomotion",
+     "description": "Присед вправо",
+     "duration": 1.5333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "crouch_pistol_walk",
+     "category": "locomotion",
+     "description": "Присед с пистолетом",
+     "duration": 1.5667,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "crouch_rifle_walk",
+     "category": "locomotion",
+     "description": "Присед с винтовкой",
+     "duration": 1.6333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle",
+     "category": "idle",
+     "description": "Стоит на посту",
+     "duration": 4.5333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_patrol",
+     "category": "idle",
+     "description": "Патрульный покой",
+     "duration": 4.5333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_alert",
+     "category": "idle",
+     "description": "Настороже",
+     "duration": 3.6333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_radio",
+     "category": "idle",
+     "description": "Слушает рацию",
+     "duration": 5.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_pistol_low",
+     "category": "idle",
+     "description": "Держит пистолет опущенным",
+     "duration": 5.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_rifle_ready",
+     "category": "idle",
+     "description": "Держит винтовку",
+     "duration": 5.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_crouch",
+     "category": "idle",
+     "description": "В приседе",
+     "duration": 4.5333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_crouch_alert",
+     "category": "idle",
+     "description": "Присед, наблюдает",
+     "duration": 4.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_crouch_pistol",
+     "category": "idle",
+     "description": "Присед с пистолетом",
+     "duration": 5.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_check_belt",
+     "category": "idle",
+     "description": "Поправляет снаряжение",
+     "duration": 6.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_tired",
+     "category": "idle",
+     "description": "Устал на смене",
+     "duration": 5.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_impatient",
+     "category": "idle",
+     "description": "Ждёт подкрепление",
+     "duration": 3.2333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "idle_cold",
+     "category": "idle",
+     "description": "Мёрзнет",
+     "duration": 3.2333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "radio_call",
+     "category": "police",
+     "description": "Говорит по рации (цикл)",
+     "duration": 2.6333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "write_ticket",
+     "category": "police",
+     "description": "Выписывает штраф",
+     "duration": 3.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "pat_down",
+     "category": "police",
+     "description": "Обыскивает задержанного",
+     "duration": 2.4333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "arrest_push",
+     "category": "police",
+     "description": "Прижимает задержанного к машине",
+     "duration": 1.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "handcuff",
+     "category": "police",
+     "description": "Надевает наручники",
+     "duration": 2.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "suspect_kneel",
+     "category": "police",
+     "description": "Ставит задержанного на колени",
+     "duration": 2.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "taser_draw",
+     "category": "police",
+     "description": "Достаёт тазер",
+     "duration": 1.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "taser_fire",
+     "category": "police",
+     "description": "Стреляет из тазера",
+     "duration": 1.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "baton_draw",
+     "category": "police",
+     "description": "Достаёт дубинку",
+     "duration": 0.9333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "baton_swing",
+     "category": "police",
+     "description": "Бьёт дубинкой",
+     "duration": 1.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "shield_block",
+     "category": "police",
+     "description": "Держит щит (цикл)",
+     "duration": 2.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "shield_bash",
+     "category": "police",
+     "description": "Толкает щитом",
+     "duration": 0.9333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "flashlight_scan",
+     "category": "police",
+     "description": "Светит фонарём (цикл)",
+     "duration": 4.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "direct_traffic",
+     "category": "police",
+     "description": "Регулирует движение (цикл)",
+     "duration": 3.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "door_open",
+     "category": "interaction",
+     "description": "Открывает дверь рукой от себя",
+     "duration": 1.1333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "door_kick",
+     "category": "interaction",
+     "description": "Выбивает дверь ударом ноги",
+     "duration": 1.4333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "door_knock",
+     "category": "interaction",
+     "description": "Стучит в дверь",
+     "duration": 1.3333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "pick_up",
+     "category": "interaction",
+     "description": "Поднимает предмет с земли",
+     "duration": 1.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "loot_body",
+     "category": "interaction",
+     "description": "Обыскивает лежащее тело",
+     "duration": 2.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "search_pockets",
+     "category": "interaction",
+     "description": "Обыскивает карманы",
+     "duration": 1.6333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "register_take",
+     "category": "interaction",
+     "description": "Достаёт деньги из кассы",
+     "duration": 2.4333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "draw_pistol",
+     "category": "firearm",
+     "description": "Достаёт пистолет",
+     "duration": 1.1333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "holster_pistol",
+     "category": "firearm",
+     "description": "Убирает пистолет в кобуру",
+     "duration": 1.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "draw_rifle",
+     "category": "firearm",
+     "description": "Берёт винтовку на изготовку",
+     "duration": 1.5333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "holster_rifle",
+     "category": "firearm",
+     "description": "Убирает винтовку за спину",
+     "duration": 1.4333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "reload_pistol",
+     "category": "firearm",
+     "description": "Перезаряжает пистолет",
+     "duration": 2.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "reload_rifle",
+     "category": "firearm",
+     "description": "Перезаряжает винтовку",
+     "duration": 2.6333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "reload_shotgun",
+     "category": "firearm",
+     "description": "Перезаряжает дробовик",
+     "duration": 3.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "car_open_door",
+     "category": "interaction",
+     "description": "Открывает дверь машины",
+     "duration": 1.4333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "car_enter",
+     "category": "interaction",
+     "description": "Садится в машину",
+     "duration": 2.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "car_drive_idle",
+     "category": "vehicle",
+     "description": "Сидит за рулём (цикл)",
+     "duration": 4.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "car_exit",
+     "category": "vehicle",
+     "description": "Выходит из машины",
+     "duration": 1.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "car_trunk",
+     "category": "interaction",
+     "description": "Открывает багажник",
+     "duration": 1.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "sit_down",
+     "category": "interaction",
+     "description": "Садится",
+     "duration": 1.6333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "sit_idle",
+     "category": "idle",
+     "description": "Сидит (цикл)",
+     "duration": 4.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "stand_up",
+     "category": "interaction",
+     "description": "Встаёт",
+     "duration": 1.5333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "wave",
+     "category": "gesture",
+     "description": "Машет рукой",
+     "duration": 1.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "point",
+     "category": "gesture",
+     "description": "Показывает рукой",
+     "duration": 1.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "salute",
+     "category": "gesture",
+     "description": "Отдаёт честь",
+     "duration": 1.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "beckon",
+     "category": "gesture",
+     "description": "Подзывает к себе",
+     "duration": 1.6333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "check_watch",
+     "category": "gesture",
+     "description": "Смотрит на часы",
+     "duration": 2.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "phone_call",
+     "category": "civilian",
+     "description": "Говорит по телефону (цикл)",
+     "duration": 2.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "push_object",
+     "category": "interaction",
+     "description": "Толкает тяжёлый объект (цикл)",
+     "duration": 2.4333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "jump_run",
+     "category": "parkour",
+     "description": "Прыжок с разбега",
+     "duration": 1.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "land_hard",
+     "category": "parkour",
+     "description": "Жёсткое приземление",
+     "duration": 1.3333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "vault_low",
+     "category": "parkour",
+     "description": "Перепрыгивает низкое препятствие",
+     "duration": 1.4333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "vault_high",
+     "category": "parkour",
+     "description": "Перепрыгивает высокое препятствие",
+     "duration": 1.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "mantle",
+     "category": "parkour",
+     "description": "Забирается на уступ",
+     "duration": 2.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "climb_fence",
+     "category": "parkour",
+     "description": "Перелезает через забор",
+     "duration": 2.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "hit_light",
+     "category": "reaction",
+     "description": "Получает лёгкий удар",
+     "duration": 0.7333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "hit_heavy",
+     "category": "reaction",
+     "description": "Получает тяжёлый удар",
+     "duration": 1.1333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "hit_head",
+     "category": "reaction",
+     "description": "Удар в голову",
+     "duration": 0.9333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "knockdown",
+     "category": "reaction",
+     "description": "Падает на землю",
+     "duration": 1.4333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "getup",
+     "category": "reaction",
+     "description": "Встаёт с земли",
+     "duration": 1.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "death_forward",
+     "category": "reaction",
+     "description": "Падает лицом вниз",
+     "duration": 1.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "death_back",
+     "category": "reaction",
+     "description": "Падает на спину",
+     "duration": 1.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "death_headshot",
+     "category": "reaction",
+     "description": "Смерть от выстрела в голову",
+     "duration": 1.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "stumble",
+     "category": "reaction",
+     "description": "Спотыкается",
+     "duration": 1.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "block_hold",
+     "category": "melee",
+     "description": "Держит блок (цикл)",
+     "duration": 2.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "block_impact",
+     "category": "melee",
+     "description": "Держит удар в блок",
+     "duration": 0.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "dodge_left",
+     "category": "melee",
+     "description": "Уклон влево",
+     "duration": 0.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "dodge_right",
+     "category": "melee",
+     "description": "Уклон вправо",
+     "duration": 0.8333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "punch_jab",
+     "category": "melee",
+     "description": "Удар рукой (jab, right)",
+     "duration": 0.7333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "punch_cross",
+     "category": "melee",
+     "description": "Удар рукой (cross, right)",
+     "duration": 0.9,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "kick_front",
+     "category": "melee",
+     "description": "Прямой удар ногой",
+     "duration": 1.1333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "tackle",
+     "category": "melee",
+     "description": "Захват и свалка",
+     "duration": 1.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "aim_pistol",
+     "category": "firearm",
+     "description": "Целится из пистолета (цикл)",
+     "duration": 4.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "aim_pistol_low",
+     "category": "firearm",
+     "description": "Пистолет опущен (цикл)",
+     "duration": 4.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "aim_rifle",
+     "category": "firearm",
+     "description": "Целится из винтовки (цикл)",
+     "duration": 5.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "aim_shotgun",
+     "category": "firearm",
+     "description": "Целится из дробовика (цикл)",
+     "duration": 5.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "aim_crouch_pistol",
+     "category": "firearm",
+     "description": "Целится в приседе",
+     "duration": 4.0333,
+     "loop": true,
+     "channels": 26
+    },
+    {
+     "name": "shoot_pistol",
+     "category": "firearm",
+     "description": "Выстрел из пистолета",
+     "duration": 1.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "shoot_pistol_double",
+     "category": "firearm",
+     "description": "Дубль из пистолета",
+     "duration": 1.3333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "shoot_pistol_crouch",
+     "category": "firearm",
+     "description": "Выстрел из пистолета в приседе",
+     "duration": 1.2333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "shoot_rifle",
+     "category": "firearm",
+     "description": "Выстрел из винтовки",
+     "duration": 1.5333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "shoot_rifle_burst",
+     "category": "firearm",
+     "description": "Очередь из винтовки",
+     "duration": 1.6333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "shoot_shotgun",
+     "category": "firearm",
+     "description": "Выстрел из дробовика",
+     "duration": 1.7333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "shoot_cover_right",
+     "category": "firearm",
+     "description": "Стреляет из-за укрытия справа",
+     "duration": 2.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "shoot_cover_left",
+     "category": "firearm",
+     "description": "Стреляет из-за укрытия слева",
+     "duration": 2.0333,
+     "loop": false,
+     "channels": 26
+    },
+    {
+     "name": "blindfire_right",
+     "category": "firearm",
+     "description": "Стреляет вслепую",
+     "duration": 1.6333,
+     "loop": false,
+     "channels": 26
+    }
+   ]
+  }
+ }
+}
