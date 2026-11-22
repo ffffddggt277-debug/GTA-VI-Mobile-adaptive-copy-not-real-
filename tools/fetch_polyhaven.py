@@ -6,6 +6,7 @@ Everything is deglitched glTF + 1K PBR textures (portable, engine-agnostic).
 """
 import json
 import os
+import shutil
 import sys
 import time
 import urllib.request
@@ -73,6 +74,12 @@ def download(url, dest, size_hint=None):
     return False
 
 
+def manifest_ids():
+    if not os.path.exists(MANIFEST):
+        return []
+    return list(json.load(open(MANIFEST)))
+
+
 def select(assets):
     by_cat = {}
     for aid, meta in assets.items():
@@ -86,10 +93,36 @@ def select(assets):
     return {aid: sorted(cats) for aid, cats in chosen.items()}
 
 
+# Pure environment scans (trees, shrubs, rocks, ground) are huge and mostly useless
+# for a city block: excluded from the full download and pruned from earlier runs.
+NATURE_CATS = {
+    "nature", "plants", "trees", "rocks", "ground cover", "flowers", "grass",
+    "succulent", "potted plants", "collection: pine_forest", "collection: namaqualand",
+    "collection: moon", "collection: verdant_trail",
+}
+
+
 def main():
-    only = sys.argv[1:] or None
+    args = sys.argv[1:]
+    only = [a for a in args if not a.startswith("--")] or None
     assets = get_json(f"{API}/assets?t=models")
-    sel = select(assets)
+    if "--all" in args:
+        sel = {aid: sorted(set(meta.get("categories", []))) for aid, meta in assets.items()}
+        sel = {a: c for a, c in sel.items() if not set(c) <= NATURE_CATS}
+    else:
+        sel = select(assets)
+    if "--prune" in args:
+        keep = set(sel)
+        old = json.load(open(MANIFEST)) if os.path.exists(MANIFEST) else {}
+        removed = 0
+        for aid in list(old):
+            if aid not in keep:
+                shutil.rmtree(os.path.join(ROOT, aid), ignore_errors=True)
+                old.pop(aid)
+                removed += 1
+        with open(MANIFEST, "w") as f:
+            json.dump(old, f, indent=1, ensure_ascii=False)
+        print(f"pruned {removed} models outside the wanted set")
     if only:
         sel = {a: sel[a] for a in only if a in sel}
     print(f"selected {len(sel)} models from {len(assets)} available")

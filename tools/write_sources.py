@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Write assets/SOURCES.md: every downloaded model, its category, license and source URL."""
+import glob
 import json
 import os
 
@@ -8,11 +9,8 @@ ASSETS = os.path.join(ROOT, "models")
 
 KHR = {
     "CarConcept": ("Транспорт", "CC-BY 4.0 (Darmstadt Graphics Group / Khronos)"),
-    "ToyCar": ("Транспорт", "CC-BY 4.0 (Khronos glTF Sample Assets)"),
     "CesiumMilkTruck": ("Транспорт", "CC-BY 4.0 (Cesium)"),
-    "CesiumMan": ("Персонаж с ригом и анимацией", "CC-BY 4.0 (Cesium)"),
     "RiggedFigure": ("Персонаж с ригом", "CC-BY 4.0 (Cesium)"),
-    "Fox": ("Существо с ригом и анимацией", "CC-BY 4.0 (tomkranis / AsoboStudio)"),
 }
 
 CAT_RU = {
@@ -27,20 +25,26 @@ CAT_RU = {
 
 def main():
     manifest = json.load(open(os.path.join(ASSETS, "manifest.json")))
+    sf_path = os.path.join(ASSETS, "sketchfab_manifest.json")
+    sketchfab = json.load(open(sf_path)) if os.path.exists(sf_path) else {}
+    houses = sorted(glob.glob(os.path.join(ASSETS, "generated", "houses", "*.glb")))
+    total = len([1 for e in manifest.values() if not e.get("error")]) + len(KHR) + 1 + len(sketchfab) + len(houses)
     lines = [
         "# Каталог 3D-ассетов",
         "",
-        "Все модели скачаны из открытых источников и лежат локально в `assets/`.",
+        "Все модели скачаны из открытых источников и лежат локально в `models/`.",
         "Формат: **glTF 2.0 / GLB + PBR-текстуры 1K** — импортируется в Blender, Unity, Unreal, Godot, three.js без конвертации.",
         "",
-        f"Всего моделей: **{len(manifest) + len(KHR) + 1}**",
+        f"Всего моделей: **{total}**",
         "",
         "## Источники и лицензии",
         "",
         "| Источник | Лицензия | Что покрывает |",
         "|---|---|---|",
-        "| [Poly Haven](https://polyhaven.com/models) | CC0 1.0 (public domain) | 118 фотореалистичных моделей: мебель, интерьеры, техника, инструменты, еда, контейнеры, фасады, двери, оружие |",
-        "| [Khronos glTF Sample Assets](https://github.com/KhronosGroup/glTF-Sample-Assets) | CC-BY 4.0 | автомобили (CarConcept, ToyCar, CesiumMilkTruck), риггованные персонажи (CesiumMan, RiggedFigure), лиса с анимацией |",
+        f"| [Poly Haven](https://polyhaven.com/models) | CC0 1.0 (public domain) | {len([1 for e in manifest.values() if not e.get('error')])} фотореалистичных моделей: мебель, интерьеры, техника, инструменты, еда, контейнеры, фасады, двери, оружие |",
+        f"| [Sketchfab](https://sketchfab.com) | CC-BY 4.0 / CC-BY-SA 4.0 | {len(sketchfab)} моделей с ригом и техники; автор обязателен к указанию (см. таблицу ниже) |",
+        f"| Сгенерировано `tools/make_houses.py` | — | {len(houses)} домов: отдельные двери с анимацией, прозрачные стёкла (KHR_materials_transmission) |",
+        "| [Khronos glTF Sample Assets](https://github.com/KhronosGroup/glTF-Sample-Assets) | CC-BY 4.0 | CarConcept, CesiumMilkTruck, RiggedFigure. ToyCar / CesiumMan / Fox удалены как нереалистичные |",
         "| Сгенерировано скриптом `tools/make_money.py` | — | пачки банкнот (деньги), без воспроизведения реального дизайна валюты |",
         "",
         "CC0 — можно использовать в коммерческой игре без указания автора (указание приветствуется).",
@@ -52,11 +56,11 @@ def main():
         "|---|---|---|",
     ]
     for name, (cat, lic) in KHR.items():
-        lines.append(f"| `assets/khronos/{name}/{name}.glb` | {cat} | {lic} |")
+        lines.append(f"| `models/khronos/{name}/{name}.glb` | {cat} | {lic} |")
     lines += [
-        "| `assets/generated/money_stack.glb` | Деньги (процедурные) | генерируется локально |",
+        "| `models/generated/money_stack.glb` | Деньги (процедурные) | генерируется локально |",
         "",
-        "Все персонажи и лиса — со **скелетом и анимациями** (skinning + animation clips).",
+        "RiggedFigure — со **скелетом и анимациями**; люди со Sketchfab — с ригом (см. таблицу).",
         "",
         "## Poly Haven (CC0)",
         "",
@@ -69,14 +73,46 @@ def main():
             continue
         cats = ", ".join(CAT_RU.get(c, c) for c in e["categories"])
         lines.append(f"| [{e['name']}]({e['source']}) | {cats} | {e.get('size_mb', '?')} МБ | `{e['file']}` |")
+    if houses:
+        lines += [
+            "",
+            "## Дома (сгенерированы локально)",
+            "",
+            "Каждый GLB содержит статичные стены/крышу, **отдельные объекты дверей с анимацией открывания** (`Door_FrontAction`) и **прозрачные стёкла** (`KHR_materials_transmission`, alpha BLEND).",
+            "",
+            "| Файл | Размер |",
+            "|---|---|",
+        ]
+        for p in houses:
+            lines.append(f"| `{os.path.relpath(p, ROOT)}` | {os.path.getsize(p) // 1024} КБ |")
+
+    if sketchfab:
+        lines += [
+            "",
+            "## Sketchfab (CC-BY / CC-BY-SA)",
+            "",
+            "Для этих моделей **обязательно указать автора** в титрах — лицензия CC-BY требует атрибуции.",
+            "",
+            "| Модель | Категория | Автор | Лицензия | Риг | Ссылка |",
+            "|---|---|---|---|---|---|",
+        ]
+        for uid in sorted(sketchfab):
+            e = sketchfab[uid]
+            lines.append(
+                f"| {e.get('name', uid)} | {', '.join(e.get('categories') or [])} | "
+                f"{e.get('author') or '?'} | {e.get('license') or '?'} | "
+                f"{'да' if e.get('rigged') else 'нет'} | [{uid[:8]}]({e.get('source')}) |"
+            )
+
     lines += [
         "",
         "## Важные ограничения",
         "",
-        "- В бесплатных библиотеках **нет фот��реалистичных людей, полицейских и целых зданий**. Персонажи выше — единственные корректно лицензированные риггованные модели с прямой загрузкой; фотореалистичных людей/машин/полиции нет.",
-        "- Модели Poly Haven — это **модульные куски архитектуры** (фасады, двери, ворота, заборы), а не готовые дома: их нужно собирать в уровне.",
-        "- Готовые фотореалистичные персонажи/машины/оружие с ригом обычно лежат на Sketchfab/Mixamo — там нужен аккаунт и ручное скачивание, автоматически их забрать нельзя.",
-        "- Отдельных подвижных деталей (дверцы/капот машины, открывающиеся двери домов) в этих наборах нет: у Kenney/Quaternius детали разделены, но они low-poly. Для подвижных частей модель нужно разрезать в Blender (`P` → Separate) и анимировать по костям/объектам.",
+        "- В бесплатных библиотеках **нет фот��реалистичных людей, полицейских и целых зданий**. Персонажи и техника — модели с прямой загрузкой; фотореалистичных людей/машин/полиции нет.",
+        "- Poly Haven даёт только **модульные куски архитектуры** (фасады, двери, ворота, заборы) — целые дома собраны процедурно в `tools/make_houses.py`.",
+        "- Люди и техника со Sketchfab — **не фотосканы**: это авторские модели под CC-BY, стиль и качество у них разные, атрибуция обязательна.",
+        "- Модели с лицензиями NC/ND со Sketchfab скрипт **пропускает**, чтобы проект можно было использовать коммерчески.",
+        "- У домов двери — отдельные объекты с анимацией, стёкла прозрачные; у остальных моделей подвижных деталей (капот/дверцы машин) нет — их нужно разрезать в Blender (`P` → Separate) и анимировать.",
         "",
         "## Как перекачать / перерендерить",
         "",

@@ -1,0 +1,67 @@
+{
+ "623e3f52b7da4116a4576f38479eaaaf": {
+  "id": "623e3f52b7da4116a4576f38479eaaaf",
+  "name": "Connor RK900 - Detroit Become Human",
+  "categories": [
+   "characters"
+  ],
+  "license": "by",
+  "author": "Q.SARDOR",
+  "source": "https://sketchfab.com/3d-models/623e3f52b7da4116a4576f38479eaaaf",
+  "file": "sketchfab/connor-rk900-detroit-become-human__623e3f52b7da4116a4576f38479eaaaf.glb",
+  "rigged": true,
+  "size_mb": 15.14
+ },
+ "0161bd8ecbaa44cb9da40ba4f2f80aaf": {
+  "id": "0161bd8ecbaa44cb9da40ba4f2f80aaf",
+  "name": "Gavin Reed - Detroit Become Human",
+  "categories": [
+   "characters"
+  ],
+  "license": "by",
+  "author": "Q.SARDOR",
+  "source": "https://sketchfab.com/3d-models/0161bd8ecbaa44cb9da40ba4f2f80aaf",
+  "file": "sketchfab/gavin-reed-detroit-become-human__0161bd8ecbaa44cb9da40ba4f2f80aaf.glb",
+  "rigged": true,
+  "size_mb": 15.74
+ },
+ "8f939bfdf22f476d91f480f4d6f5d72a": {
+  "id": "8f939bfdf22f476d91f480f4d6f5d72a",
+  "name": "Police",
+  "categories": [
+   "characters"
+  ],
+  "license": "by",
+  "author": "Alihan",
+  "source": "https://sketchfab.com/3d-models/8f939bfdf22f476d91f480f4d6f5d72a",
+  "file": "sketchfab/police__8f939bfdf22f476d91f480f4d6f5d72a.glb",
+  "rigged": true,
+  "size_mb": 4.3
+ },
+ "774ca00136b94d359e7d3ba425a5c57a": {
+  "id": "774ca00136b94d359e7d3ba425a5c57a",
+  "name": "IWI Male Character 02",
+  "categories": [
+   "characters"
+  ],
+  "license": "by",
+  "author": "ilkay.ivrendi",
+  "source": "https://sketchfab.com/3d-models/774ca00136b94d359e7d3ba425a5c57a",
+  "file": "sketchfab/iwi-male-character-02__774ca00136b94d359e7d3ba425a5c57a.glb",
+  "rigged": true,
+  "size_mb": 10.83
+ },
+ "d47bb1f61fa340588b5801cdb63812c8": {
+  "id": "d47bb1f61fa340588b5801cdb63812c8",
+  "name": "PoliceMan",
+  "categories": [
+   "characters"
+  ],
+  "license": "by",
+  "author": "SPP Animation Studio",
+  "source": "https://sketchfab.com/3d-models/d47bb1f61fa340588b5801cdb63812c8",
+  "file": "sketchfab/policeman__d47bb1f61fa340588b5801cdb63812c8.glb",
+  "rigged": true,
+  "size_mb": 9.05
+ }
+}
