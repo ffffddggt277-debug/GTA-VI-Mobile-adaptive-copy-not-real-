@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Marisol — карта 4К (LOD + тайлы)</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: #071019; color: #e6edf3;
+    font: 13px/1.4 system-ui, "Segoe UI", sans-serif; overscroll-behavior: none; }
+  #viewport { position: fixed; inset: 0; overflow: hidden; cursor: grab;
+    touch-action: none; background: #0a2230; }
+  #viewport.dragging { cursor: grabbing; }
+  #world { position: absolute; left: 0; top: 0; width: 3840px; height: 2720px;
+    transform-origin: 0 0; will-change: transform; }
+  #overview, #full { position: absolute; inset: 0; width: 100%; height: 100%;
+    user-select: none; -webkit-user-drag: none; pointer-events: none; }
+  #full { opacity: 0; transition: opacity .4s; }
+  #tiles { position: absolute; inset: 0; }
+  #tiles img { position: absolute; width: 1024px; height: 1024px;
+    user-select: none; -webkit-user-drag: none; pointer-events: none; }
+  header { position: fixed; right: 0; top: 0; padding: 10px 12px;
+    pointer-events: none; z-index: 6; }
+  .tools { display: flex; gap: 6px; pointer-events: auto; flex-wrap: wrap;
+    justify-content: flex-end; }
+  .tools button, .tools a { min-width: 36px; height: 34px; padding: 0 11px;
+    display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+    background: #101d28dd; color: #e6edf3; border: 1px solid #2c3f4d;
+    border-radius: 8px; font: inherit; font-weight: 600; cursor: pointer;
+    text-decoration: none; backdrop-filter: blur(6px); }
+  .tools button:hover, .tools a:hover { background: #1b2c3a; border-color: #466072; }
+  #places { position: fixed; right: 12px; top: 56px; z-index: 6; display: none;
+    flex-direction: column; gap: 5px; width: 200px; max-height: min(70vh, 520px);
+    overflow: auto; padding: 8px; background: #0b151de8; border: 1px solid #223441;
+    border-radius: 10px; backdrop-filter: blur(8px); }
+  #places.open { display: flex; }
+  #places button { padding: 7px 10px; font: inherit; font-size: 12px; font-weight: 600;
+    color: #cfe0ea; background: #101d28; border: 1px solid #263b49;
+    border-radius: 7px; cursor: pointer; text-align: left; }
+  #places button:hover { background: #182a37; border-color: #4b6a80; }
+  #places button.hot { color: #ffd479; border-color: #6b5a2e; }
+  #hud { position: fixed; left: 50%; transform: translateX(-50%); bottom: 12px;
+    z-index: 5; display: flex; gap: 7px; align-items: center; flex-wrap: wrap;
+    justify-content: center; font-size: 10.5px; color: #93a3b1;
+    pointer-events: none; max-width: calc(100vw - 24px); }
+  #hud span { background: #0b151dcc; border: 1px solid #223441; border-radius: 6px;
+    padding: 5px 8px; backdrop-filter: blur(4px); }
+  #hud #coords { font-variant-numeric: tabular-nums; color: #cfe0ea; }
+  #lod.loaded { color: #7ddba0; border-color: #2d5a3c; }
+  #hint { display: none; }
+  #loading { position: fixed; inset: 0; display: grid; place-items: center; z-index: 9;
+    background: #071019; transition: opacity .35s; }
+  #loading.done { opacity: 0; pointer-events: none; }
+  #loading div { text-align: center; color: #93a3b1; letter-spacing: 2px; font-size: 12px; }
+  #loading b { display: block; font-size: 22px; letter-spacing: 5px; color: #e6edf3;
+    margin-bottom: 8px; }
+  @media (max-width: 720px) {
+    .brand { font-size: 14px; letter-spacing: 2px; }
+    #places { top: 52px; }
+    #hint { display: none; }
+    #hud { font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+<div id="loading"><div><b>MARISOL</b>загрузка карты…</div></div>
+<div id="viewport">
+  <div id="world">
+    <img id="overview" src="4k/overview.webp" alt="Карта Marisol" width="3840" height="2720">
+    <img id="full" alt="" width="3840" height="2720">
+    <div id="tiles"></div>
+  </div>
+</div>
+
+<header>
+  <div class="tools">
+    <button id="placesToggle" title="Быстрый переход">Места</button>
+    <button id="zoomOut" title="Уменьшить">−</button>
+    <button id="zoomIn" title="Увеличить">+</button>
+    <button id="reset" title="Вся карта">Сброс</button>
+    <a id="download" href="4k/city_map_4k.webp" download title="Скачать 4К">4K ↓</a>
+    <a href="../houses.html" title="Жилые дома">Дома</a>
+  </div>
+</header>
+
+<div id="places"></div>
+
+<div id="hud">
+  <span id="lod">LOD: overview</span>
+  <span id="coords">—</span>
+</div>
+
+<script type="module">
+const viewport = document.getElementById('viewport');
+const world = document.getElementById('world');
+const tilesEl = document.getElementById('tiles');
+const overview = document.getElementById('overview');
+const lodEl = document.getElementById('lod');
+const fullEl = document.getElementById('full');
+const placesEl = document.getElementById('places');
+const coordsEl = document.getElementById('coords');
+const loading = document.getElementById('loading');
+
+const BASE_W = 2400, BASE_H = 1700, PX = 3840 / BASE_W;
+let view = { x: 0, y: 0, s: 0.3 };
+let minScale = 0.2;
+const MAX_SCALE = 2.2;
+let tiles = [];
+let manifest = null;
+
+const PLACES = [
+  { name: 'Даунтаун', px: 1180, py: 700, s: 0.85 },
+  { name: 'Магазин', px: 1046, py: 442, s: 1.15, hot: true },
+  { name: 'Оружейный', px: 1520, py: 800, s: 1.15, hot: true },
+  { name: 'Пляж', px: 760, py: 1080, s: 0.9 },
+  { name: 'Убежище', px: 776, py: 1002, s: 1.1 },
+  { name: 'Марина', px: 1470, py: 962, s: 1.0 },
+  { name: 'Порт', px: 1885, py: 1120, s: 0.9 },
+  { name: 'Аэропорт', px: 1970, py: 420, s: 0.75 },
+  { name: 'Стадион', px: 1290, py: 330, s: 1.0 },
+];
+
+function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+
+function fitScale() {
+  return Math.min(viewport.clientWidth / 3840, viewport.clientHeight / 2720) * 0.98;
+}
+
+function tilesActive() {
+  // 4К-тайл нужен, когда карта на экране плотнее overview (1600 px)
+  const dpr = Math.min(devicePixelRatio || 1, 3);
+  return view.s * dpr >= 0.42;
+}
+
+function apply() {
+  world.style.transform = `translate3d(${view.x}px, ${view.y}px, 0) scale(${view.s})`;
+  updateTiles();
+  const on = tilesActive();
+  lodEl.textContent = on ? 'LOD: 4K тайлы' : 'LOD: overview 1600';
+  lodEl.classList.toggle('loaded', on);
+}
+
+function centerOn(px, py, scale) {
+  view.s = clamp(scale, minScale, MAX_SCALE);
+  const x = px * PX, y = py * PX;
+  view.x = viewport.clientWidth / 2 - x * view.s;
+  view.y = viewport.clientHeight / 2 - y * view.s;
+  apply();
+}
+
+function reset() {
+  const s = fitScale();
+  view.s = s;
+  view.x = (viewport.clientWidth - 3840 * s) / 2;
+  view.y = (viewport.clientHeight - 2720 * s) / 2;
+  apply();
+}
+
+function zoomAt(cx, cy, factor) {
+  const ns = clamp(view.s * factor, minScale, MAX_SCALE);
+  const wx = (cx - view.x) / view.s;
+  const wy = (cy - view.y) / view.s;
+  view.x = cx - wx * ns;
+  view.y = cy - wy * ns;
+  view.s = ns;
+  apply();
+}
+
+/* ---------- тайлы: грузим только то, что видно ---------- */
+let tileImgs = new Map();
+function updateTiles() {
+  if (!manifest) return;
+  if (!tilesActive()) { tilesEl.style.display = 'none'; return; }
+  tilesEl.style.display = '';
+  const vw = viewport.clientWidth, vh = viewport.clientHeight;
+  const x0 = -view.x / view.s, y0 = -view.y / view.s;
+  const x1 = (vw - view.x) / view.s, y1 = (vh - view.y) / view.s;
+  const size = manifest.tileSize;
+  for (const t of manifest.tiles) {
+    const tx = t.c * size, ty = t.r * size;
+    if (tx + size < x0 - 64 || tx > x1 + 64 || ty + size < y0 - 64 || ty > y1 + 64) continue;
+    let img = tileImgs.get(t.src);
+    if (!img) {
+      img = new Image();
+      img.decoding = 'async';
+      img.loading = 'eager';
+      img.alt = '';
+      img.style.left = tx + 'px';
+      img.style.top = ty + 'px';
+      img.src = '4k/' + t.src;
+      tilesEl.appendChild(img);
+      tileImgs.set(t.src, img);
+    }
+  }
+}
+
+async function loadManifest() {
+  try {
+    const r = await fetch('4k/manifest.json', { cache: 'force-cache' });
+    manifest = await r.json();
+    tiles = manifest.tiles;
+    document.getElementById('download').href = '4k/' + manifest.full;
+  } catch (e) {
+    console.warn('manifest недоступен, остаётся overview', e);
+  }
+}
+
+/* ---------- мышь и жесты ---------- */
+const pointers = new Map();
+let dragging = false, pinchDist = 0, pinchCenter = null;
+
+viewport.addEventListener('pointerdown', (e) => {
+  viewport.setPointerCapture(e.pointerId);
+  pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  if (pointers.size === 1) { dragging = true; viewport.classList.add('dragging'); }
+  if (pointers.size === 2) {
+    const [a, b] = [...pointers.values()];
+    pinchDist = Math.hypot(a.x - b.x, a.y - b.y);
+    pinchCenter = { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
+  }
+});
+
+viewport.addEventListener('pointermove', (e) => {
+  const p = pointers.get(e.pointerId);
+  if (!p) return;
+  const prev = { ...p };
+  p.x = e.clientX; p.y = e.clientY;
+  if (pointers.size === 1 && dragging) {
+    view.x += p.x - prev.x;
+    view.y += p.y - prev.y;
+    apply();
+  } else if (pointers.size === 2) {
+    const [a, b] = [...pointers.values()];
+    const d = Math.hypot(a.x - b.x, a.y - b.y);
+    if (pinchDist > 0) {
+      const c = { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
+      if (pinchCenter) { view.x += c.x - pinchCenter.x; view.y += c.y - pinchCenter.y; }
+      pinchCenter = c;
+      zoomAt(c.x, c.y, d / pinchDist);
+    }
+    pinchDist = d;
+  }
+  showCoords(e.clientX, e.clientY);
+});
+
+function endPointer(e) {
+  pointers.delete(e.pointerId);
+  if (pointers.size < 2) { pinchDist = 0; pinchCenter = null; }
+  if (pointers.size === 0) { dragging = false; viewport.classList.remove('dragging'); }
+}
+viewport.addEventListener('pointerup', endPointer);
+viewport.addEventListener('pointercancel', endPointer);
+viewport.addEventListener('pointerleave', (e) => { if (e.buttons === 0) endPointer(e); });
+
+viewport.addEventListener('wheel', (e) => {
+  e.preventDefault();
+  const f = Math.exp(-e.deltaY * 0.0016);
+  zoomAt(e.clientX, e.clientY, f);
+}, { passive: false });
+
+viewport.addEventListener('dblclick', (e) => zoomAt(e.clientX, e.clientY, 1.7));
+
+/* ---------- координаты ---------- */
+function showCoords(clientX, clientY) {
+  const rect = viewport.getBoundingClientRect();
+  const mx = (clientX - rect.left - view.x) / view.s;
+  const my = (clientY - rect.top - view.y) / view.s;
+  const px = mx / PX, py = my / PX;
+  if (px < 0 || py < 0 || px > BASE_W || py > BASE_H) { coordsEl.textContent = '—'; return; }
+  const wx = Math.round((px - 1200) * 5);
+  const wz = Math.round((py - 850) * 5);
+  const col = 'ABCDEFGH'[clamp(Math.floor(px / 300), 0, 7)];
+  const row = clamp(Math.floor(py / 340) + 1, 1, 5);
+  coordsEl.textContent = `${col}${row} · X ${wx} · Z ${wz} м`;
+}
+
+function buildPlaces() {
+  for (const p of PLACES) {
+    const b = document.createElement('button');
+    b.textContent = p.name;
+    if (p.hot) b.className = 'hot';
+    b.addEventListener('click', () => {
+      centerOn(p.px, p.py, p.s);
+      placesEl.classList.remove('open');
+    });
+    placesEl.appendChild(b);
+  }
+  document.getElementById('placesToggle').addEventListener('click', () =>
+    placesEl.classList.toggle('open'));
+}
+
+function loadFull() {
+  if (innerWidth < 760) return;
+  const img = new Image();
+  img.decoding = 'async';
+  img.src = '4k/city_map_4k.webp';
+  img.onload = () => {
+    fullEl.src = img.src;
+    fullEl.style.opacity = '1';
+    document.getElementById('overview').style.opacity = '0';
+  };
+}
+
+document.getElementById('zoomIn').addEventListener('click', () =>
+  zoomAt(viewport.clientWidth / 2, viewport.clientHeight / 2, 1.5));
+document.getElementById('zoomOut').addEventListener('click', () =>
+  zoomAt(viewport.clientWidth / 2, viewport.clientHeight / 2, 1 / 1.5));
+document.getElementById('reset').addEventListener('click', reset);
+
+addEventListener('keydown', (e) => {
+  if (e.key === '+' || e.key === '=') zoomAt(viewport.clientWidth / 2, viewport.clientHeight / 2, 1.25);
+  else if (e.key === '-') zoomAt(viewport.clientWidth / 2, viewport.clientHeight / 2, 1 / 1.25);
+  else if (e.key === '0') reset();
+  else if (e.key === 'ArrowLeft') { view.x += 120; apply(); }
+  else if (e.key === 'ArrowRight') { view.x -= 120; apply(); }
+  else if (e.key === 'ArrowUp') { view.y += 120; apply(); }
+  else if (e.key === 'ArrowDown') { view.y -= 120; apply(); }
+});
+
+addEventListener('resize', () => {
+  minScale = Math.min(fitScale(), 0.5) * 0.85;
+  if (view.s < minScale) reset();
+});
+
+/* ---------- старт ---------- */
+buildPlaces();
+reset();
+if (overview.complete) {
+  loading.classList.add('done');
+} else {
+  overview.addEventListener('load', () => loading.classList.add('done'));
+  setTimeout(() => loading.classList.add('done'), 2500);
+}
+await loadManifest();
+minScale = Math.min(fitScale(), 0.5) * 0.85;
+apply();
+loadFull();
+</script>
+</body>
+</html>

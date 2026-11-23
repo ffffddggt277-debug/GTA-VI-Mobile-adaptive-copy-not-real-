@@ -5,10 +5,13 @@
 
 ```
 game/
+├── houses.html               # галерея 24 жилых домов с текстурами
 ├── map/
 │   ├── city_map.svg          # вектор-карта Marisol, 2400×1700
-│   ├── city_map.png          # растровая версия
-│   └── MAP.md                # районы, дороги, POI, перевод координат в мир
+│   ├── city_map.png          # 4К-растр 3840×2720
+│   ├── viewer.html           # вьюер: зум, LOD-тайлы, места, скачать 4К
+│   ├── 4k/                   # 4К WebP, overview и 12 тайлов + manifest.json
+│   └── MAP.md                # районы, дороги, POI, 4К/LOD, координаты
 ├── animations/
 │   ├── player.glb            # игрок: 198 клипов
 │   ├── npc_civilian.glb      # гражданские NPC: 120 клипов
@@ -22,7 +25,11 @@ game/
     ├── actions.py            # ключевые кадры: двери, касса, паркур, реакции, смерть
     ├── actions2.py           # бой, оружие, полиция, гражданские
     ├── build_animations.py   # сборка трёх GLB + манифест + документация
-    └── make_map.py           # генератор карты
+    ├── make_map.py           # генератор SVG-карты
+    ├── render_map.cjs        # SVG → PNG 3840×2720 (resvg)
+    ├── make_tiles.py         # PNG → WebP 4К, overview, тайлы, manifest
+    ├── make_houses.py        # 24 дома: геометрия, UV, общие PBR-текстуры
+    └── validate_glb.cjs      # glTF-Validator с подгрузкой внешних текстур
 ```
 
 ## Карта
@@ -36,8 +43,29 @@ game/
 - 21 точка интереса: полиция, больница, магазины, гараж, убежище, еда, одежда,
   оружие, банк, заправка, порт, развлечения.
 
-Подробности, таблицы районов и формула перевода координат карты в мир —
+Карта отдаётся в 4К и не тормозит: `map/viewer.html` сначала показывает overview
+1600 px, а при зуме подгружает только видимые тайлы 1024 px из `map/4k/`. Есть
+кнопки «Места» (9 быстрых переходов), «Сброс», скачивание 4К и переход к домам.
+
+Подробности, таблицы районов, 4К/LOD и формула перевода координат карты в мир —
 [`map/MAP.md`](map/MAP.md).
+
+## Жилые дома
+
+[`houses.html`](houses.html) — галерея 24 разных обычных домов. Модели лежат в
+`../models/generated/houses/`, у каждой есть UV и PBR-текстуры; 12 текстур общие
+для всех домов, поэтому браузер грузит их один раз.
+
+- размеры в метрах, origin по центру на земле, фасад в +Z;
+- двери на петле, крыльцо, гараж, бассейн, забор, дымоход, парапет — по стилю;
+- 12 старых корпусов с дверьми и кассой — в `shop_shells/` (в галерею не входят).
+
+```bash
+python3 game/tools/make_houses.py
+node game/tools/validate_glb.cjs models/generated/houses/house_*.glb
+```
+
+Каталог домов — [`models/generated/houses/README.md`](../models/generated/houses/README.md).
 
 ## Анимации
 
@@ -77,14 +105,13 @@ python3 game/tools/build_animations.py
 ### Как пересобрать карту
 
 ```bash
-python3 game/tools/make_map.py
+python3 game/tools/make_map.py                 # SVG
+node game/tools/render_map.cjs                 # PNG 3840×2720
+python3 game/tools/make_tiles.py               # WebP 4К, overview, тайлы, manifest
 ```
 
-SVG перезаписывается. PNG рендерится любым конвертером, например:
-
-```bash
-npx @resvg/resvg-js city_map.svg city_map.png
-```
+`render_map.cjs` использует `@resvg/resvg-js`, `make_tiles.py` — Pillow. После
+пересборки открой `map/viewer.html` и проверь, что тайлы появляются при зуме.
 
 ## Ограничения
 

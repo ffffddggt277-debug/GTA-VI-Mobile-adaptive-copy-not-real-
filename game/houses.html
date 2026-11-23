@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Жилые дома — GTA VI Mobile (фанатский концепт)</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: #0b141c; color: #e6edf3;
+    font: 13px/1.45 system-ui, "Segoe UI", sans-serif; overflow: hidden; }
+  #app { display: flex; height: 100%; }
+  aside { width: 300px; flex: 0 0 300px; display: flex; flex-direction: column;
+    background: #0e1822; border-right: 1px solid #20303c; }
+  aside header { padding: 14px 16px 12px; border-bottom: 1px solid #20303c; }
+  aside h1 { margin: 0 0 3px; font-size: 15px; letter-spacing: .4px; }
+  aside p { margin: 0; color: #8b9ba8; font-size: 11.5px; }
+  #showAll { margin-top: 9px; padding: 6px 10px; font: inherit; font-size: 11.5px;
+    font-weight: 600; color: #cfe0ea; background: #16242f; border: 1px solid #2c3f4d;
+    border-radius: 7px; cursor: pointer; }
+  #showAll:hover { background: #1e3140; }
+  #list { flex: 1; overflow: auto; padding: 8px 0 20px; }
+  .group { padding: 12px 16px 4px; font-size: 10.5px; letter-spacing: .12em;
+    text-transform: uppercase; color: #748694; }
+  .item { display: flex; align-items: center; gap: 9px; width: 100%; padding: 6px 16px;
+    background: none; border: 0; color: #cfdae2; font: inherit; text-align: left;
+    cursor: pointer; }
+  .item:hover { background: #16242f; }
+  .item.active { background: #1b3448; box-shadow: inset 2px 0 0 #4d9fe0; }
+  .item i { width: 8px; height: 8px; border-radius: 2px; background: #56707f;
+    flex: 0 0 8px; }
+  .item.active i { background: #7cc4f0; }
+  .item span { margin-left: auto; color: #6f818e; font-size: 10.5px; }
+  #stage { position: relative; flex: 1; min-width: 0; }
+  canvas { display: block; width: 100%; height: 100%; }
+  #menuBtn { display: none; position: absolute; left: 12px; top: 12px; z-index: 9;
+    padding: 8px 12px; font: inherit; font-weight: 600; color: #e6edf3;
+    background: #101d28e8; border: 1px solid #2c3f4d; border-radius: 8px;
+    cursor: pointer; backdrop-filter: blur(6px); }
+  #hint { position: absolute; left: 16px; bottom: 14px; color: #8b9ba8;
+    font-size: 11px; text-shadow: 0 1px 4px #000; }
+  #name { position: absolute; left: 18px; top: 16px; font-size: 22px; font-weight: 700;
+    letter-spacing: .3px; text-shadow: 0 2px 12px #000; }
+  #name small { display: block; font-size: 11px; font-weight: 500; letter-spacing: 2px;
+    color: #9db3c4; margin-top: 4px; }
+  #stats { position: absolute; right: 16px; top: 16px; text-align: right;
+    font-size: 11px; color: #9db3c4; text-shadow: 0 1px 4px #000; }
+  #loading { position: absolute; inset: 0; display: grid; place-items: center;
+    background: #0b141c; color: #9db3c4; letter-spacing: 2px; font-size: 12px;
+    transition: opacity .4s; }
+  #loading.done { opacity: 0; pointer-events: none; }
+  #loading b { display: block; color: #e6edf3; font-size: 18px; letter-spacing: 4px;
+    margin-bottom: 8px; text-align: center; }
+  #bar { width: 220px; height: 3px; background: #20303c; margin-top: 12px; }
+  #bar div { height: 100%; width: 0; background: #4d9fe0; transition: width .2s; }
+  @media (max-width: 760px) {
+    #app { position: relative; }
+    aside { display: none; position: absolute; left: 0; top: 0; bottom: 0; z-index: 8;
+      width: min(78vw, 300px); box-shadow: 12px 0 40px #000a; }
+    aside.open { display: flex; }
+    aside h1 { font-size: 14px; }
+    #menuBtn { display: block; }
+    #name { font-size: 15px; top: auto; bottom: 42px; left: 14px; right: 14px; }
+    #name small { font-size: 9.5px; }
+  }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "./vendor/three/three.module.js",
+  "three/addons/": "./vendor/three/addons/"
+} }
+</script>
+</head>
+<body>
+<div id="app">
+  <aside>
+    <header>
+      <h1>Жилые дома Marisol</h1>
+      <p>24 дома · PBR-текстуры · двери, окна, крыльцо, гараж, бассейн</p>
+      <p><a href="map/viewer.html" style="color:#7cc4f0">← карта 4К</a></p>
+      <button id="showAll">Показать все дома</button>
+    </header>
+    <div id="list"></div>
+  </aside>
+  <main id="stage">
+    <button id="menuBtn">Дома</button>
+    <div id="name"></div>
+    <div id="stats"></div>
+    <div id="hint">Клик по дому или названию · ЛКМ — вращение · колесо — зум</div>
+    <div id="loading"><div><b>MARISOL</b>загрузка домов…<div id="bar"><div></div></div></div></div>
+  </main>
+</div>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+const stage = document.getElementById('stage');
+const listEl = document.getElementById('list');
+const nameEl = document.getElementById('name');
+const statsEl = document.getElementById('stats');
+const loading = document.getElementById('loading');
+const bar = document.querySelector('#bar div');
+
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.04;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+stage.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x0c1822);
+scene.fog = new THREE.Fog(0x0c1822, 260, 720);
+
+const camera = new THREE.PerspectiveCamera(45, 1, 0.5, 1200);
+camera.position.set(0, 60, 150);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.target.set(0, 3, 18);
+controls.enableDamping = true;
+controls.dampingFactor = 0.06;
+controls.maxPolarAngle = Math.PI * 0.49;
+controls.minDistance = 8;
+controls.maxDistance = 340;
+
+scene.add(new THREE.AmbientLight(0xffffff, 0.10));
+scene.add(new THREE.HemisphereLight(0xd6e6ff, 0x4a4030, 1.35));
+const fill = new THREE.DirectionalLight(0xbfd8ff, 0.5);
+fill.position.set(80, 35, -60);
+scene.add(fill);
+const sun = new THREE.DirectionalLight(0xffe6c4, 2.2);
+sun.position.set(-70, 90, 60);
+sun.castShadow = true;
+sun.shadow.mapSize.set(2048, 2048);
+sun.shadow.camera.left = -180;
+sun.shadow.camera.right = 180;
+sun.shadow.camera.top = 160;
+sun.shadow.camera.bottom = -160;
+sun.shadow.camera.far = 500;
+sun.shadow.bias = -0.0004;
+sun.shadow.normalBias = 0.03;
+scene.add(sun);
+
+function grassTexture() {
+  const c = document.createElement('canvas');
+  c.width = c.height = 256;
+  const g = c.getContext('2d');
+  g.fillStyle = '#33502f';
+  g.fillRect(0, 0, 256, 256);
+  const rnd = mulberry(17);
+  for (let i = 0; i < 9000; i++) {
+    const x = rnd() * 256, y = rnd() * 256;
+    const v = 30 + rnd() * 40;
+    g.fillStyle = `rgb(${Math.round(v * 0.75)},${Math.round(v * 1.5)},${Math.round(v * 0.8)})`;
+    g.fillRect(x, y, 1.4, 2.4);
+  }
+  for (let i = 0; i < 24; i++) {
+    g.strokeStyle = 'rgba(20,36,22,0.35)';
+    g.beginPath();
+    g.moveTo(rnd() * 256, rnd() * 256);
+    g.lineTo(rnd() * 256, rnd() * 256);
+    g.stroke();
+  }
+  const t = new THREE.CanvasTexture(c);
+  t.wrapS = t.wrapT = THREE.RepeatWrapping;
+  t.repeat.set(70, 70);
+  t.colorSpace = THREE.SRGBColorSpace;
+  t.anisotropy = 4;
+  return t;
+}
+
+function mulberry(a) {
+  return function () {
+    a |= 0; a = a + 0x6D2B79F5 | 0;
+    let t = Math.imul(a ^ a >>> 15, 1 | a);
+    t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+    return ((t ^ t >>> 14) >>> 0) / 4294967296;
+  };
+}
+
+const ground = new THREE.Mesh(
+  new THREE.PlaneGeometry(1200, 1200),
+  new THREE.MeshStandardMaterial({ map: grassTexture(), color: 0xffffff, roughness: 0.97 })
+);
+ground.rotation.x = -Math.PI / 2;
+ground.receiveShadow = true;
+scene.add(ground);
+
+// небо: градиент от тёплого горизонта к синему верху
+const sky = new THREE.Mesh(
+  new THREE.SphereGeometry(800, 32, 16),
+  new THREE.ShaderMaterial({
+    side: THREE.BackSide, depthWrite: false, fog: false,
+    uniforms: {
+      top: { value: new THREE.Color(0x1c3b55) },
+      mid: { value: new THREE.Color(0x6f8aa0) },
+      low: { value: new THREE.Color(0xe0b489) },
+    },
+    vertexShader: `varying vec3 vPos;
+      void main(){ vPos = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
+    fragmentShader: `varying vec3 vPos; uniform vec3 top; uniform vec3 mid; uniform vec3 low;
+      void main(){
+        float h = clamp(normalize(vPos).y * 0.5 + 0.5, 0.0, 1.0);
+        vec3 c = mix(low, mid, smoothstep(0.42, 0.58, h));
+        c = mix(c, top, smoothstep(0.58, 0.95, h));
+        gl_FragColor = vec4(c, 1.0);
+      }`,
+  })
+);
+scene.add(sky);
+
+// окружение из того же неба: блики на стекле и мокрой черепице
+const pmrem = new THREE.PMREMGenerator(renderer);
+const envScene = new THREE.Scene();
+envScene.add(sky.clone());
+scene.environment = pmrem.fromScene(envScene, 0.02, 0.1, 1000).texture;
+scene.environmentIntensity = 0.45;
+pmrem.dispose();
+
+const HOUSES = [
+  ['house_00', 'Бунгало', 'Bungalow'],
+  ['house_01', 'Ранчо', 'Ranch'],
+  ['house_02', 'Двухэтажный', 'Two-storey'],
+  ['house_03', 'Таунхаус', 'Townhouse'],
+  ['house_04', 'Коттедж', 'Cottage'],
+  ['house_05', 'Дуплекс', 'Duplex'],
+  ['house_06', 'Узкий дом', 'Shotgun'],
+  ['house_07', 'Вилла', 'Villa'],
+  ['house_08', 'Хижина', 'Cabin'],
+  ['house_09', 'Модерн', 'Modern'],
+  ['house_10', 'Дом с гаражом', 'Garage house'],
+  ['house_11', 'Угловой дом', 'Corner house'],
+  ['house_12', 'Садовый коттедж', 'Garden cottage'],
+  ['house_13', 'Кирпичный ряд', 'Brick rowhouse'],
+  ['house_14', 'Пляжное бунгало', 'Beach bungalow'],
+  ['house_15', 'Семейный дом', 'Family house'],
+  ['house_16', 'Узкий двухэтажный', 'Narrow house'],
+  ['house_17', 'Деревянная хижина', 'Wood cabin'],
+  ['house_18', 'Современная вилла', 'Modern villa'],
+  ['house_19', 'Малый ранчо', 'Small ranch'],
+  ['house_20', 'Домик у озера', 'Lake cottage'],
+  ['house_21', 'Двойной дуплекс', 'Twin duplex'],
+  ['house_22', 'Солнечный дом', 'Sun house'],
+  ['house_23', 'Угловой двухэтажный', 'Corner two-storey'],
+];
+
+const ALL = HOUSES.map(([file, ru, en]) => ({ file, ru, en, group: 'new' }));
+
+const loader = new GLTFLoader();
+let loaded = 0;
+const houses = [];
+let active = -1;
+const MOBILE = matchMedia('(max-width: 760px)').matches;
+const COLS = MOBILE ? 3 : 6;
+const CELL = MOBILE ? 30 : 30;
+const ROWS = Math.ceil(ALL.length / COLS);
+
+function loadHouse(h, index) {
+  const col = index % COLS;
+  const row = Math.floor(index / COLS);
+  const x = (col - (COLS - 1) / 2) * CELL;
+  const z = row * CELL - 22;
+  return new Promise((resolve) => {
+    loader.load('../models/generated/houses/' + h.file + '.glb', (gltf) => {
+      const root = gltf.scene;
+      const box = new THREE.Box3().setFromObject(root);
+      const size = box.getSize(new THREE.Vector3());
+      const min = box.min.clone();
+      root.position.set(x - (min.x + size.x / 2), -min.y, z - (min.z + size.z / 2));
+      root.traverse((o) => {
+        if (o.isMesh) {
+          o.castShadow = true;
+          o.receiveShadow = true;
+          o.frustumCulled = true;
+        }
+      });
+      const group = new THREE.Group();
+      group.add(root);
+
+      const pad = new THREE.Mesh(
+        new THREE.BoxGeometry(Math.max(size.x + 6, 18), 0.2, Math.max(size.z + 6, 16)),
+        new THREE.MeshStandardMaterial({ color: 0x3f5a3a, roughness: 1 })
+      );
+      pad.position.set(x, 0.1, z);
+      pad.receiveShadow = true;
+      group.add(pad);
+
+      // подпись
+      const cv = document.createElement('canvas');
+      cv.width = 512; cv.height = 128;
+      const ctx = cv.getContext('2d');
+      ctx.fillStyle = 'rgba(8,16,22,0.72)';
+      ctx.roundRect(6, 26, 500, 76, 16); ctx.fill();
+      ctx.fillStyle = '#e6edf3';
+      ctx.font = '600 40px system-ui, sans-serif';
+      ctx.textAlign = 'center'; ctx.fillText(h.ru, 256, 80);
+      const tex = new THREE.CanvasTexture(cv);
+      tex.colorSpace = THREE.SRGBColorSpace;
+      const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthWrite: false }));
+      sprite.position.set(x, size.y + 3.2, z);
+      sprite.scale.set(7.2, 1.8, 1);
+      group.add(sprite);
+
+      group.userData = { index, h, sprite, focus: new THREE.Vector3(x, 2.2, z), radius: Math.max(size.x, size.z) };
+      scene.add(group);
+      houses[index] = group;
+      h.size = size;
+      loaded++;
+      bar.style.width = (loaded / ALL.length * 100) + '%';
+      if (loaded === ALL.length) {
+        loading.classList.add('done');
+        resetView();
+      }
+      resolve();
+    }, undefined, (err) => {
+      console.warn('не загрузился дом', h.file, err);
+      loaded++;
+      bar.style.width = (loaded / ALL.length * 100) + '%';
+      if (loaded === ALL.length) { loading.classList.add('done'); resetView(); }
+      resolve();
+    });
+  });
+}
+
+const buttons = [];
+function buildList() {
+  const groups = { new: 'Обычные дома · 24 стиля · текстуры' };
+  for (const key of ['new']) {
+    const title = document.createElement('div');
+    title.className = 'group';
+    title.textContent = groups[key];
+    listEl.appendChild(title);
+    ALL.forEach((h, i) => {
+      if (h.group !== key) return;
+      const b = document.createElement('button');
+      b.className = 'item';
+      b.innerHTML = `<i></i>${h.ru}<span>${h.en}</span>`;
+      b.addEventListener('click', () => focusHouse(i));
+      b.addEventListener('mouseenter', () => { if (houses[i]) hover(i, true); });
+      b.addEventListener('mouseleave', () => { if (houses[i]) hover(i, false); });
+      listEl.appendChild(b);
+      buttons[i] = b;
+    });
+  }
+}
+
+function resetView() {
+  setActive(-1);
+  houses.forEach((g) => { if (g && g.userData.sprite) g.userData.sprite.visible = false; });
+  nameEl.style.display = 'none';
+  statsEl.textContent = `${ALL.length} дома · PBR-текстуры`;
+  if (matchMedia('(max-width: 760px)').matches) {
+    focusHouse(0, true);
+    return;
+  }
+  const centerZ = ((ROWS - 1) / 2) * CELL - 22;
+  const halfW = (COLS - 1) / 2 * CELL + 28;
+  const halfD = (ROWS - 1) / 2 * CELL + 22;
+  const vFov = camera.fov * Math.PI / 180;
+  const hFov = 2 * Math.atan(Math.tan(vFov / 2) * camera.aspect);
+  const dist = Math.max(halfW / Math.tan(hFov / 2),
+                        (halfD * 0.8 + halfW * 0.25) / Math.tan(vFov / 2)) * 1.28;
+  const target = new THREE.Vector3(0, 3, centerZ);
+  const dir = new THREE.Vector3(0.15, 0.58, 0.8).normalize();
+  controls.target.copy(target);
+  camera.position.copy(target).addScaledVector(dir, dist);
+  controls.update();
+}
+
+function focusHouse(i, reset) {
+  const g = houses[i];
+  if (!g) return;
+  const f = g.userData.focus;
+  const d = Math.max(18, g.userData.radius * 2.1);
+  controls.target.copy(f);
+  camera.position.set(f.x + d * 0.62, f.y + d * 0.55, f.z + d * 1.05);
+  controls.update();
+  houses.forEach((g) => { if (g && g.userData.sprite) g.userData.sprite.visible = false; });
+  if (g.userData.sprite) g.userData.sprite.visible = true;
+  setActive(i);
+  if (!reset) {
+    nameEl.style.display = '';
+    nameEl.innerHTML = `${g.userData.h.ru}<small>${g.userData.h.en.toUpperCase()}</small>`;
+    statsEl.textContent = `${g.userData.h.size.x.toFixed(1)} × ${g.userData.h.size.z.toFixed(1)} × ${g.userData.h.size.y.toFixed(1)} м`;
+  } else {
+    nameEl.style.display = 'none';
+    statsEl.textContent = `${ALL.length} дома · PBR-текстуры`;
+  }
+}
+
+function setActive(i) {
+  if (active >= 0 && buttons[active]) buttons[active].classList.remove('active');
+  active = i;
+  if (buttons[i]) {
+    buttons[i].classList.add('active');
+    buttons[i].scrollIntoView({ block: 'nearest' });
+  }
+}
+function hover(i, on) {
+  const g = houses[i];
+  if (!g) return;
+  const pad = g.children[1];
+  if (pad) pad.material.emissive.setHex(on ? 0x1d3a52 : 0x000000);
+}
+
+const ray = new THREE.Raycaster();
+const ptr = new THREE.Vector2();
+renderer.domElement.addEventListener('pointerdown', (e) => {
+  ptr.set(e.clientX / renderer.domElement.clientWidth * 2 - 1,
+         -(e.clientY / renderer.domElement.clientHeight) * 2 + 1);
+  ray.setFromCamera(ptr, camera);
+  const hit = ray.intersectObjects(scene.children, true)[0];
+  if (!hit) return;
+  let o = hit.object;
+  while (o && o.userData.index === undefined) o = o.parent;
+  if (o) focusHouse(o.userData.index);
+});
+
+function resize() {
+  const w = stage.clientWidth, h = stage.clientHeight;
+  renderer.setSize(w, h, false);
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+}
+addEventListener('resize', resize);
+
+buildList();
+resize();
+document.getElementById('menuBtn').addEventListener('click', () =>
+  document.querySelector('aside').classList.toggle('open'));
+document.getElementById('showAll').addEventListener('click', resetView);
+ALL.forEach((h, i) => loadHouse(h, i));
+
+let t = 0;
+function animate() {
+  requestAnimationFrame(animate);
+  t += 0.006;
+  controls.update();
+  renderer.render(scene, camera);
+}
+animate();
+
+let resizeTimer = 0;
+addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(resetView, 260);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+{
+ "map": "Marisol",
+ "width": 3840,
+ "height": 2720,
+ "tileSize": 1024,
+ "cols": 4,
+ "rows": 3,
+ "overview": "overview.webp",
+ "overviewWidth": 1600,
+ "full": "city_map_4k.webp",
+ "tiles": [
+  {
+   "r": 0,
+   "c": 0,
+   "src": "tiles/r0_c0.webp"
+  },
+  {
+   "r": 0,
+   "c": 1,
+   "src": "tiles/r0_c1.webp"
+  },
+  {
+   "r": 0,
+   "c": 2,
+   "src": "tiles/r0_c2.webp"
+  },
+  {
+   "r": 0,
+   "c": 3,
+   "src": "tiles/r0_c3.webp"
+  },
+  {
+   "r": 1,
+   "c": 0,
+   "src": "tiles/r1_c0.webp"
+  },
+  {
+   "r": 1,
+   "c": 1,
+   "src": "tiles/r1_c1.webp"
+  },
+  {
+   "r": 1,
+   "c": 2,
+   "src": "tiles/r1_c2.webp"
+  },
+  {
+   "r": 1,
+   "c": 3,
+   "src": "tiles/r1_c3.webp"
+  },
+  {
+   "r": 2,
+   "c": 0,
+   "src": "tiles/r2_c0.webp"
+  },
+  {
+   "r": 2,
+   "c": 1,
+   "src": "tiles/r2_c1.webp"
+  },
+  {
+   "r": 2,
+   "c": 2,
+   "src": "tiles/r2_c2.webp"
+  },
+  {
+   "r": 2,
+   "c": 3,
+   "src": "tiles/r2_c3.webp"
+  }
+ ],
+ "lod": {
+  "overviewBelowScale": 0.5,
+  "tilesAboveScale": 0.5
+ },
+ "source": "../city_map.svg",
+ "world": {
+  "baseWidth": 2400,
+  "baseHeight": 1700,
+  "metersPerPixel": 5,
+  "worldX": "(px - 1200) * 5",
+  "worldZ": "(py - 850) * 5"
+ }
+}

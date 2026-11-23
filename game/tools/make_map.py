@@ -96,6 +96,465 @@ POI = {
 }
 
 # --------------------------------------------------------------------------- #
+# дома, кварталы, детали
+# --------------------------------------------------------------------------- #
+
+ROOFS = ["#7a4a3a", "#6b5546", "#4d5a63", "#8a6a4a", "#5f6b58",
+         "#7d5f52", "#55606b", "#946e50", "#4a5560", "#6f5a4a"]
+WALLS = ["#8f8878", "#a8a091", "#7d8478", "#9a8f7c", "#b0a795",
+         "#867a68", "#9c9585", "#77705f"]
+LAWN = ["#1f3d2a", "#24452f", "#1b3626", "#274a33"]
+TOWER = ["#4a6375", "#566f80", "#5e6a74", "#46586a", "#6b5f58",
+         "#3f5364", "#5a6876"]
+TOWER_PAIRS = [("#41576a", "#5f7d93"), ("#4a5f6e", "#6b8798"),
+               ("#5b6a74", "#7f919d"), ("#46586a", "#617e96"),
+               ("#685d55", "#87776a"), ("#3f5364", "#5a7592"),
+               ("#546675", "#748a9b"), ("#6a5a52", "#877669")]
+
+
+def _rect_pts(cx, cy, w, h, ang=0.0):
+    c, s = math.cos(ang), math.sin(ang)
+    pts = []
+    for dx, dy in ((-w / 2, -h / 2), (w / 2, -h / 2),
+                   (w / 2, h / 2), (-w / 2, h / 2)):
+        pts.append((cx + dx * c - dy * s, cy + dx * s + dy * c))
+    return pts
+
+
+def house(cx, cy, w, d, ang=0.0, wall=None, roof=None, chimney=False):
+    wall = wall or rnd.choice(WALLS)
+    roof = roof or rnd.choice(ROOFS)
+    poly(_rect_pts(cx + 1.7, cy + 2.2, w, d, ang), "#050a0f", "none", 0,
+         'opacity="0.42"')
+    poly(_rect_pts(cx, cy, w, d, ang), wall, "#101a22", 0.45)
+    poly(_rect_pts(cx, cy, w - 1.0, d - 1.0, ang), roof, "none", 0)
+    c, s = math.cos(ang), math.sin(ang)
+    if w >= d:
+        dx = w / 2 - 1.2
+        line(cx - dx * c, cy - dx * s, cx + dx * c, cy + dx * s,
+             "#2b211c", 0.55, 'opacity="0.55"')
+    else:
+        dy = d / 2 - 1.2
+        line(cx + dy * s, cy - dy * c, cx - dy * s, cy + dy * c,
+             "#2b211c", 0.55, 'opacity="0.55"')
+    if chimney:
+        circle(cx + (w * 0.26) * c - (-d * 0.2) * s,
+               cy + (w * 0.26) * s + (-d * 0.2) * c, 0.7, "#5b4b42")
+
+
+def lawn(cx, cy, w, h, ang=0.0):
+    poly(_rect_pts(cx, cy, w, h, ang), rnd.choice(LAWN), "none", 0,
+         'opacity="0.85"')
+
+
+def tree(cx, cy, r=2.4):
+    add(f'<ellipse cx="{cx + 1.3:.1f}" cy="{cy + 1.7:.1f}" rx="{r:.1f}" ry="{r * 0.8:.1f}" '
+        f'fill="#050a0f" opacity="0.35"/>')
+    circle(cx, cy, r, "#2b5238")
+    circle(cx - r * 0.22, cy - r * 0.26, r * 0.66, "#3c6e4a")
+
+
+def palm(cx, cy, s=1.0):
+    add(f'<ellipse cx="{cx + 1.6:.1f}" cy="{cy + 2.0:.1f}" rx="{3.2 * s:.1f}" '
+        f'ry="{1.5 * s:.1f}" fill="#050a0f" opacity="0.3"/>')
+    line(cx, cy + 1.2, cx + 0.7, cy, "#5c4632", 1.1)
+    for k in range(6):
+        a = math.pi * 2 * k / 6 + 0.35
+        line(cx + 0.7, cy, cx + 0.7 + math.cos(a) * 3.4 * s,
+             cy + math.sin(a) * 2.4 * s, "#2f6a45", 0.9, 'opacity="0.9"')
+
+
+def car(cx, cy, ang=0.0, color="#c9d4dc"):
+    poly(_rect_pts(cx + 0.7, cy + 0.9, 3.4, 1.6, ang), "#050a0f", "none", 0,
+         'opacity="0.4"')
+    poly(_rect_pts(cx, cy, 3.2, 1.5, ang), color, "#101a22", 0.3)
+    poly(_rect_pts(cx, cy - 0.1, 1.6, 1.2, ang), "#23313c", "none", 0,
+         'opacity="0.8"')
+
+
+def tower(cx, cy, w, d, h, pair=None):
+    body, roof = pair or rnd.choice(TOWER_PAIRS)
+    off = 2.0 + min(6.5, h / 8.0)
+    # тень
+    poly(_rect_pts(cx + off * 0.55, cy + off * 0.85, w, d), "#050a0f", "none", 0,
+         'opacity="0.55"')
+    # стилобат (первый этаж шире башни)
+    poly(_rect_pts(cx, cy, w + 1.8, d + 1.8), "#33434f", "#111c25", 0.4,
+         'opacity="0.9"')
+    # корпус и кровля с отступом
+    poly(_rect_pts(cx, cy, w, d), body, "#0f1a23", 0.6)
+    rw, rd = max(3.0, w - 2.6), max(3.0, d - 2.6)
+    poly(_rect_pts(cx, cy, rw, rd), roof, "none", 0)
+    # оконные полосы
+    for k in range(1, 3):
+        y = cy - d / 2 + k * d / 3
+        line(cx - w / 2 + 0.8, y, cx + w / 2 - 0.8, y, "#1d2a35", 0.45,
+             'opacity="0.35"')
+    line(cx - w / 2 + 1, cy - d / 2 + 1, cx + w / 2 - 1, cy - d / 2 + 1,
+         "#b6c9d6", 0.6, 'opacity="0.4"')
+    # детали кровли — у каждого здания свои
+    r = rnd.random()
+    if h > 74 or r < 0.16:
+        circle(cx, cy, min(rw, rd) * 0.27, "#273742", "#a8bccb", 0.5)
+        line(cx - 1.2, cy, cx + 1.2, cy, "#a8bccb", 0.5, 'opacity="0.8"')
+        line(cx, cy - 1.2, cx, cy + 1.2, "#a8bccb", 0.5, 'opacity="0.8"')
+    elif r < 0.46:
+        rect(cx - rw * 0.28, cy - rd * 0.22, rw * 0.24, rd * 0.28, "#8ea3b2",
+             "#394b57", 0.3, r=0.3)
+        rect(cx + rw * 0.06, cy + rd * 0.02, rw * 0.22, rd * 0.24, "#7f95a4",
+             "#394b57", 0.3, r=0.3)
+    elif r < 0.60:
+        rect(cx - rw * 0.22, cy - rd * 0.18, rw * 0.5, rd * 0.38, "#2c7d92",
+             "#b9d6de", 0.35, r=0.3)
+        circle(cx + rw * 0.28, cy + rd * 0.2, 0.9, "#2f6a45")
+    elif r < 0.76:
+        rect(cx - rw * 0.3, cy - rd * 0.28, rw * 0.6, rd * 0.56, "#2f5a3c",
+             "#79b98d", 0.35, r=0.5)
+    else:
+        rect(cx - rw * 0.18, cy - rd * 0.16, rw * 0.3, rd * 0.3, "#455866",
+             "none", 0, r=0.3)
+        line(cx + rw * 0.16, cy + rd * 0.12, cx + rw * 0.16, cy - rd * 0.36,
+             "#9db3c4", 0.55, 'opacity="0.65"')
+        circle(cx + rw * 0.16, cy - rd * 0.36, 0.7, "#d55c4a")
+
+
+# --------------------------------------------------------------------------- #
+# кварталы
+# --------------------------------------------------------------------------- #
+
+def build_downtown():
+    for yi, y in enumerate(range(400, 800, 32)):
+        for xi, x in enumerate(range(1010, 1420, 34)):
+            cx, cy = x + 17, y + 16
+            r = rnd.random()
+            if r < 0.09:
+                # парковка / сквер
+                rect(x + 4, y + 4, 26, 24, "#1b2a35", "#2c4050", 0.5, r=1)
+                for k in range(4):
+                    line(x + 8 + k * 6, y + 7, x + 8 + k * 6, y + 24,
+                         "#3c4f5e", 0.5, 'opacity="0.7"')
+                if rnd.random() < 0.5:
+                    tree(x + 8, y + 8, 1.8)
+                continue
+            bw = rnd.uniform(18, 27)
+            bd = rnd.uniform(16, 25)
+            h = rnd.choice([14, 20, 26, 34, 44, 58, 76, 96]) * rnd.uniform(0.9, 1.1)
+            tower(cx, cy, bw, bd, h)
+
+
+def build_barrio():
+    for x in range(530, 928, 46):
+        for y in range(575, 876, 42):
+            if rnd.random() < 0.06:
+                tree(x + 23, y + 21, 3.2)
+                continue
+            rect(x + 2, y + 2, 42, 38, "#1c2a34", "#2a3b47", 0.4, r=0.8)
+            for i in range(3):
+                for j in range(2):
+                    if rnd.random() < 0.08:
+                        continue
+                    cx = x + 10 + i * 14 + rnd.uniform(-1.2, 1.2)
+                    cy = y + 11 + j * 17 + rnd.uniform(-1.2, 1.2)
+                    lawn(cx, cy, 11.5, 13.5)
+                    house(cx, cy, rnd.uniform(6.0, 8.2), rnd.uniform(4.8, 6.2),
+                          rnd.uniform(-0.1, 0.1), chimney=rnd.random() < 0.2)
+                    if rnd.random() < 0.22:
+                        tree(cx + rnd.choice([-5.2, 5.2]), cy + 4.8, 1.9)
+
+
+def build_suburb():
+    # отдельные участки вдоль петляющих улиц
+    for x in range(304, 700, 20):
+        for y in range(620, 884, 20):
+            if rnd.random() > 0.52:
+                continue
+            cx = x + rnd.uniform(-2, 2)
+            cy = y + rnd.uniform(-2, 2)
+            # не застраиваем сами петли улиц
+            on_loop = any(((cx - ex) / (rx + 4)) ** 2 + ((cy - ey) / (ry + 4)) ** 2 < 1.0
+                          and ((cx - ex) / (rx - 5)) ** 2 + ((cy - ey) / (ry - 5)) ** 2 > 1.0
+                          for ex, ey, rx, ry in [(410, 730, 90, 60), (600, 740, 80, 54),
+                                                 (430, 840, 84, 46), (620, 840, 70, 40)])
+            if on_loop:
+                continue
+            lawn(cx, cy, 16, 15, 0.0)
+            house(cx, cy, rnd.uniform(6.4, 8.6), rnd.uniform(5.4, 7.2),
+                  rnd.choice([0, math.pi / 2]) + rnd.uniform(-0.06, 0.06),
+                  chimney=rnd.random() < 0.35)
+            # дорожка от дома
+            line(cx, cy + 3.2, cx, cy + 7.2, "#49535b", 0.7, 'opacity="0.6"')
+            if rnd.random() < 0.3:
+                tree(cx + rnd.choice([-7, 7]), cy + rnd.uniform(-5, 5), 2.1)
+    # дома вдоль берега залива
+    for x in range(300, 560, 22):
+        for y in range(660, 900, 24):
+            if rnd.random() < 0.4:
+                continue
+            lawn(x, y, 17, 17)
+            house(x, y, 7.0, 5.8, 0.0, chimney=rnd.random() < 0.3)
+
+
+def build_villas():
+    for x in range(1470, 1820, 42):
+        for y in range(130, 380, 42):
+            if rnd.random() < 0.18:
+                tree(x + 20, y + 20, 3.6)
+                continue
+            lawn(x + 22, y + 22, 34, 34)
+            house(x + 22, y + 20, rnd.uniform(13, 18), rnd.uniform(9, 12),
+                  rnd.uniform(-0.08, 0.08), wall="#d8d2c2",
+                  roof=rnd.choice(["#8a7a64", "#6a6f6a", "#9a8064"]))
+            if rnd.random() < 0.7:
+                add(f'<rect x="{x + 9:.1f}" y="{y + 31:.1f}" width="9" height="4.4" rx="1" '
+                    f'fill="#2f7f96" opacity="0.85"/>')
+                add(f'<rect x="{x + 9:.1f}" y="{y + 31:.1f}" width="9" height="4.4" rx="1" '
+                    f'fill="none" stroke="#c9d4dc" stroke-width="0.5" opacity="0.5"/>')
+            for k in range(2):
+                if rnd.random() < 0.6:
+                    tree(x + rnd.uniform(4, 38), y + rnd.uniform(6, 18), 2.0)
+            car(x + 32, y + 36, rnd.uniform(-0.4, 0.4),
+                rnd.choice(["#c9d4dc", "#8a2f2f", "#2f4a6a"]))
+
+
+def build_industrial():
+    for x in range(1566, 1756, 34):
+        for y in range(706, 846, 30):
+            if rnd.random() < 0.2:
+                continue
+            w = rnd.uniform(18, 28)
+            d = rnd.uniform(14, 22)
+            poly(_rect_pts(x + 16 + 2.2, y + 14 + 2.6, w, d), "#050a0f", "none", 0,
+                 'opacity="0.5"')
+            poly(_rect_pts(x + 16, y + 14, w, d), "#3d4b55", "#16222c", 0.5)
+            for k in range(3):
+                line(x + 16 - w / 2 + 2, y + 10 + k * 4, x + 16 + w / 2 - 2,
+                     y + 10 + k * 4, "#56656f", 0.45, 'opacity="0.55"')
+
+
+def text_along(x1, y1, x2, y2, s, size=9, fill=TEXT_DIM, opacity=0.75):
+    ang = math.degrees(math.atan2(y2 - y1, x2 - x1))
+    if ang > 90 or ang < -90:
+        ang += 180
+    mx, my = (x1 + x2) / 2, (y1 + y2) / 2
+    add(f'<text x="{mx:.1f}" y="{my:.1f}" transform="rotate({ang:.1f} {mx:.1f} {my:.1f})" '
+        f'font-family="DejaVu Sans, Verdana, sans-serif" font-size="{size}" '
+        f'font-weight="600" fill="{fill}" fill-opacity="{opacity}" text-anchor="middle" '
+        f'letter-spacing="1.6" paint-order="stroke" stroke="#0d1117" stroke-width="2.6">{s}</text>')
+
+
+def coast_y(x):
+    pts = sorted(COAST, key=lambda p: p[0])
+    if x <= pts[0][0]:
+        return pts[0][1]
+    if x >= pts[-1][0]:
+        return pts[-1][1]
+    for (x0, y0), (x1, y1) in zip(pts, pts[1:]):
+        if x0 <= x <= x1:
+            u = (x - x0) / max(1e-6, (x1 - x0))
+            return y0 + (y1 - y0) * u
+    return pts[-1][1]
+
+
+def build_ocean_strip():
+    # городская подложка набережной
+    strip = ([(x, coast_y(x) - 165) for x in range(470, 1260, 16)] +
+             [(x, coast_y(x) - 36) for x in reversed(range(470, 1260, 16))])
+    poly(strip, "#1a2730", "none", 0, 'opacity="0.95"')
+    for x in range(520, 1240, 55):
+        line(x, coast_y(x) - 160, x, coast_y(x) - 44, "#24333e", 3.2,
+             'opacity="0.9"')
+    # три ряда застройки между шоссе и пляжем
+    for x in range(510, 1210, 27):
+        if rnd.random() < 0.1:
+            continue
+        cy = coast_y(x) - rnd.uniform(58, 68)
+        w, d = rnd.uniform(17, 24), rnd.uniform(11, 15)
+        lawn(x, cy, w + 5, d + 6)
+        house(x, cy, w, d, 0.0,
+              wall=rnd.choice(["#d8cfb8", "#cfc7b4", "#b7c2c4", "#e2d4b8"]),
+              roof=rnd.choice(["#8a6a52", "#5d6a6a", "#9a7a5c", "#7d8a90"]))
+        if rnd.random() < 0.62:
+            rect(x - w / 2 - 0.5, cy + d / 2 + 1.8, 8.5, 4.2, "#2f7f96",
+                 "#d8e6ea", 0.4, r=1.2)
+            for k in range(3):
+                rect(x + w / 2 + 1.5, cy - d / 2 + 1.5 + k * 2.2, 1.1, 1.6,
+                     rnd.choice(["#e8eef4", "#d96f4a"]), "none", 0, r=0.2)
+        if rnd.random() < 0.7:
+            palm(x + w / 2 + 2.5, cy + d / 2 + 1.8, 0.9)
+    # второй ряд: апартаменты с балконами
+    for x in range(540, 1180, 25):
+        if rnd.random() < 0.22:
+            continue
+        cy = coast_y(x) - rnd.uniform(98, 108)
+        w, d = rnd.uniform(16, 21), rnd.uniform(10, 14)
+        rect(x - w / 2 - 1.5, cy - d / 2 - 1.5, w + 3, d + 3, "#2a3c47", "none", 0, r=1)
+        rect(x - w / 2, cy - d / 2, w, d, rnd.choice(["#7d8a90", "#8d8a80", "#6d7d86"]),
+             "#101a22", 0.5)
+        poly(_rect_pts(x, cy, w - 2.2, d - 2.2), rnd.choice(["#6a7b85", "#7c766b"]), "none", 0)
+        for k in range(1, 3):
+            line(x - w / 2 + 0.8, cy - d / 2 + k * d / 3, x + w / 2 - 0.8,
+                 cy - d / 2 + k * d / 3, "#43535e", 0.6, 'opacity="0.7"')
+        if rnd.random() < 0.5:
+            rect(x + w / 2 - 4.2, cy - 1.6, 4.6, 3.2, "#2f7f96", "#d8e6ea", 0.35, r=0.8)
+    # третий ряд: небольшие жилые дома и магазины
+    for x in range(560, 1160, 30):
+        if rnd.random() < 0.35:
+            continue
+        cy = coast_y(x) - rnd.uniform(140, 152)
+        lawn(x, cy, 18, 15)
+        house(x, cy, rnd.uniform(7, 9.5), rnd.uniform(5.5, 7.5), 0.0)
+    # пляжная полоса: зонты с лежаками, пальмы, спасательные вышки
+    for x in range(540, 1560, 9):
+        cy = coast_y(x)
+        if rnd.random() < 0.7:
+            uy = cy - rnd.uniform(8, 22)
+            col = rnd.choice(["#d96f4a", "#e8c46a", "#4fa3a8", "#c95a78", "#e0e6ea"])
+            add(f'<ellipse cx="{x + 1.6:.1f}" cy="{uy + 2.4:.1f}" rx="3.4" ry="1.4" '
+                f'fill="#050a0f" opacity="0.35"/>')
+            circle(x, uy, 3.0, col, "#f0e6d0", 0.45)
+            line(x, uy + 3.0, x, uy + 4.6, "#6b5a44", 0.55)
+            if rnd.random() < 0.6:
+                rect(x - 3.8, uy + 4.0, 3.0, 1.5, rnd.choice(["#e8eef4", "#d96f4a"]),
+                     "none", 0, r=0.2)
+        if x % 45 == 0:
+            palm(x + 3, cy - rnd.uniform(26, 36), 1.0)
+    # пляжный клуб и кафе у моря
+    for (cx, cy, w, d) in [(758, 1112, 26, 16), (656, 1052, 13, 9), (900, 1136, 15, 10)]:
+        lawn(cx, cy, w + 6, d + 8)
+        house(cx, cy, w, d, 0.0, wall="#e0d2b4", roof="#a07a54")
+        rect(cx - w / 2 - 2, cy + d / 2 + 2, w * 0.45, 7, "#2f7f96",
+             "#d8e6ea", 0.5, r=1.5)
+        for k in range(5):
+            add(f'<ellipse cx="{cx - 9 + k * 4.4:.1f}" cy="{cy + d / 2 + 12.4:.1f}" '
+                f'rx="2.4" ry="1.1" fill="#050a0f" opacity="0.3"/>')
+            circle(cx - 9 + k * 4.4, cy + d / 2 + 11, 2.0,
+                   ["#e8c46a", "#d96f4a", "#e0e6ea"][k % 3], "#f0e6d0", 0.4)
+    # деревянный настил вдоль пляжа
+    board = [(x, coast_y(x) - 32) for x in range(500, 1600, 20)]
+    path("M" + " L".join(f"{x:.0f},{y:.0f}" for x, y in board), "none", "#7a6448", 3.2,
+         'opacity="0.55" stroke-linecap="round"')
+    # спасательные вышки
+    for x in (700, 880, 1120, 1380):
+        y = coast_y(x) - 14
+        rect(x - 1.4, y - 2.4, 2.8, 2.8, "#d8c79a", "#7a6448", 0.4, r=0.3)
+        line(x - 1.4, y, x + 1.4, y, "#7a6448", 0.45)
+
+
+def build_marina():
+    # яхты в заливе и у Marina Real
+    for i in range(9):
+        x = 1470 + i * 15 + rnd.uniform(-3, 3)
+        y = 1020 + (i % 3) * 12 + rnd.uniform(-2, 2)
+        ang = 0.15 + rnd.uniform(-0.1, 0.1)
+        c, s = math.cos(ang), math.sin(ang)
+        pts = [(x - 7 * c, y - 7 * s), (x + 7 * c, y + 7 * s),
+               (x + 4 * c - 2.2 * s, y + 4 * s + 2.2 * c),
+               (x - 4 * c - 2.2 * s, y - 4 * s + 2.2 * c)]
+        poly(pts, "#e8eef4", "#4a6474", 0.5, 'opacity="0.95"')
+        add(f'<rect x="{x - 3:.1f}" y="{y - 1.2:.1f}" width="5" height="2.2" rx="0.6" '
+            f'fill="#3c5a6a" opacity="0.9"/>')
+    # пирсы Marina Real
+    for i in range(6):
+        line(1576 + i * 15, 866, 1576 + i * 15, 892, "#8aa0ad", 1.4, 'opacity="0.7"')
+
+
+def build_airport():
+    # самолёты и перрон
+    for (cx, cy, ang) in [(1860, 470, -0.55), (1990, 395, -0.55), (1740, 330, 0.1)]:
+        c, s = math.cos(ang), math.sin(ang)
+        body = [(cx - 6 * c, cy - 6 * s), (cx + 6 * c, cy + 6 * s),
+                (cx + 4.5 * c - 1.1 * s, cy + 4.5 * s + 1.1 * c),
+                (cx - 4.5 * c - 1.1 * s, cy - 4.5 * s + 1.1 * c)]
+        poly(body, "#c9d4dc", "#4a5b68", 0.4)
+        line(cx - 1.5 * s, cy + 1.5 * c, cx + 1.5 * s, cy - 1.5 * c,
+             "#8aa0ad", 5, 'opacity="0.9"')
+    for i in range(4):
+        rect(1772 + i * 26, 552, 20, 12, "#2a3c48", "#4a5b68", 0.4, r=1)
+    # рулёжные дорожки
+    for (x1, y1, x2, y2) in [(1800, 500, 1780, 560), (2130, 340, 2140, 400)]:
+        line(x1, y1, x2, y2, "#3a4b57", 5, 'opacity="0.8"')
+
+
+def build_outskirts():
+    """Небольшие жилые и коммерческие кварталы по краям карты."""
+    # северо-восток: малоэтажные дома между виллами и аэропортом
+    for x in range(1840, 2120, 24):
+        for y in range(404, 606, 24):
+            if rnd.random() < 0.42:
+                continue
+            lawn(x, y, 20, 19)
+            house(x, y, rnd.uniform(6.5, 8.5), rnd.uniform(5.2, 6.6),
+                  rnd.choice([0, math.pi / 2]), chimney=rnd.random() < 0.3)
+            if rnd.random() < 0.3:
+                tree(x - 7, y + 6, 1.9)
+    # восток: склады и мастерские
+    for x in range(1776, 2050, 38):
+        for y in range(624, 852, 34):
+            if rnd.random() < 0.3:
+                continue
+            w, d = rnd.uniform(18, 26), rnd.uniform(14, 21)
+            poly(_rect_pts(x + 2.2, y + 2.6, w, d), "#050a0f", "none", 0,
+                 'opacity="0.45"')
+            poly(_rect_pts(x, y, w, d), rnd.choice(["#3d4b55", "#444f56", "#37444e"]),
+                 "#16222c", 0.5)
+            for k in range(3):
+                line(x - w / 2 + 2, y - d / 2 + 3 + k * 4, x + w / 2 - 2,
+                     y - d / 2 + 3 + k * 4, "#56656f", 0.45, 'opacity="0.5"')
+    # юго-запад: пригород у воды
+    for x in range(118, 300, 22):
+        for y in range(640, 900, 22):
+            if rnd.random() < 0.5:
+                continue
+            lawn(x, y, 18, 18)
+            house(x, y, rnd.uniform(6.2, 7.8), rnd.uniform(5.0, 6.2),
+                  rnd.choice([0, math.pi / 2]))
+            if rnd.random() < 0.35:
+                tree(x + 6, y - 6, 2.0)
+    # полоса между шоссе и набережной
+    for x in range(620, 780, 20):
+        for y in range(908, 1000, 20):
+            if rnd.random() < 0.55:
+                continue
+            lawn(x, y, 16, 16)
+            house(x, y, 6.8, 5.6, 0.0)
+    # редкие дома у железной дороги на западе
+    for x in range(60, 260, 26):
+        for y in range(620, 780, 26):
+            if rnd.random() < 0.62:
+                continue
+            lawn(x, y, 20, 18)
+            house(x, y, 7.0, 5.6, 0.0)
+
+
+def build_park_details():
+    for _ in range(26):
+        x = rnd.uniform(140, 560)
+        y = rnd.uniform(120, 430)
+        if any((x - cx) ** 2 + (y - cy) ** 2 < 900 for cx, cy in []):
+            continue
+        tree(x, y, rnd.uniform(1.8, 3.4))
+    for (x, y) in [(820, 260), (960, 340), (860, 380), (770, 300)]:
+        tree(x, y, 2.6)
+    # лунки и бункеры гольфа
+    for (cx, cy, r) in [(860, 260, 34), (960, 340, 26), (820, 350, 20)]:
+        circle(cx, cy + 3, r, "#234a30", "#3f7a52", 1.2)
+    for (cx, cy) in [(890, 300), (930, 320), (800, 330)]:
+        add(f'<ellipse cx="{cx}" cy="{cy}" rx="7" ry="4" fill="#c9b78a" opacity="0.9"/>')
+    # кампус
+    for (x, y, w, h) in [(915, 270, 24, 16), (960, 300, 18, 14), (930, 320, 30, 12)]:
+        poly(_rect_pts(x + w / 2 + 2, y + h / 2 + 2.5, w, h), "#050a0f", "none", 0,
+             'opacity="0.4"')
+        rect(x, y, w, h, "#5e6a74", "#2a3b47", 0.5, r=1)
+        line(x + 3, y + 4, x + w - 3, y + 4, "#93a3b1", 0.5, 'opacity="0.5"')
+    # стадион: трибуны
+    add('<ellipse cx="1290" cy="330" rx="58" ry="40" fill="#394c5a" stroke="#6f8595" stroke-width="2"/>')
+    add('<ellipse cx="1290" cy="330" rx="46" ry="31" fill="#4a5f6e" stroke="none"/>')
+    add('<ellipse cx="1290" cy="330" rx="40" ry="25" fill="#2f5a3c" stroke="#79b98d" stroke-width="1.5"/>')
+    line(1250, 330, 1330, 330, "#8fc79f", 0.7, 'opacity="0.6"')
+    circle(1290, 330, 4, "none", "#8fc79d", 0.8)
+
+
+# --------------------------------------------------------------------------- #
 # береговая линия
 # --------------------------------------------------------------------------- #
 
@@ -238,16 +697,15 @@ DISTRICT_FILL = [
 for pts, color, op in DISTRICT_FILL:
     poly(pts, color, "none", 0, f'opacity="{op}"')
 
-# даунтаун
-scatter_blocks(1004, 392, 1412, 792, cell=30, fill="#2b3e4d", chance=0.92, inset=3)
-# баррио
-scatter_blocks(520, 560, 930, 880, cell=32, fill=BLOCK_HI, chance=0.7, inset=5)
-# пригород
-scatter_blocks(300, 620, 700, 880, cell=36, fill=BLOCK, chance=0.45, inset=7)
-# промзона
-scatter_blocks(1560, 700, 1760, 850, cell=34, fill="#2a343c", chance=0.75, inset=4)
-# виллы
-scatter_blocks(1460, 120, 1830, 380, cell=42, fill=BLOCK_HI, chance=0.5, inset=9)
+# жилые и деловые кварталы
+build_downtown()
+build_barrio()
+build_suburb()
+build_villas()
+build_industrial()
+build_outskirts()
+build_ocean_strip()
+build_park_details()
 
 # --------------------------------------------------------------------------- #
 # дороги
@@ -277,19 +735,41 @@ for m in MAIN:
     path("M" + " L".join(f"{x},{y}" for x, y in m), "none", ROAD_MAIN, 5,
          'fill="none" stroke-linecap="round"')
 
-# сетка даунтауна
+# прибрежные улицы Ocean Drive / Shore Ave / Boardwalk Lane
+for off, wdt in ((46, 5), (88, 5), (128, 4.2)):
+    pts = [(x, coast_y(x) - off) for x in range(480, 1640, 24)]
+    d = "M" + " L".join(f"{x:.0f},{y:.0f}" for x, y in pts)
+    path(d, "none", "#2b3945", wdt + 4, 'fill="none" stroke-linecap="round"')
+    path(d, "none", ROAD_MAIN, wdt, 'fill="none" stroke-linecap="round"')
+path("M" + " L".join(f"{x:.0f},{coast_y(x) - 46:.0f}" for x in range(480, 1640, 24)),
+     "none", "#d9e2e8", 0.8, 'fill="none" stroke-dasharray="9 12" opacity="0.35"')
+# подходы к пляжу от Coast Road
+for x in range(760, 1600, 90):
+    line(x, coast_y(x) - 44, x, coast_y(x) - 10, "#3a4b5b", 2.2, 'opacity="0.8"')
+
+# сетка даунтауна: тротуары + проезжая часть + разметка
 for x in range(1010, 1420, 34):
+    line(x, 396, x, 790, "#33434f", 5.4, 'opacity="0.85"')
     line(x, 396, x, 790, ROAD_MINOR, 3)
 for y in range(400, 800, 32):
+    line(1006, y, 1416, y, "#33434f", 5.4, 'opacity="0.85"')
     line(1006, y, 1416, y, ROAD_MINOR, 3)
+# машины в центре
+for _ in range(48):
+    x = rnd.choice([x for x in range(1010, 1420, 34)]) + rnd.uniform(-1.2, 1.2)
+    y = rnd.uniform(402, 788)
+    car(x, y, math.pi / 2 + rnd.uniform(-0.05, 0.05),
+        rnd.choice(["#c9d4dc", "#8a2f2f", "#2f4a6a", "#d8b34a", "#2b2f34"]))
 # новые кварталы на пустых пятнах
 scatter_blocks(1764, 610, 2040, 840, cell=38, fill=BLOCK, chance=0.42, inset=6)
 scatter_blocks(250, 900, 560, 1000, cell=34, fill=BLOCK_HI, chance=0.5, inset=6)
 
 # сетка баррио
 for x in range(530, 930, 46):
+    line(x, 566, x + 18, 878, "#2a3742", 4.2, 'opacity="0.8"')
     line(x, 566, x + 18, 878, ROAD_MINOR, 2.4)
 for y in range(575, 875, 42):
+    line(526, y, 928, y, "#2a3742", 4.2, 'opacity="0.8"')
     line(526, y, 928, y, ROAD_MINOR, 2.4)
 # пригород: извилистые улицы
 for i, (cx, cy, rx, ry) in enumerate([(410, 730, 90, 60), (600, 740, 80, 54),
@@ -300,6 +780,16 @@ line(300, 800, 700, 800, ROAD_MINOR, 3)
 
 # подъездные пути аэропорта
 path("M1750,600 L1900,560 L2050,520", "none", ROAD_MAIN, 5)
+
+# названия улиц
+text_along(1520, 268, 1860, 340, "M-1  ·  MARISOL RING", 9, "#d8b34a", 0.7)
+text_along(300, 640, 402, 600, "M-1", 9, "#d8b34a", 0.65)
+text_along(1120, 396, 1120, 790, "NEON BLVD", 8.5, TEXT_DIM, 0.55)
+text_along(1010, 600, 1416, 600, "UNION AVE", 8.5, TEXT_DIM, 0.5)
+text_along(530, 700, 930, 700, "CALLE SOL", 8.5, TEXT_DIM, 0.6)
+text_along(304, 800, 700, 800, "PALM AVENUE", 8.5, TEXT_DIM, 0.55)
+text_along(620, 880, 900, 900, "OCEAN DRIVE", 8.5, "#c9d4dc", 0.55)
+text_along(1760, 560, 2000, 525, "PORT ROAD", 8, TEXT_DIM, 0.45)
 
 # --------------------------------------------------------------------------- #
 # железная дорога + мосты
@@ -340,6 +830,7 @@ for (x1, y1, x2, y2) in [(1800, 500, 2130, 340), (1830, 360, 2090, 510)]:
 add("</g>")
 rect(1900, 430, 90, 34, "#2c3d49", "#5f7d8f", 1.5, r=3)
 text(1945, 452, "TERMINAL", 10, TEXT_DIM, weight=600)
+build_airport()
 
 # --------------------------------------------------------------------------- #
 # порт
@@ -370,11 +861,7 @@ circle(1640, 1120, 18, "none", "#f6d365", 1, 'opacity="0.4"')
 # стадион, больница-кампус, университет
 # --------------------------------------------------------------------------- #
 
-add(f'<ellipse cx="1290" cy="330" rx="58" ry="40" fill="#243440" stroke="#5f7d8f" stroke-width="2"/>')
-add(f'<ellipse cx="1290" cy="330" rx="40" ry="25" fill="#2f5a3c" stroke="#79b98d" stroke-width="1.5"/>')
 text(1290, 396, "ESTADIO MARISOL", 12, TEXT_DIM, weight=600, spacing=1)
-
-rect(900, 250, 150, 90, "#243440", "#3f5566", 1.5, r=4)
 text(975, 366, "UNIVERSIDAD", 12, TEXT_DIM, weight=600, spacing=1)
 
 # --------------------------------------------------------------------------- #
