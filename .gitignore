@@ -3,3 +3,25 @@
 # OS / editor noise
 .DS_Store
 Thumbs.db
+
+# Unity generated folders
+game/unity/Library/
+game/unity/Temp/
+game/unity/Obj/
+game/unity/Logs/
+game/unity/UserSettings/
+game/unity/Builds/
+game/unity/MemoryCaptures/
+game/unity/*.csproj
+game/unity/*.sln
+game/unity/*.user
+
+# Build output
+*.apk
+*.aab
+*.unitypackage
+
+# Machine-specific Unity activation request / licence
+licenses/
+*.alf
+*.ulf
