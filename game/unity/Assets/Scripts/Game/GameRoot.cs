@@ -754,8 +754,10 @@ namespace GTA6.Game
         void SnapCamera()
         {
             if (Cam == null || Player == null) return;
+            Cam.Yaw = Player.Heading;
+            Cam.Pitch = 14f;
             Cam.SnapTo(Player.Pos + Vector3.up * 1.45f);
-            Cam.Cam.transform.position = Player.Pos + new Vector3(0f, 2.2f, -5f);
+            Cam.Cam.transform.position = Player.Pos + Quaternion.Euler(0f, Player.Heading, 0f) * new Vector3(0f, 2.2f, -5f);
         }
 
         // ------------------------------------------------------------ interface
