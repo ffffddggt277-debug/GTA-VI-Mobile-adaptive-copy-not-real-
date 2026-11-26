@@ -6,6 +6,7 @@ Thumbs.db
 
 # Unity generated folders
 game/unity/Library/
+game/unity/.utmp/
 game/unity/Temp/
 game/unity/Obj/
 game/unity/Logs/

@@ -72,6 +72,7 @@ namespace GTA6.Build
             string jdk = Environment.GetEnvironmentVariable("JAVA_HOME");
             string sdk = Environment.GetEnvironmentVariable("ANDROID_HOME");
             if (string.IsNullOrEmpty(sdk)) sdk = Environment.GetEnvironmentVariable("ANDROID_SDK_ROOT");
+            string ndk = FindNdk(sdk);
 
             if (!string.IsNullOrEmpty(jdk))
             {
@@ -83,7 +84,20 @@ namespace GTA6.Build
                 EditorPrefs.SetString("AndroidSdkRoot", sdk);
                 Debug.Log("[Leonida] Android SDK: " + sdk);
             }
-            EditorPrefs.SetString("AndroidNdkRoot", "");
+            // Unity 6000+ supports NDK r27c (27.2.12479018) and looks for it in
+            // AndroidPlayer/NDK, which the Linux module does not ship. Point the
+            // editor at the side-by-side NDK installed by sdkmanager instead.
+            if (!string.IsNullOrEmpty(ndk))
+            {
+                EditorPrefs.SetString("AndroidNdkRoot", ndk);
+                Debug.Log("[Leonida] Android NDK: " + ndk);
+            }
+            else
+            {
+                Debug.LogWarning("[Leonida] Android NDK not found under the SDK; " +
+                                 "install it with: sdkmanager \"ndk;27.2.12479018\"");
+                EditorPrefs.SetString("AndroidNdkRoot", "");
+            }
 
             try
             {
@@ -92,13 +106,31 @@ namespace GTA6.Build
                 {
                     SetStatic(settings, "jdkRootPath", jdk);
                     SetStatic(settings, "sdkRootPath", sdk);
-                    SetStatic(settings, "ndkRootPath", "");
+                    SetStatic(settings, "ndkRootPath", ndk);
                 }
             }
             catch (Exception e)
             {
                 Debug.LogWarning("[Leonida] could not set external tools through the API: " + e.Message);
             }
+        }
+
+        /// <summary>
+        /// Finds the side-by-side NDK under ANDROID_HOME/ndk, preferring the
+        /// r27c build Unity 6000 reports as its supported version.
+        /// </summary>
+        static string FindNdk(string sdk)
+        {
+            if (string.IsNullOrEmpty(sdk)) return null;
+            string root = Path.Combine(sdk, "ndk");
+            if (!Directory.Exists(root)) return null;
+
+            string preferred = Path.Combine(root, "27.2.12479018");
+            if (Directory.Exists(preferred)) return preferred;
+
+            string[] versions = Directory.GetDirectories(root);
+            Array.Sort(versions, StringComparer.OrdinalIgnoreCase);
+            return versions.Length > 0 ? versions[versions.Length - 1] : null;
         }
 
         static void SetStatic(Type type, string property, string value)
@@ -140,7 +172,10 @@ namespace GTA6.Build
             PlayerSettings.MTRendering = false;
             PlayerSettings.stereoRenderingPath = StereoRenderingPath.SinglePass;
 
-            PlayerSettings.SetScriptingBackend(NamedBuildTarget.Android, ScriptingImplementation.Mono2x);
+            // Mono on Android cannot produce 64-bit ARM code, and modern phones are
+            // arm64-only, so the APK is built with IL2CPP for both ABIs.
+            PlayerSettings.SetScriptingBackend(NamedBuildTarget.Android, ScriptingImplementation.IL2CPP);
+            PlayerSettings.SetIl2CppCompilerConfiguration(NamedBuildTarget.Android, Il2CppCompilerConfiguration.Release);
             PlayerSettings.SetApiCompatibilityLevel(NamedBuildTarget.Android, ApiCompatibilityLevel.NET_Standard);
             PlayerSettings.SetManagedStrippingLevel(NamedBuildTarget.Android, ManagedStrippingLevel.Low);
 

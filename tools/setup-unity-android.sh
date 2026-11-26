@@ -12,8 +12,11 @@ set -euo pipefail
 UNITY_VERSION="6000.3.29f1"
 UNITY_CHANGESET="96d2fe17529c"
 JDK_PACKAGE="amazon-corretto-17"
-SDK_PLATFORM="android-35"
-BUILD_TOOLS="35.0.0"
+# Unity 6000.3 reports these as its supported Android tools:
+# build-tools 36.0.0, platform android-36, NDK r27c, CMake 3.22.1.
+SDK_PLATFORM="android-36"
+BUILD_TOOLS="36.0.0"
+NDK_VERSION="27.2.12479018"
 
 HOME_DIR="${HOME:?}"
 DL="$HOME_DIR/dl"
@@ -71,9 +74,11 @@ else
   rm -f "$DL/cmdline-tools.zip"
 fi
 
-say "Принимаю лицензии и ставлю platform-tools, $SDK_PLATFORM, build-tools $BUILD_TOOLS"
+say "Принимаю лицензии и ставлю platform-tools, $SDK_PLATFORM, build-tools $BUILD_TOOLS, NDK $NDK_VERSION, CMake 3.22.1"
 yes | "$SDKMANAGER" --sdk_root="$SDK_DIR" --licenses >/dev/null
-"$SDKMANAGER" --sdk_root="$SDK_DIR" "platform-tools" "platforms;$SDK_PLATFORM" "build-tools;$BUILD_TOOLS"
+"$SDKMANAGER" --sdk_root="$SDK_DIR" \
+  "platform-tools" "platforms;$SDK_PLATFORM" "build-tools;$BUILD_TOOLS" \
+  "ndk;$NDK_VERSION" "cmake;3.22.1"
 
 # ── 4. GUI-библиотеки для Unity (без root, через apt-get download) ───────────
 if have "$LIBS/usr/lib/x86_64-linux-gnu/libgtk-3.so.0"; then
@@ -109,7 +114,7 @@ fi
 
 # ── 5. Android Build Support для редактора ──────────────────────────────────
 ANDROID_PLAYER="$UNITY_DIR/Editor/Data/PlaybackEngines/AndroidPlayer"
-if have "$ANDROID_PLAYER/Tools/gradle"; then
+if have "$ANDROID_PLAYER/Tools/gradle" && [ "${FORCE_ANDROID:-0}" != 1 ]; then
   say "Android Build Support уже на месте"
 else
   say "Скачиваю модуль Android Build Support (~2 ГБ)"
@@ -175,8 +180,9 @@ while True:
     filesize = int(hdr[65:76], 8)
     mode = int(hdr[18:24], 8)
     name = f.read(namesize).split(b'\0')[0].decode('utf8', 'replace')
-    if (76 + namesize) % 2:
-        f.read(1)
+    # ВАЖНО: формат odc (magic 070707) не использует выравнивание — ни после
+    # имени, ни после данных. Любой пропуск "выравнивающего" байта сдвигает
+    # файл на 1 байт (именно так ломались libunity.so и DLL Android-плеера).
     if name == 'TRAILER!!!':
         break
     path = os.path.join(dst, name.lstrip('./'))
@@ -199,8 +205,6 @@ while True:
                 out.write(chunk)
                 left -= len(chunk)
         os.chmod(path, mode & 0o777)
-    if filesize % 2:
-        f.read(1)
     count += 1
 os.unlink(tmp.name)
 print('распаковано файлов:', count)

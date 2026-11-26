@@ -29,21 +29,15 @@ if [ ! -f "$LIC" ]; then
   cat >&2 <<'MSG'
 build-apk: Unity has no licence, so it cannot open the project or build.
 
-Activate the free Personal licence once (two minutes, needs a browser):
+Unity 6 no longer supports manual .alf/.ulf activation of Personal licences.
+Activate once with the bundled command-line licensing client:
 
-  1. Generate the activation request:
-       source ~/unity-android-env.sh 2>/dev/null
-       "$HOME/tools/unity/Editor/Unity" -batchmode -nographics -createManualActivationFile -logFile -
-     -> ~/Unity_v6000.3.29f1.alf   (a copy is in licenses/)
+    bash tools/activate-unity-license.sh
 
-  2. Open https://license.unity3d.com/manual, sign in, upload the .alf,
-     pick "Unity Personal", download the .ulf file.
+It asks for your Unity ID email and password (hidden input, nothing is saved)
+and writes ~/.local/share/unity3d/Unity/Unity_lic.ulf.
 
-  3. Put the file here:
-       mkdir -p ~/.local/share/unity3d/Unity
-       cp Unity_v6000.3.29f1.ulf ~/.local/share/unity3d/Unity/Unity_lic.ulf
-
-  4. Re-run: bash tools/build-apk.sh
+Then re-run: bash tools/build-apk.sh
 MSG
   exit 3
 fi
@@ -53,6 +47,7 @@ rm -f "$LOG"
 "$UNITY_EDITOR" -batchmode -nographics -quit \
   -projectPath "$PROJECT" \
   -buildTarget Android \
+  -disable-assembly-updater \
   -executeMethod GTA6.Build.BuildScript.BuildApk \
   -logFile "$LOG"
 STATUS=$?
