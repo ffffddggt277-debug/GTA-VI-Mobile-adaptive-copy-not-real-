@@ -265,6 +265,13 @@ namespace GTA6.Game
             Palette = new Palette();
             Shader std = Shader.Find("Standard");
             if (std == null) std = Shader.Find("Diffuse");
+            if (std == null) std = Shader.Find("Unlit/Texture");
+            if (std == null) std = Shader.Find("Sprites/Default");
+            if (std == null)
+            {
+                Debug.LogError("[Leonida] no usable shader in the build");
+                return;
+            }
             Matte = New(std, "matte", 0f, 0.18f);
             Glossy = New(std, "glossy", 0.55f, 0.72f);
             Emissive = New(std, "emissive", 0.2f, 0.3f);

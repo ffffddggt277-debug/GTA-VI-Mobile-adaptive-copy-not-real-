@@ -82,9 +82,9 @@ namespace GTA6.Game
             head.Box(new Vector3(0f, 1.64f, 0.12f), new Vector3(0.06f, 0.05f, 0.04f), skin);
             head.Box(new Vector3(0.055f, 1.66f, 0.115f), new Vector3(0.03f, 0.03f, 0.02f), palette.Index(Col.Hex("1A1A1A")));
             head.Box(new Vector3(-0.055f, 1.66f, 0.115f), new Vector3(0.03f, 0.03f, 0.02f), palette.Index(Col.Hex("1A1A1A")));
+            // The head mesh is already baked around y = 1.63, so its transform stays
+            // at the character root; there is no child object to re-centre.
             v.Head = TorsoOf(v.Root, "head", head, palette);
-            v.Head.localPosition = new Vector3(0f, 1.63f, 0f);
-            v.Head.GetChild(0).localPosition = new Vector3(0f, -1.63f, 0f);
 
             MeshBuilder arm = new MeshBuilder(palette);
             arm.Box(new Vector3(0f, -0.22f, 0f), new Vector3(0.13f, 0.46f, 0.14f), shirt);

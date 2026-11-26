@@ -148,10 +148,10 @@ namespace GTA6.Build
         {
             PlayerSettings.companyName = "Leonida Fan Project";
             PlayerSettings.productName = ProductName;
-            PlayerSettings.bundleVersion = "1.0.0";
+            PlayerSettings.bundleVersion = "1.0.1";
             PlayerSettings.SetApplicationIdentifier(NamedBuildTarget.Android, BundleId);
 
-            PlayerSettings.Android.bundleVersionCode = 1;
+            PlayerSettings.Android.bundleVersionCode = 2;
             PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel25;
             PlayerSettings.Android.targetSdkVersion = AndroidSdkVersions.AndroidApiLevelAuto;
             PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARM64 | AndroidArchitecture.ARMv7;
@@ -179,6 +179,8 @@ namespace GTA6.Build
             PlayerSettings.SetApiCompatibilityLevel(NamedBuildTarget.Android, ApiCompatibilityLevel.NET_Standard);
             PlayerSettings.SetManagedStrippingLevel(NamedBuildTarget.Android, ManagedStrippingLevel.Low);
 
+            EnsureShaderMaterials();
+
             QualitySettings.shadows = ShadowQuality.All;
             QualitySettings.shadowResolution = ShadowResolution.Medium;
             QualitySettings.antiAliasing = 0;
@@ -189,6 +191,45 @@ namespace GTA6.Build
             EditorUserBuildSettings.development = false;
 
             Debug.Log("[Leonida] player settings configured for Android");
+        }
+
+        /// <summary>
+        /// The build ships an empty scene, so nothing references the built-in shaders
+        /// the game creates at runtime (Standard, Skybox/Procedural) and Unity strips
+        /// them: Shader.Find then returns null on the device, leaving a black sky and
+        /// invisible models. A material kept in Resources pulls its shader into the
+        /// build. Always Included Shaders would do it too, but writing that list breaks
+        /// the player build on 6000.3 ("Failed to write unity_builtin_extra").
+        /// </summary>
+        static void EnsureShaderMaterials()
+        {
+            const string dir = "Assets/Resources";
+            if (!Directory.Exists(dir))
+            {
+                Directory.CreateDirectory(dir);
+                AssetDatabase.Refresh();
+            }
+
+            EnsureMaterial(dir + "/LeonidaStandard.mat", "Standard");
+            EnsureMaterial(dir + "/LeonidaSky.mat", "Skybox/Procedural");
+            AssetDatabase.SaveAssets();
+        }
+
+        static void EnsureMaterial(string path, string shaderName)
+        {
+            if (File.Exists(path)) return;
+
+            Shader shader = Shader.Find(shaderName);
+            if (shader == null)
+            {
+                Debug.LogWarning("[Leonida] shader not found: " + shaderName);
+                return;
+            }
+
+            Material material = new Material(shader);
+            material.name = Path.GetFileNameWithoutExtension(path);
+            AssetDatabase.CreateAsset(material, path);
+            Debug.Log("[Leonida] resources material: " + path + " (" + shaderName + ")");
         }
 
         static string EnsureScene()
